@@ -1,0 +1,29 @@
+<svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" aria-label="Illustration of the Refine IDE verdict surface" font-family="'Inter',sans-serif">
+  <rect x="12" y="12" width="576" height="276" rx="10" fill="#eef0ec" stroke="#cfc8b4" stroke-width="1"/>
+  <!-- facet tabs -->
+  <rect x="12" y="12" width="576" height="34" rx="10" fill="#ffffff"/>
+  <rect x="12" y="38" width="576" height="8" fill="#ffffff"/>
+  <g font-size="11" fill="#6b6358">
+    <text x="34" y="34">Code</text>
+    <rect x="80" y="18" width="46" height="22" rx="5" fill="#2F6B3A"/><text x="103" y="34" text-anchor="middle" fill="#fff" font-weight="700">RFN</text>
+    <text x="140" y="34">Cascade</text><text x="204" y="34">Graph</text><text x="258" y="34">Tests</text>
+  </g>
+  <!-- verdict card -->
+  <rect x="60" y="66" width="480" height="200" rx="10" fill="#ffffff" stroke="#1a1612" stroke-width="1.2"/>
+  <circle cx="88" cy="94" r="7" fill="#2F6B3A"/>
+  <text x="104" y="98" font-size="12" font-weight="700" fill="#1a1612">tighten_penalty_cap</text>
+  <text x="520" y="98" text-anchor="end" font-size="9.5" fill="#6b6358">rfn-0207 · amina@sonibank</text>
+  <line x1="76" y1="110" x2="524" y2="110" stroke="#cfc8b4"/>
+  <g font-size="10">
+    <text x="92" y="132" fill="#2F6B3A" font-weight="700">✓</text><text x="110" y="132" fill="#1a1612">structural</text><text x="240" y="132" fill="#6b6358">python re-validated 14 files</text>
+    <text x="92" y="154" fill="#2F6B3A" font-weight="700">✓</text><text x="110" y="154" fill="#1a1612">constraint</text><text x="240" y="154" fill="#6b6358">16 within bounds 10..20</text>
+    <text x="92" y="176" fill="#2F6B3A" font-weight="700">✓</text><text x="110" y="176" fill="#1a1612">derivation</text><text x="240" y="176" fill="#6b6358">17 nodes revalidated · verdicts hold</text>
+    <text x="92" y="198" fill="#2F6B3A" font-weight="700">✓</text><text x="110" y="198" fill="#1a1612">governance</text><text x="240" y="198" fill="#6b6358">author authorized for policy/*</text>
+  </g>
+  <line x1="76" y1="212" x2="524" y2="212" stroke="#cfc8b4"/>
+  <rect x="76" y="226" width="86" height="24" rx="12" fill="#2F6B3A"/>
+  <text x="119" y="242" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">landed ✓</text>
+  <rect x="170" y="226" width="120" height="24" rx="12" fill="#ffffff" stroke="#cfc8b4"/>
+  <text x="230" y="242" text-anchor="middle" font-size="10" fill="#1a1612">↺ revert available</text>
+  <text x="524" y="242" text-anchor="end" font-size="9.5" font-style="italic" fill="#6b6358">audit entry sealed · stz why rfn-0207</text>
+</svg>

@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Refinement-Oriented Programming — AYOUNI</title>
+<meta name="description" content="A discipline for software in the agentic era. By Mansour Ayouni. First book from the AYOUNI imprint.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1612;
+  --ink-soft: #3a3326;
+  --soft: #6b6358;
+  --soft-2: #9a9078;
+  --paper: #ffffff;
+  --bg: #fbfaf6;
+  --rule: #e3ddc9;
+  --rule-strong: #1a1612;
+  --hover-bg: #f3eedf;
+  --card-bg: #ffffff;
+  --sidebar-bg: #f5f0e2;
+  --bookmark: #E96A1A;
+  --serif: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  --sans: 'Inter', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+  --display: 'Archivo Black', 'Helvetica Neue', Arial, sans-serif;
+  --font-size: 22px;
+  --content-max: 36em;
+  --sidebar-w: 380px;
+  --header-h: 64px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
+body {
+  font-family: var(--serif);
+  font-size: var(--font-size);
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--bg);
+  overflow-x: hidden;
+}
+button { font: inherit; cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+
+/* =================================================================== */
+/* AYOUNI WORDMARK                                                     */
+/* =================================================================== */
+.ayouni {
+  font-family: var(--display);
+  letter-spacing: -0.01em;
+  display: inline-block;
+  line-height: 1;
+}
+.ayouni .i-dot {
+  position: relative;
+}
+.ayouni .i-dot::before {
+  content: '';
+  position: absolute;
+  width: 0.16em;
+  height: 0.16em;
+  border-radius: 50%;
+  background: currentColor;
+  top: -0.30em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* =================================================================== */
+/* TOP HEADER                                                          */
+/* =================================================================== */
+.top-header {
+  height: var(--header-h);
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  font-family: var(--sans);
+  gap: 16px;
+}
+.hdr-section { display: flex; align-items: center; gap: 8px; }
+.hdr-left { flex: 0 0 auto; min-width: 0; }
+.hdr-center {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--ink-soft);
+  overflow: hidden;
+  min-width: 0;
+}
+.hdr-right { flex: 0 0 auto; }
+
+.circle-btn {
+  width: 38px; height: 38px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  transition: background 0.15s, border-color 0.15s, opacity 0.2s;
+  padding: 0;
+  font-size: 16px;
+}
+.circle-btn:hover { background: var(--hover-bg); border-color: var(--ink); }
+.circle-btn svg { width: 17px; height: 17px; }
+.circle-btn.invisible { opacity: 0; pointer-events: none; }
+
+.library-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; height: 32px;
+}
+.library-icon svg { width: 22px; height: 22px; }
+.bc-sep { color: var(--soft-2); font-size: 14px; user-select: none; }
+.bc-book {
+  font-weight: 600;
+  color: var(--ink-soft);
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 320px;
+}
+.bc-book:hover { color: var(--ink); }
+.bc-current {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 280px;
+}
+
+.font-control {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--rule);
+  border-radius: 19px;
+  background: var(--paper);
+  overflow: hidden;
+  height: 38px;
+}
+.font-control button {
+  border: none;
+  background: transparent;
+  padding: 0 12px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1;
+  height: 100%;
+}
+.font-control button:hover { background: var(--hover-bg); }
+.font-control button.smaller { font-size: 13px; }
+.font-control button.larger { font-size: 18px; }
+
+/* =================================================================== */
+/* VIEWS — overview and chapter                                        */
+/* =================================================================== */
+.view { display: none; }
+.view.active { display: block; }
+
+/* =================================================================== */
+/* OVERVIEW VIEW                                                       */
+/* =================================================================== */
+.overview-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 40px 80px;
+}
+
+.book-hero {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) 1fr;
+  gap: 56px;
+  align-items: start;
+  margin-bottom: 64px;
+}
+.hero-cover { display: flex; justify-content: center; }
+.hero-cover svg,
+.hero-cover img.cover-img {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 16px 48px rgba(40, 30, 18, 0.16), 0 4px 12px rgba(40, 30, 18, 0.08);
+  display: block;
+}
+.hero-info { padding-top: 12px; }
+.hero-imprint {
+  font-size: 18px;
+  color: var(--ink);
+  margin-bottom: 24px;
+  display: inline-block;
+}
+.hero-title {
+  font-family: var(--sans);
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--ink);
+  letter-spacing: -1.2px;
+  margin-bottom: 14px;
+}
+.hero-subtitle {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 22px;
+  line-height: 1.4;
+}
+.hero-author {
+  font-family: var(--sans);
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 36px;
+}
+.hero-meta {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--soft);
+  letter-spacing: 1.5px;
+  margin-bottom: 28px;
+}
+
+.view-mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--rule);
+  border-radius: 22px;
+  background: var(--paper);
+  padding: 4px;
+  margin-top: 8px;
+}
+.view-mode-toggle button {
+  width: 36px; height: 36px;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-soft);
+  transition: background 0.15s, color 0.15s;
+}
+.view-mode-toggle button.active {
+  background: var(--ink);
+  color: var(--paper);
+}
+.view-mode-toggle button:not(.active):hover { background: var(--hover-bg); }
+.view-mode-toggle svg { width: 16px; height: 16px; }
+
+/* Chapter grid */
+.chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.chapter-grid.list-mode {
+  grid-template-columns: 1fr;
+  gap: 0;
+  max-width: 760px;
+  margin: 0 auto;
+  border-top: 1px solid var(--rule);
+}
+
+.chapter-card {
+  background: var(--card-bg);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  position: relative;
+  text-decoration: none;
+}
+.chapter-card:hover {
+  border-color: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(40, 30, 18, 0.08);
+}
+.chapter-card .card-bookmark {
+  position: absolute;
+  top: 0;
+  left: 24px;
+  width: 14px;
+  height: 24px;
+  background: var(--bookmark);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 75%, 0 100%);
+  z-index: 1;
+}
+.card-preview {
+  padding: 32px 26px 16px;
+  font-family: var(--serif);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  flex: 1;
+  max-height: 280px;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
+}
+.card-preview p { margin-bottom: 11px; }
+.card-preview p:last-child { margin-bottom: 0; }
+.card-preview em { font-style: italic; }
+.card-preview strong { font-weight: 700; color: var(--ink); }
+.card-meta {
+  padding: 18px 26px 28px;
+  border-top: 1px solid var(--rule);
+}
+.card-title {
+  font-family: var(--sans);
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+  letter-spacing: -0.3px;
+  line-height: 1.25;
+}
+.card-words {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--soft);
+}
+
+/* List mode: rows */
+.chapter-grid.list-mode .chapter-card {
+  flex-direction: row;
+  align-items: baseline;
+  border: none;
+  border-bottom: 1px solid var(--rule);
+  border-radius: 0;
+  padding: 22px 8px;
+  background: transparent;
+  transform: none;
+  box-shadow: none;
+  gap: 24px;
+}
+.chapter-grid.list-mode .chapter-card:hover {
+  border-color: transparent;
+  border-bottom-color: var(--ink);
+  background: var(--hover-bg);
+  transform: none;
+  box-shadow: none;
+}
+.chapter-grid.list-mode .card-bookmark { display: none; }
+.chapter-grid.list-mode .card-preview {
+  display: none;
+}
+.chapter-grid.list-mode .card-meta {
+  flex: 1;
+  padding: 0;
+  border-top: none;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+.chapter-grid.list-mode .card-title {
+  font-size: 22px;
+  margin-bottom: 0;
+}
+.chapter-grid.list-mode .card-words {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* =================================================================== */
+/* CHAPTER VIEW                                                        */
+/* =================================================================== */
+.chapter-container {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+  min-height: calc(100vh - var(--header-h));
+}
+
+.chapter-sidebar {
+  background: var(--sidebar-bg);
+  padding: 36px 28px 60px;
+  font-family: var(--sans);
+  border-right: 1px solid var(--rule);
+  position: sticky;
+  top: var(--header-h);
+  height: calc(100vh - var(--header-h));
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.chapter-sidebar::-webkit-scrollbar { display: none; width: 0; height: 0; }
+.sidebar-book-title {
+  font-family: var(--sans);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+.sidebar-book-title a:hover { color: var(--ink); }
+
+.sidebar-nav { display: flex; flex-direction: column; }
+.sidebar-link {
+  display: flex;
+  align-items: flex-end;
+  padding: 10px 0;
+  font-size: 16px;
+  color: var(--ink);
+  font-weight: 400;
+  line-height: 1.3;
+  transition: color 0.15s, opacity 0.15s;
+}
+.sidebar-link .sl-text {
+  /* long titles wrap to a second line instead of being clipped */
+  flex: 0 1 auto;
+  min-width: 0;
+  padding-right: 8px;
+}
+/* invisible bold ghost of the label: reserves the bold width up front so
+   hover/active bolding never re-wraps the line */
+.sidebar-link .sl-text::after {
+  content: attr(data-t);
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  font-weight: 700;
+  pointer-events: none;
+  user-select: none;
+}
+.sidebar-link .sl-leader {
+  flex: 1 1 auto;
+  border-bottom: 1px dotted var(--soft-2);
+  margin-bottom: 5px;
+  min-width: 16px;
+  opacity: 0.7;
+}
+.sidebar-link:hover .sl-text { font-weight: 600; }
+.sidebar-link:hover { color: var(--ink); }
+.sidebar-link.active .sl-text {
+  font-weight: 700;
+}
+.sidebar-link.active .sl-leader { opacity: 0; }
+
+.chapter-main {
+  padding: 56px 64px 96px;
+  min-width: 0;
+}
+.chapter-content {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.chapter-page { display: none; }
+.chapter-page.active {
+  display: block;
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+/* =================================================================== */
+/* CHAPTER PAGE TYPOGRAPHY                                             */
+/* =================================================================== */
+.ch-title {
+  font-family: var(--sans);
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--ink);
+  letter-spacing: -0.8px;
+  margin-bottom: 12px;
+}
+.ch-eyebrow {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--soft);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.ch-rule {
+  width: 64px;
+  border-top: 2px solid var(--ink);
+  margin: 28px 0 36px;
+}
+.ch-epigraph {
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 30em;
+  border-left: 3px solid var(--ink);
+  padding-left: 22px;
+  margin: 32px 0 48px;
+}
+.ch-epigraph-attr {
+  display: block;
+  margin-top: 12px;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--soft);
+}
+
+.subsection-h {
+  font-family: var(--sans);
+  /* relative to the reading size so it scales with the font control */
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--ink);
+  text-transform: uppercase;
+  margin: 44px 0 18px;
+  line-height: 1.4;
+}
+
+/* book convention: a blank gap between paragraphs AND a first-line indent */
+.chapter-page p {
+  margin: 0 0 1em;
+  text-indent: 1.5em;
+  font-size: var(--font-size);
+  line-height: 1.65;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  font-feature-settings: "kern", "liga", "onum";
+}
+.chapter-page p:last-child { margin-bottom: 0; }
+.chapter-page p em, .chapter-page p i { font-style: italic; }
+.chapter-page p strong { font-weight: 700; color: var(--ink); }
+
+/* No drop caps on chapter pages — keep Writebook-style clean opening */
+
+.divider {
+  display: flex;
+  justify-content: center;
+  margin: 36px 0;
+  color: var(--soft-2);
+  font-size: 22px;
+  letter-spacing: 20px;
+  padding-left: 20px;
+}
+
+/* Figures */
+figure { margin: 40px -8px; }
+figure svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+figcaption {
+  text-align: center;
+  /* relative to the reading size so captions stay readable at any setting */
+  font-size: 0.82em;
+  line-height: 1.55;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-top: 16px;
+  font-family: var(--serif);
+}
+figcaption strong {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--ink);
+  margin-right: 6px;
+  letter-spacing: 0.5px;
+}
+
+/* Asides */
+.aside {
+  background: var(--sidebar-bg);
+  border-left: 3px solid var(--ink);
+  padding: 18px 22px;
+  margin: 32px 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  border-radius: 0 4px 4px 0;
+}
+.aside-h {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 7px;
+}
+
+/* Chapter navigation (next/previous) */
+.ch-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 80px 0 0;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+}
+.ch-nav-btn {
+  flex: 1;
+  padding: 18px 22px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.15s, background 0.15s;
+}
+.ch-nav-btn:hover { border-color: var(--ink); background: var(--hover-bg); }
+.ch-nav-btn.invisible { visibility: hidden; pointer-events: none; }
+.cnb-dir {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: var(--soft);
+  text-transform: uppercase;
+}
+.cnb-title {
+  font-family: var(--sans);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.ch-nav-btn.next { text-align: right; }
+
+/* Special pages */
+.contents-listing { font-family: var(--sans); }
+.contents-listing .ce-part {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--ink);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 28px 0 12px;
+}
+.contents-listing .ce-row {
+  display: flex;
+  align-items: baseline;
+  padding: 8px 0;
+  font-size: 17px;
+  border-bottom: 0.5px dotted var(--rule);
+}
+.contents-listing .ce-num {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--soft);
+  letter-spacing: 1px;
+  width: 36px;
+}
+.contents-listing .ce-title { font-family: var(--serif); font-style: italic; flex: 1; padding-right: 12px; }
+.contents-listing .ce-pg { font-family: var(--sans); font-size: 12px; color: var(--soft); font-weight: 500; }
+
+.dedication-page, .epigraph-page {
+  text-align: center;
+  padding-top: 56px;
+  font-style: italic;
+  font-size: 24px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 26em;
+  margin: 0 auto;
+}
+.dedication-page .attr, .epigraph-page .attr {
+  display: block;
+  margin-top: 24px;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--soft);
+}
+
+.copyright-page {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 32em;
+}
+.copyright-page p { margin-bottom: 14px; }
+.copyright-page strong { color: var(--ink); font-weight: 600; }
+
+.closing-page {
+  text-align: center;
+  padding-top: 56px;
+}
+.closing-page .ch-rule { margin: 24px auto; }
+.closing-page p {
+  font-size: 19px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 32em;
+  margin: 0 auto 20px;
+}
+.closing-tag {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  color: var(--ink);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 26px;
+}
+
+/* =================================================================== */
+/* MOBILE                                                              */
+/* =================================================================== */
+.btn-sidebar-toggle { display: none; }
+
+@media (max-width: 1100px) {
+  .chapter-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+  :root { --sidebar-w: 0px; }
+  .book-hero { grid-template-columns: 1fr; gap: 32px; padding: 0 8px; }
+  .hero-cover svg, .hero-cover img.cover-img { max-width: 280px; margin: 0 auto; }
+  .hero-info { text-align: center; }
+  .hero-title { font-size: 40px; }
+  .chapter-grid { grid-template-columns: repeat(2, 1fr); }
+  .chapter-container { display: block; }
+  .chapter-sidebar {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    width: 290px;
+    max-width: 85vw;
+    height: calc(100vh - var(--header-h));
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 40;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.12);
+  }
+  .chapter-sidebar.open { transform: translateX(0); }
+  .sidebar-backdrop {
+    position: fixed;
+    inset: var(--header-h) 0 0 0;
+    background: rgba(26, 22, 18, 0.45);
+    z-index: 35;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .sidebar-backdrop.open { opacity: 1; pointer-events: auto; }
+  .btn-sidebar-toggle { display: inline-flex; }
+  .chapter-main { padding: 36px 22px 64px; }
+  .bc-book { max-width: 160px; }
+  .bc-current { max-width: 200px; }
+  .hdr-center { font-size: 13px; }
+}
+
+@media (max-width: 600px) {
+  :root { --font-size: 19px; --header-h: 56px; }
+  .chapter-main { padding: 28px 16px 56px; }
+  .chapter-page p { text-align: left; }
+  figure { margin: 30px 0; }
+  .ch-epigraph { font-size: 17px; padding-left: 16px; }
+  .chapter-grid { grid-template-columns: 1fr; }
+  .ch-title { font-size: 34px; }
+  .hero-title { font-size: 34px; }
+  .top-header { padding: 0 14px; gap: 8px; }
+  .hdr-center { font-size: 12px; }
+  .bc-book { max-width: 100px; }
+  .bc-current { max-width: 140px; }
+  .font-control { display: none; }
+  .overview-container { padding: 32px 18px 56px; }
+  .ch-nav { flex-direction: column; }
+}
+
+/* =================================================================== */
+/* SEARCH                                                              */
+/* =================================================================== */
+.search-overlay {
+  position: fixed; inset: 0; z-index: 80;
+  background: rgba(26, 22, 18, 0.42);
+  display: none;
+  padding: 9vh 16px 16px;
+}
+.search-overlay.open { display: flex; justify-content: center; align-items: flex-start; }
+.search-panel {
+  width: 100%; max-width: 620px;
+  background: var(--card-bg);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  box-shadow: 0 18px 50px rgba(26, 22, 18, 0.28);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+.search-inputrow {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--rule);
+}
+.search-inputrow svg { width: 18px; height: 18px; color: var(--soft); flex: 0 0 auto; }
+#searchInput {
+  flex: 1; min-width: 0;
+  border: none; outline: none; background: transparent;
+  font-family: var(--sans); font-size: 17px; color: var(--ink);
+}
+#searchInput::-webkit-search-cancel-button { -webkit-appearance: none; }
+.search-close {
+  flex: 0 0 auto;
+  border: 1px solid var(--rule); background: none; border-radius: 6px;
+  font-family: var(--sans); font-size: 11px; letter-spacing: 0.5px;
+  padding: 3px 8px; color: var(--soft); cursor: pointer;
+}
+.search-close:hover { background: var(--hover-bg); color: var(--ink); }
+.search-meta {
+  padding: 7px 16px;
+  font-family: var(--sans); font-size: 12px; color: var(--soft);
+  border-bottom: 1px solid var(--rule);
+}
+.search-meta:empty { display: none; }
+.search-results { overflow-y: auto; max-height: min(60vh, 540px); }
+.search-hit {
+  display: block; padding: 10px 16px;
+  cursor: pointer; text-decoration: none;
+}
+.search-hit + .search-hit { border-top: 1px solid var(--rule); }
+/* selected line = the full hover tone; mouse-over = a lighter version of it */
+.search-hit:hover { background: #fcfaf5; }
+.search-hit.active { background: var(--hover-bg); }
+.search-hit .sh-where {
+  display: block;
+  font-family: var(--sans); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 1.6px; text-transform: uppercase;
+  color: var(--bookmark);
+  margin-bottom: 2px;
+}
+.search-hit .sh-snippet {
+  display: block;
+  font-family: var(--serif); font-size: 15.5px; line-height: 1.5;
+  color: var(--ink-soft);
+}
+.search-hit mark {
+  background: rgba(233, 106, 26, 0.20);
+  color: var(--ink);
+  padding: 0 1px; border-radius: 2px;
+}
+.search-empty {
+  padding: 26px 16px;
+  font-family: var(--sans); font-size: 14px; color: var(--soft);
+  text-align: center;
+}
+mark.search-term-hl {
+  background: rgba(233, 106, 26, 0.25);
+  color: inherit;
+  padding: 0 1px;
+  border-radius: 2px;
+}
+.search-clear-hl {
+  position: fixed;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%) translateY(90px);
+  z-index: 55;
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid var(--rule);
+  background: var(--card-bg);
+  color: var(--ink-soft);
+  font-family: var(--sans); font-size: 13px; font-weight: 500;
+  padding: 9px 16px;
+  border-radius: 22px;
+  box-shadow: 0 6px 24px rgba(26, 22, 18, 0.18);
+  opacity: 0; pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.search-clear-hl.show { transform: translateX(-50%) translateY(0); opacity: 1; pointer-events: auto; }
+.search-clear-hl:hover { background: var(--hover-bg); color: var(--ink); }
+.search-clear-hl .schl-x { font-size: 16px; line-height: 1; color: var(--soft); }
+.search-flash { animation: searchFlash 1.8s ease-out 1; }
+@keyframes searchFlash {
+  0%   { background: rgba(233, 106, 26, 0.22); box-shadow: 0 0 0 6px rgba(233, 106, 26, 0.22); }
+  100% { background: transparent; box-shadow: 0 0 0 6px rgba(233, 106, 26, 0); }
+}
+@media (max-width: 600px) {
+  .search-overlay { padding: 10px 10px 10px; }
+  .search-results { max-height: calc(100vh - 170px); }
+  #searchInput { font-size: 16px; }
+}
+@media print {
+  .search-overlay, .search-clear-hl { display: none !important; }
+  mark.search-term-hl { background: none; }
+}
+
+/* =================================================================== */
+/* PRINT                                                               */
+/* =================================================================== */
+@media print {
+  body { background: white; font-size: 11pt; }
+  .top-header, .chapter-sidebar, .sidebar-backdrop, .view-mode-toggle, .ch-nav { display: none !important; }
+  .chapter-container { display: block; }
+  .chapter-main { padding: 0; }
+  .chapter-content, .chapter-page.active { max-width: none; }
+  .view { display: block !important; }
+  .chapter-page { display: block !important; page-break-before: always; }
+  .chapter-page:first-of-type { page-break-before: auto; }
+  .hero-cover svg, .hero-cover img.cover-img { box-shadow: none; }
+  .ch-title { font-size: 26pt; }
+  figure { page-break-inside: avoid; }
+  @page { margin: 0.7in; }
+  a { color: inherit; text-decoration: none; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============ TOP HEADER ============ -->
+<header class="top-header">
+  <div class="hdr-section hdr-left">
+    <button class="circle-btn back-btn" id="btnBack" aria-label="Back to library">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    </button>
+    <button class="circle-btn btn-sidebar-toggle" id="btnSidebar" aria-label="Toggle chapters">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="7" height="16" rx="1"/><line x1="14" y1="6" x2="21" y2="6"/><line x1="14" y1="12" x2="21" y2="12"/><line x1="14" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+
+  <div class="hdr-section hdr-center" id="breadcrumb">
+    <a href="#" class="library-icon" aria-label="Library" id="bcLibrary">
+      <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="3" height="18" rx="0.5"/><rect x="8" y="3" width="3" height="18" rx="0.5"/><rect x="13" y="6" width="3" height="15" rx="0.5" transform="rotate(-10 14.5 13.5)"/><rect x="18" y="3" width="3" height="18" rx="0.5"/></svg>
+    </a>
+    <span class="bc-sep">▸</span>
+    <a href="#" class="bc-book" id="bcBook">Refinement-Oriented Programming</a>
+    <span class="bc-sep chapter-sep" id="bcChapterSep" style="display:none;">▸</span>
+    <span class="bc-current" id="bcCurrent" style="display:none;"></span>
+  </div>
+
+  <div class="hdr-section hdr-right">
+    <div class="font-control" role="group" aria-label="Font size">
+      <button class="smaller" id="btnFontDown" aria-label="Smaller text">A</button>
+      <button class="larger" id="btnFontUp" aria-label="Larger text">A</button>
+    </div>
+    <button class="circle-btn" id="btnSearch" aria-label="Search the book">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.2" y2="16.2"/></svg>
+    </button>
+    <button class="circle-btn" id="btnPrint" aria-label="Print">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- Sidebar backdrop (mobile) -->
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+<!-- Search overlay -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search the book">
+  <div class="search-panel">
+    <div class="search-inputrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.2" y2="16.2"/></svg>
+      <input id="searchInput" type="search" placeholder="Search the book&hellip;" autocomplete="off" spellcheck="false" aria-label="Search query">
+      <button class="search-close" id="searchClose" aria-label="Close search">Esc</button>
+    </div>
+    <div class="search-meta" id="searchMeta"></div>
+    <div class="search-results" id="searchResults" role="listbox"></div>
+  </div>
+</div>
+
+<!-- Clear-highlights pill (appears while search-term highlights are active) -->
+<button class="search-clear-hl" id="searchClearHl" aria-label="Clear search highlights">
+  Clear highlights
+  <span class="schl-x">&times;</span>
+</button>
+
+<!-- ============ OVERVIEW VIEW ============ -->
+<script>
+(function() {
+  'use strict';
+
+  // Element references
+  const viewOverview = document.getElementById('viewOverview');
+  const viewChapter = document.getElementById('viewChapter');
+  const btnBack = document.getElementById('btnBack');
+  const btnSidebar = document.getElementById('btnSidebar');
+  const btnPrint = document.getElementById('btnPrint');
+  const btnFontUp = document.getElementById('btnFontUp');
+  const btnFontDown = document.getElementById('btnFontDown');
+  const bcChapterSep = document.getElementById('bcChapterSep');
+  const bcCurrent = document.getElementById('bcCurrent');
+  const bcBook = document.getElementById('bcBook');
+  const bcLibrary = document.getElementById('bcLibrary');
+  const vmGrid = document.getElementById('vmGrid');
+  const vmList = document.getElementById('vmList');
+  const chapterGrid = document.getElementById('chapterGrid');
+  const chapterSidebar = document.getElementById('chapterSidebar');
+  const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+  const chapterNav = document.getElementById('chapterNav');
+  const cnPrev = document.getElementById('cnPrev');
+  const cnNext = document.getElementById('cnNext');
+  const sidebarLinks = Array.from(document.querySelectorAll('.sidebar-link'));
+  const chapterPages = Array.from(document.querySelectorAll('.chapter-page'));
+  const root = document.documentElement;
+
+  // ROUTING
+  function showView(viewName) {
+    if (viewName === 'overview') {
+      viewOverview.classList.add('active');
+      viewChapter.classList.remove('active');
+      btnBack.classList.add('invisible');
+      bcChapterSep.style.display = 'none';
+      bcCurrent.style.display = 'none';
+      document.body.classList.remove('in-chapter');
+    } else {
+      viewOverview.classList.remove('active');
+      viewChapter.classList.add('active');
+      btnBack.classList.remove('invisible');
+      bcChapterSep.style.display = 'inline';
+      bcCurrent.style.display = 'inline';
+      document.body.classList.add('in-chapter');
+    }
+  }
+
+  function showChapter(slug) {
+    let page = chapterPages.find(p => p.dataset.slug === slug);
+    if (!page) {
+      // Unknown slug, return to overview
+      goOverview();
+      return;
+    }
+    chapterPages.forEach(p => p.classList.remove('active'));
+    page.classList.add('active');
+
+    // Update breadcrumb
+    bcCurrent.textContent = page.dataset.title || slug;
+
+    // Update sidebar active
+    sidebarLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + slug);
+    });
+
+    // Update prev/next
+    updateChapterNav(page);
+
+    // Show chapter view
+    showView('chapter');
+
+    // Scroll to top of content
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    // Close mobile sidebar
+    closeSidebar();
+  }
+
+  function updateChapterNav(page) {
+    const prevSlug = page.dataset.prev;
+    const nextSlug = page.dataset.next;
+
+    if (prevSlug) {
+      const prevPage = chapterPages.find(p => p.dataset.slug === prevSlug);
+      cnPrev.setAttribute('href', '#' + prevSlug);
+      cnPrev.querySelector('.cnb-title').textContent = prevPage ? prevPage.dataset.title : prevSlug;
+      cnPrev.classList.remove('invisible');
+    } else {
+      cnPrev.classList.add('invisible');
+    }
+
+    if (nextSlug) {
+      const nextPage = chapterPages.find(p => p.dataset.slug === nextSlug);
+      cnNext.setAttribute('href', '#' + nextSlug);
+      cnNext.querySelector('.cnb-title').textContent = nextPage ? nextPage.dataset.title : nextSlug;
+      cnNext.classList.remove('invisible');
+    } else {
+      cnNext.classList.add('invisible');
+    }
+  }
+
+  function goOverview() {
+    if (window.location.hash) {
+      history.pushState(null, '', window.location.pathname + window.location.search);
+    }
+    showView('overview');
+  }
+
+  function handleHash() {
+    const hash = (window.location.hash || '').replace(/^#\/?/, '');
+    if (!hash || hash === 'overview') {
+      showView('overview');
+    } else {
+      showChapter(hash);
+    }
+  }
+
+  window.addEventListener('hashchange', handleHash);
+
+  // Header buttons
+  btnBack.addEventListener('click', goOverview);
+  bcLibrary.addEventListener('click', (e) => { e.preventDefault(); goOverview(); });
+  bcBook.addEventListener('click', (e) => { e.preventDefault(); goOverview(); });
+
+  // Sidebar toggle (mobile)
+  function openSidebar() { chapterSidebar.classList.add('open'); sidebarBackdrop.classList.add('open'); }
+  function closeSidebar() { chapterSidebar.classList.remove('open'); sidebarBackdrop.classList.remove('open'); }
+  btnSidebar.addEventListener('click', openSidebar);
+  sidebarBackdrop.addEventListener('click', closeSidebar);
+
+  // VIEW MODE TOGGLE
+  vmGrid.addEventListener('click', () => {
+    chapterGrid.classList.remove('list-mode');
+    vmGrid.classList.add('active');
+    vmList.classList.remove('active');
+    try { localStorage.setItem('ayouni-viewmode', 'grid'); } catch(e) {}
+  });
+  vmList.addEventListener('click', () => {
+    chapterGrid.classList.add('list-mode');
+    vmList.classList.add('active');
+    vmGrid.classList.remove('active');
+    try { localStorage.setItem('ayouni-viewmode', 'list'); } catch(e) {}
+  });
+  // Restore view mode
+  try {
+    const savedMode = localStorage.getItem('ayouni-viewmode');
+    if (savedMode === 'list') vmList.click();
+  } catch(e) {}
+
+  // FONT SIZE CONTROL
+  const SIZE_STEPS = [18, 20, 22, 24, 26, 28, 30];
+  let currentSizeIdx = 2;
+  function applyFontSize() {
+    root.style.setProperty('--font-size', SIZE_STEPS[currentSizeIdx] + 'px');
+    try { localStorage.setItem('ayouni-fontsize', currentSizeIdx); } catch (e) {}
+  }
+  try {
+    const saved = parseInt(localStorage.getItem('ayouni-fontsize'), 10);
+    if (!isNaN(saved) && saved >= 0 && saved < SIZE_STEPS.length) {
+      currentSizeIdx = saved;
+      applyFontSize();
+    }
+  } catch (e) {}
+  btnFontUp.addEventListener('click', () => {
+    if (currentSizeIdx < SIZE_STEPS.length - 1) { currentSizeIdx++; applyFontSize(); }
+  });
+  btnFontDown.addEventListener('click', () => {
+    if (currentSizeIdx > 0) { currentSizeIdx--; applyFontSize(); }
+  });
+
+  // Print
+  btnPrint.addEventListener('click', () => window.print());
+
+  // Keyboard
+  document.addEventListener('keydown', (e) => {
+    const t = e.target;
+    if (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape') {
+      if (chapterSidebar.classList.contains('open')) {
+        closeSidebar();
+      } else if (document.body.classList.contains('in-chapter')) {
+        goOverview();
+      }
+    }
+    else if (e.key === 'ArrowRight' && document.body.classList.contains('in-chapter') && !cnNext.classList.contains('invisible')) {
+      window.location.hash = cnNext.getAttribute('href').slice(1);
+    }
+    else if (e.key === 'ArrowLeft' && document.body.classList.contains('in-chapter') && !cnPrev.classList.contains('invisible')) {
+      window.location.hash = cnPrev.getAttribute('href').slice(1);
+    }
+    else if ((e.key === '+' || e.key === '=') && !e.ctrlKey && !e.metaKey) {
+      e.preventDefault();
+      if (currentSizeIdx < SIZE_STEPS.length - 1) { currentSizeIdx++; applyFontSize(); }
+    } else if ((e.key === '-' || e.key === '_') && !e.ctrlKey && !e.metaKey) {
+      e.preventDefault();
+      if (currentSizeIdx > 0) { currentSizeIdx--; applyFontSize(); }
+    }
+  });
+
+
+  // SEARCH
+  const searchOverlay = document.getElementById('searchOverlay');
+  const searchInput = document.getElementById('searchInput');
+  const searchResults = document.getElementById('searchResults');
+  const searchMeta = document.getElementById('searchMeta');
+  const btnSearch = document.getElementById('btnSearch');
+  const searchClose = document.getElementById('searchClose');
+  let searchIndex = null;
+  let searchHits = [];
+  let searchActive = -1;
+  let searchTimer = null;
+  let searchLastTerms = [];
+
+  const searchNorm = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+  function searchNormMap(s) {
+    // normalized text + map from normalized index back to original index
+    const lower = s.toLowerCase();
+    let out = '';
+    const map = [];
+    for (let i = 0; i < lower.length; i++) {
+      const d = lower[i].normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      for (let j = 0; j < d.length; j++) { out += d[j]; map.push(i); }
+    }
+    return { text: out, map };
+  }
+
+  function pageLabel(page) {
+    const slug = page.dataset.slug || '';
+    const title = page.dataset.title || slug;
+    let m = slug.match(/^ch(\d+)-/);
+    if (m) return 'Chapter ' + m[1] + ' \u00b7 ' + title;
+    // part pages' data-title already carries the "Part N : " prefix
+    if (/^part-[ivx]+$/.test(slug)) return title;
+    return title;
+  }
+
+  function buildSearchIndex() {
+    searchIndex = [];
+    chapterPages.forEach(page => {
+      const label = pageLabel(page);
+      const slug = page.dataset.slug;
+      const blocks = Array.from(page.querySelectorAll('p, li, blockquote, h2, h3, h4, figcaption, pre'));
+      const set = new Set(blocks);
+      blocks.forEach(bl => {
+        // skip if an ancestor block is also indexed (e.g. p inside blockquote)
+        let a = bl.parentElement, nested = false;
+        while (a && a !== page) { if (set.has(a)) { nested = true; break; } a = a.parentElement; }
+        if (nested) return;
+        const text = bl.textContent.replace(/\s+/g, ' ').trim();
+        if (text.length < 2) return;
+        const isHeading = /^H[2-4]$/.test(bl.tagName);
+        searchIndex.push({ slug, label, bl, text, ntext: searchNorm(text), isHeading });
+      });
+    });
+  }
+
+  function escHtml(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function snippetFor(entry, terms) {
+    const { text: n, map } = searchNormMap(entry.text);
+    let first = -1;
+    terms.forEach(t => {
+      const i = n.indexOf(t);
+      if (i !== -1) { const o = map[i]; if (first === -1 || o < first) first = o; }
+    });
+    if (first < 0) first = 0;
+    let start = Math.max(0, first - 70);
+    if (start > 0) {
+      const sp = entry.text.indexOf(' ', start);
+      if (sp !== -1 && sp < first) start = sp + 1;
+    }
+    const win = entry.text.slice(start, start + 220);
+    // highlight all term occurrences in the window, diacritics-insensitively
+    const w = searchNormMap(win);
+    const ranges = [];
+    terms.forEach(t => {
+      let i = -1;
+      while ((i = w.text.indexOf(t, i + 1)) !== -1) {
+        ranges.push([w.map[i], w.map[i + t.length - 1] + 1]);
+      }
+    });
+    ranges.sort((a, b) => a[0] - b[0]);
+    const merged = [];
+    ranges.forEach(r => {
+      const last = merged[merged.length - 1];
+      if (last && r[0] <= last[1]) { if (r[1] > last[1]) last[1] = r[1]; }
+      else merged.push(r.slice());
+    });
+    let html = '', pos = 0;
+    merged.forEach(r => {
+      html += escHtml(win.slice(pos, r[0])) + '<mark>' + escHtml(win.slice(r[0], r[1])) + '</mark>';
+      pos = r[1];
+    });
+    html += escHtml(win.slice(pos));
+    return (start > 0 ? '\u2026 ' : '') + html + (start + 220 < entry.text.length ? ' \u2026' : '');
+  }
+
+  function setActiveHit(i) {
+    const items = searchResults.querySelectorAll('.search-hit');
+    items.forEach(el => el.classList.remove('active'));
+    searchActive = i;
+    if (i >= 0 && items[i]) {
+      items[i].classList.add('active');
+      items[i].scrollIntoView({ block: 'nearest' });
+    }
+  }
+
+  function runSearch() {
+    const q = searchInput.value.trim();
+    searchResults.innerHTML = '';
+    searchHits = [];
+    searchActive = -1;
+    const nq = searchNorm(q);
+    if (nq.length < 2) { searchMeta.textContent = ''; return; }
+    const terms = nq.split(/\s+/).filter(Boolean);
+    searchLastTerms = terms;
+    const matched = [];
+    for (const entry of searchIndex) {
+      if (terms.every(t => entry.ntext.includes(t))) {
+        let score = 0;
+        terms.forEach(t => {
+          let i = -1;
+          while ((i = entry.ntext.indexOf(t, i + 1)) !== -1) score++;
+        });
+        if (entry.isHeading) score += 3;
+        matched.push({ entry, score });
+        if (matched.length >= 500) break;
+      }
+    }
+    matched.sort((a, b) => b.score - a.score);
+    if (matched.length === 0) {
+      searchMeta.textContent = '';
+      searchResults.innerHTML = '<div class="search-empty">No matches. Try fewer or shorter words.</div>';
+      return;
+    }
+    const top = matched.slice(0, 60);
+    searchMeta.textContent = matched.length + (matched.length >= 500 ? '+' : '') +
+      ' matching passage' + (matched.length === 1 ? '' : 's') +
+      (matched.length > top.length ? ' \u00b7 showing the top ' + top.length : '');
+    const frag = document.createDocumentFragment();
+    top.forEach((m, i) => {
+      const a = document.createElement('a');
+      a.className = 'search-hit';
+      a.href = '#' + m.entry.slug;
+      a.setAttribute('role', 'option');
+      a.innerHTML = '<span class="sh-where">' + escHtml(m.entry.label) + '</span>' +
+                    '<span class="sh-snippet">' + snippetFor(m.entry, terms) + '</span>';
+      a.addEventListener('click', (e) => { e.preventDefault(); gotoSearchHit(i); });
+      frag.appendChild(a);
+      searchHits.push(m.entry);
+    });
+    searchResults.appendChild(frag);
+    searchResults.scrollTop = 0;
+    setActiveHit(0);
+  }
+
+  const searchClearHl = document.getElementById('searchClearHl');
+
+  function highlightTerms(rootEl, terms) {
+    const walker = document.createTreeWalker(rootEl, NodeFilter.SHOW_TEXT, null);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(node => {
+      const text = node.nodeValue;
+      if (!text || !text.trim()) return;
+      const p = node.parentElement;
+      if (p && (p.tagName === 'MARK' || p.tagName === 'SCRIPT' || p.tagName === 'STYLE')) return;
+      const nm = searchNormMap(text);
+      const ranges = [];
+      terms.forEach(t => {
+        let i = -1;
+        while ((i = nm.text.indexOf(t, i + 1)) !== -1) {
+          ranges.push([nm.map[i], nm.map[i + t.length - 1] + 1]);
+        }
+      });
+      if (!ranges.length) return;
+      ranges.sort((a, b) => a[0] - b[0]);
+      const merged = [];
+      ranges.forEach(r => {
+        const last = merged[merged.length - 1];
+        if (last && r[0] <= last[1]) { if (r[1] > last[1]) last[1] = r[1]; }
+        else merged.push(r.slice());
+      });
+      const frag = document.createDocumentFragment();
+      let pos = 0;
+      merged.forEach(r => {
+        if (r[0] > pos) frag.appendChild(document.createTextNode(text.slice(pos, r[0])));
+        const m = document.createElement('mark');
+        m.className = 'search-term-hl';
+        m.textContent = text.slice(r[0], r[1]);
+        frag.appendChild(m);
+        pos = r[1];
+      });
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      node.parentNode.replaceChild(frag, node);
+    });
+  }
+
+  function clearTermHighlights() {
+    const marks = document.querySelectorAll('mark.search-term-hl');
+    marks.forEach(m => {
+      const parent = m.parentNode;
+      parent.replaceChild(document.createTextNode(m.textContent), m);
+      parent.normalize();
+    });
+    searchClearHl.classList.remove('show');
+    if (marks.length) searchIndex = null; // text nodes changed; rebuild lazily next time
+  }
+
+  function gotoSearchHit(i) {
+    const entry = searchHits[i];
+    if (!entry) return;
+    const terms = searchLastTerms.slice();
+    closeSearch();
+    if (window.location.hash.slice(1) !== entry.slug) {
+      window.location.hash = entry.slug;
+    }
+    setTimeout(() => {
+      clearTermHighlights();
+      const pageEl = document.getElementById('page-' + entry.slug);
+      if (pageEl && terms.length) {
+        highlightTerms(pageEl, terms);
+        searchClearHl.classList.add('show');
+      }
+      entry.bl.scrollIntoView({ block: 'center' });
+      entry.bl.classList.remove('search-flash');
+      void entry.bl.offsetWidth;
+      entry.bl.classList.add('search-flash');
+    }, 90);
+  }
+
+  searchClearHl.addEventListener('click', clearTermHighlights);
+  // leaving the page (prev/next, sidebar, breadcrumb) drops stale highlights
+  window.addEventListener('hashchange', clearTermHighlights);
+
+  function openSearch() {
+    if (!searchIndex) buildSearchIndex();
+    searchOverlay.classList.add('open');
+    searchInput.focus();
+    searchInput.select();
+    runSearch();
+  }
+  function closeSearch() { searchOverlay.classList.remove('open'); }
+
+  btnSearch.addEventListener('click', openSearch);
+  searchClose.addEventListener('click', closeSearch);
+  searchOverlay.addEventListener('mousedown', (e) => { if (e.target === searchOverlay) closeSearch(); });
+
+  searchInput.addEventListener('input', () => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(runSearch, 120);
+  });
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') { e.preventDefault(); if (searchHits.length) setActiveHit(Math.min(searchActive + 1, searchHits.length - 1)); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); if (searchHits.length) setActiveHit(Math.max(searchActive - 1, 0)); }
+    else if (e.key === 'Enter') { e.preventDefault(); gotoSearchHit(searchActive >= 0 ? searchActive : 0); }
+  });
+
+  // capture phase so search shortcuts win over the reader's own key handling
+  document.addEventListener('keydown', (e) => {
+    const isOpen = searchOverlay.classList.contains('open');
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
+      e.preventDefault(); e.stopPropagation();
+      if (isOpen) closeSearch(); else openSearch();
+      return;
+    }
+    if (isOpen && e.key === 'Escape') {
+      e.preventDefault(); e.stopPropagation();
+      closeSearch();
+      return;
+    }
+    if (!isOpen && e.key === 'Escape' && searchClearHl.classList.contains('show')) {
+      e.preventDefault(); e.stopPropagation();
+      clearTermHighlights();
+      return;
+    }
+    if (!isOpen && e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      const t = e.target;
+      if (t.tagName !== 'INPUT' && t.tagName !== 'TEXTAREA') { e.preventDefault(); openSearch(); }
+    }
+  }, true);
+
+  // Initial route
+  handleHash();
+})();
+</script>
+
+</body>
+</html>

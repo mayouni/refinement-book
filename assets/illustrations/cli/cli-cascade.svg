@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 246" width="760" height="246" role="img" aria-label="Terminal session: stz — the blast radius, before anything lands">
+<defs><clipPath id="clip-cli-cascade"><rect x="0" y="0" width="760" height="246" rx="12"/></clipPath></defs>
+<g clip-path="url(#clip-cli-cascade)">
+<rect x="0" y="0" width="760" height="246" fill="#211c15"/>
+<rect x="0" y="0" width="760" height="38" fill="#2a241c"/>
+<circle cx="24" cy="19.0" r="5.5" fill="#5a5248"/>
+<circle cx="44" cy="19.0" r="5.5" fill="#6b6358"/>
+<circle cx="64" cy="19.0" r="5.5" fill="#8d8471"/>
+<text x="380.0" y="23.5" text-anchor="middle" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="12.5" fill="#8d8471">stz — the blast radius, before anything lands</text>
+<text x="26" y="73.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">❯ </tspan><tspan fill="#e8e1d1">stz cascade rfn-0207</tspan></text>
+<text x="26" y="97.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">  depth 1  </tspan><tspan fill="#82c0ae">14</tspan><tspan fill="#cfc7b5"> loan products reprice        </tspan><tspan fill="#8d8471">gates: tests/pricing/*</tspan></text>
+<text x="26" y="121.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">  depth 2  </tspan><tspan fill="#cfc7b5">risk_assessment · statement_gen  </tspan><tspan fill="#8d8471">gates: tests/risk/*</tspan></text>
+<text x="26" y="145.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">  depth 3  </tspan><tspan fill="#cfc7b5">q3_compliance_report             </tspan><tspan fill="#8d8471">gate: policy/BCEAO-4.2</tspan></text>
+<text x="26" y="169.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">  stopped  </tspan><tspan fill="#cfc7b5">4 further nodes unchanged — </tspan><tspan fill="#9fc98f">early cutoff</tspan></text>
+<text x="26" y="217.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#82c0ae">17</tspan><tspan fill="#cfc7b5"> nodes revalidate · nothing lands until </tspan><tspan fill="#e8e1d1">stz apply</tspan></text>
+</g>
+<rect x="0.5" y="0.5" width="759" height="245" rx="12" fill="none" stroke="#35302a"/>
+</svg>

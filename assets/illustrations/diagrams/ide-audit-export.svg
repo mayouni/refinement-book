@@ -1,0 +1,39 @@
+<svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" aria-label="Illustration of the Refine IDE audit chain and evidence export" font-family="'Inter',sans-serif">
+  <rect x="12" y="12" width="576" height="296" rx="10" fill="#eef0ec" stroke="#cfc8b4" stroke-width="1"/>
+  <!-- facet tabs -->
+  <rect x="12" y="12" width="576" height="34" rx="10" fill="#ffffff"/>
+  <rect x="12" y="38" width="576" height="8" fill="#ffffff"/>
+  <g font-size="11" fill="#6b6358">
+    <text x="34" y="34">Code</text><text x="86" y="34">RFN</text><text x="140" y="34">Cascade</text>
+    <rect x="196" y="18" width="52" height="22" rx="5" fill="#2F6B3A"/><text x="222" y="34" text-anchor="middle" fill="#fff" font-weight="700">Audit</text>
+  </g>
+
+  <!-- the chain -->
+  <text x="32" y="70" font-size="10" font-weight="700" fill="#1a1612">The chain — Q3 period · policy/*</text>
+  <g font-size="9">
+    <rect x="32" y="80" width="330" height="26" rx="5" fill="#ffffff" stroke="#cfc8b4"/>
+    <text x="42" y="97" fill="#1a1612">rfn-0207  penalty_cap 18 → 16</text><text x="260" y="97" fill="#6b6358">amina · sealed ✓</text>
+    <rect x="32" y="112" width="330" height="26" rx="5" fill="#ffffff" stroke="#cfc8b4"/>
+    <text x="42" y="129" fill="#1a1612">rfn-0211  letters + SMS wording</text><text x="260" y="129" fill="#6b6358">fatima · sealed ✓</text>
+    <rect x="32" y="144" width="330" height="26" rx="5" fill="#ffffff" stroke="#cfc8b4"/>
+    <text x="42" y="161" fill="#1a1612">rfn-0219  report column checks</text><text x="260" y="161" fill="#6b6358">agent · sealed ✓</text>
+    <rect x="32" y="176" width="330" height="26" rx="5" fill="#ffffff" stroke="#cfc8b4"/>
+    <text x="42" y="193" fill="#1a1612">rfn-0208  penalty_cap → 22</text><text x="260" y="193" fill="#B83838">refused · recorded</text>
+    <text x="42" y="222" font-size="8.5" font-style="italic" fill="#9a9078">… 43 more in this period, every verdict on both clocks</text>
+  </g>
+
+  <!-- export panel -->
+  <rect x="386" y="66" width="184" height="212" rx="8" fill="#ffffff" stroke="#1a1612" stroke-width="1.2"/>
+  <text x="402" y="90" font-size="10.5" font-weight="700" fill="#1a1612">Evidence export</text>
+  <line x1="402" y1="100" x2="554" y2="100" stroke="#cfc8b4"/>
+  <g font-size="9" fill="#1a1612">
+    <text x="402" y="120"><tspan fill="#6b6358">scope</tspan>    BCEAO · policy/*</text>
+    <text x="402" y="140"><tspan fill="#6b6358">period</tspan>   Q3 2026</text>
+    <text x="402" y="160"><tspan fill="#6b6358">entries</tspan>  47 refinements</text>
+    <text x="402" y="180"><tspan fill="#6b6358">clocks</tspan>   in force + recorded</text>
+    <text x="402" y="200"><tspan fill="#6b6358">bundle</tspan>   signed, verifiable</text>
+  </g>
+  <rect x="402" y="220" width="152" height="26" rx="13" fill="#2F6B3A"/>
+  <text x="478" y="237" text-anchor="middle" font-size="10" fill="#fff" font-weight="600">Export for the auditor</text>
+  <text x="402" y="266" font-size="8.5" font-style="italic" fill="#9a9078">minutes, not a war room</text>
+</svg>

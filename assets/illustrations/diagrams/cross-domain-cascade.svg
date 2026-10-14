@@ -1,0 +1,59 @@
+<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" aria-label="One change cascading across code, UI, and data" font-family="'Inter',sans-serif">
+  <!-- the change at center -->
+  <circle cx="320" cy="180" r="40" fill="#B83838"/>
+  <text x="320" y="176" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">penalty_cap</text>
+  <text x="320" y="192" text-anchor="middle" font-size="10" fill="#fff">18 → 16</text>
+
+  <!-- CODE region -->
+  <text x="120" y="46" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="#2F6B3A">CODE</text>
+  <g fill="#ffffff" stroke="#2F6B3A" stroke-width="1.3">
+    <rect x="46" y="60" width="148" height="30" rx="6"/>
+    <rect x="46" y="100" width="148" height="30" rx="6"/>
+    <rect x="46" y="140" width="148" height="30" rx="6"/>
+  </g>
+  <g font-size="9.5" fill="#1a1612">
+    <text x="120" y="79" text-anchor="middle">14 pricing functions</text>
+    <text x="120" y="119" text-anchor="middle">risk_assessment</text>
+    <text x="120" y="159" text-anchor="middle">tests/pricing/*</text>
+  </g>
+  <g stroke="#2F6B3A" stroke-width="1.2" fill="none">
+    <path d="M282 162 C 240 140, 220 120, 198 106"/>
+    <path d="M198 106 l9 1 l-3 8 z" fill="#2F6B3A" stroke="none"/>
+  </g>
+
+  <!-- UI region -->
+  <text x="520" y="46" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="#E96A1A">UI</text>
+  <g fill="#ffffff" stroke="#E96A1A" stroke-width="1.3">
+    <rect x="446" y="60" width="148" height="30" rx="6"/>
+    <rect x="446" y="100" width="148" height="30" rx="6"/>
+    <rect x="446" y="140" width="148" height="30" rx="6"/>
+  </g>
+  <g font-size="9.5" fill="#1a1612">
+    <text x="520" y="79" text-anchor="middle">customer letters (copy)</text>
+    <text x="520" y="119" text-anchor="middle">SMS templates</text>
+    <text x="520" y="159" text-anchor="middle">portal penalty notice</text>
+  </g>
+  <g stroke="#E96A1A" stroke-width="1.2" fill="none">
+    <path d="M358 162 C 400 140, 420 120, 442 106"/>
+    <path d="M442 106 l-9 1 l3 8 z" fill="#E96A1A" stroke="none"/>
+  </g>
+
+  <!-- DATA region -->
+  <text x="320" y="268" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="#6e2a86">DATA</text>
+  <g fill="#ffffff" stroke="#6e2a86" stroke-width="1.3">
+    <rect x="160" y="280" width="148" height="30" rx="6"/>
+    <rect x="332" y="280" width="148" height="30" rx="6"/>
+  </g>
+  <g font-size="9.5" fill="#1a1612">
+    <text x="234" y="299" text-anchor="middle">q3_compliance_report</text>
+    <text x="406" y="299" text-anchor="middle">penalty column checks</text>
+  </g>
+  <g stroke="#6e2a86" stroke-width="1.2" fill="none">
+    <path d="M300 216 C 280 240, 260 260, 245 276"/>
+    <path d="M245 276 l8 -4 l3 8 z" fill="#6e2a86" stroke="none"/>
+    <path d="M340 216 C 360 240, 380 260, 395 276"/>
+    <path d="M395 276 l-8 -4 l-3 8 z" fill="#6e2a86" stroke="none"/>
+  </g>
+
+  <text x="320" y="344" text-anchor="middle" font-family="'EB Garamond',serif" font-size="14" font-style="italic" fill="#1a1612">One change, three domains, one cascade — and one gate for all of it.</text>
+</svg>

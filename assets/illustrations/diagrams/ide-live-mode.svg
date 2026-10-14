@@ -1,0 +1,41 @@
+<svg viewBox="0 0 600 330" xmlns="http://www.w3.org/2000/svg" aria-label="Illustration of the Refine IDE Live Mode" font-family="'Inter',sans-serif">
+  <rect x="12" y="12" width="576" height="306" rx="10" fill="#eef0ec" stroke="#cfc8b4" stroke-width="1"/>
+  <!-- app chrome: the RUNNING product -->
+  <rect x="12" y="12" width="576" height="30" rx="10" fill="#ffffff"/>
+  <rect x="12" y="34" width="576" height="8" fill="#ffffff"/>
+  <circle cx="32" cy="27" r="4" fill="#cfc8b4"/><circle cx="48" cy="27" r="4" fill="#cfc8b4"/><circle cx="64" cy="27" r="4" fill="#cfc8b4"/>
+  <text x="300" y="31" text-anchor="middle" font-size="10" fill="#6b6358">Sonibank — customer portal (running) · Live Mode on</text>
+
+  <!-- the running UI -->
+  <rect x="40" y="60" width="250" height="26" rx="4" fill="#ffffff" stroke="#cfc8b4"/>
+  <text x="52" y="77" font-size="10.5" font-weight="700" fill="#1a1612">Your loan · September</text>
+  <rect x="40" y="94" width="250" height="140" rx="6" fill="#ffffff" stroke="#cfc8b4"/>
+  <g font-size="9.5" fill="#6b6358">
+    <text x="54" y="116">Balance due</text><text x="276" y="116" text-anchor="end" fill="#1a1612">184 300 F</text>
+    <text x="54" y="138">Due date</text><text x="276" y="138" text-anchor="end" fill="#1a1612">30 Sep</text>
+  </g>
+  <!-- the clicked element -->
+  <rect x="52" y="152" width="226" height="34" rx="4" fill="#fdf6f1" stroke="#E96A1A" stroke-width="1.6" stroke-dasharray="5 3"/>
+  <text x="62" y="166" font-size="8.5" fill="#B83838">Late payment penalty: up to 16% may apply</text>
+  <text x="62" y="179" font-size="8" fill="#9a9078">clicked in the running app ⌖</text>
+
+  <!-- the popover: a typed refinement, from the pixels -->
+  <rect x="316" y="66" width="252" height="228" rx="10" fill="#ffffff" stroke="#1a1612" stroke-width="1.3"/>
+  <text x="332" y="90" font-size="10.5" font-weight="700" fill="#1a1612">Refine this element</text>
+  <line x1="332" y1="100" x2="552" y2="100" stroke="#cfc8b4"/>
+  <g font-size="9" fill="#1a1612">
+    <text x="332" y="120"><tspan fill="#6b6358">element</tspan>  penalty_notice_text</text>
+    <text x="332" y="140"><tspan fill="#6b6358">kind</tspan>     copy · bound to policy/penalty_cap</text>
+  </g>
+  <text x="332" y="164" font-size="9" fill="#6b6358">intent, in plain language:</text>
+  <rect x="332" y="172" width="220" height="26" rx="5" fill="#fbfaf6" stroke="#cfc8b4"/>
+  <text x="340" y="189" font-size="9" font-style="italic" fill="#1a1612">“show the exact rate, not ‘up to’”</text>
+  <g font-size="9" fill="#1a1612">
+    <text x="332" y="220"><tspan fill="#6b6358">cascade</tspan>  3 nodes · letters + SMS follow</text>
+  </g>
+  <rect x="332" y="236" width="104" height="24" rx="12" fill="#2F6B3A"/>
+  <text x="384" y="252" text-anchor="middle" font-size="9.5" fill="#fff" font-weight="600">Propose → gate</text>
+  <rect x="446" y="236" width="72" height="24" rx="12" fill="#ffffff" stroke="#cfc8b4"/>
+  <text x="482" y="252" text-anchor="middle" font-size="9.5" fill="#6b6358">Cancel</text>
+  <text x="332" y="282" font-size="8.5" font-style="italic" fill="#9a9078">same gate as the terminal — the pixels are a door</text>
+</svg>

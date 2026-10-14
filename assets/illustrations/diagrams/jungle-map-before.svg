@@ -1,0 +1,90 @@
+<svg viewBox="0 0 760 560" xmlns="http://www.w3.org/2000/svg" aria-label="The AI vocabulary as a tangled map" font-family="'Inter',sans-serif">
+  <!-- crossing, uncertain relations (drawn first, under the boxes) -->
+  <g stroke="#9a9078" stroke-width="1.1" stroke-dasharray="5 4" fill="none" opacity="0.75">
+    <path d="M150 120 C 300 60, 470 70, 600 120"/>
+    <path d="M120 160 C 240 300, 420 280, 640 170"/>
+    <path d="M170 130 C 260 240, 300 300, 360 370"/>
+    <path d="M600 150 C 520 260, 470 300, 420 380"/>
+    <path d="M130 340 C 260 330, 420 200, 590 130"/>
+    <path d="M200 420 C 340 470, 520 460, 620 420"/>
+    <path d="M110 360 C 200 420, 300 440, 380 400"/>
+    <path d="M640 360 C 560 400, 480 410, 420 395"/>
+    <path d="M370 90 C 360 180, 380 280, 390 370"/>
+    <path d="M620 420 C 640 300, 630 220, 615 165"/>
+  </g>
+  <!-- uncertain relation labels -->
+  <g font-size="10" font-style="italic" fill="#9a9078">
+    <text x="365" y="66" text-anchor="middle">contains?</text>
+    <text x="378" y="240" text-anchor="middle">replaces?</text>
+    <text x="245" y="296" text-anchor="middle">same thing?</text>
+    <text x="530" y="278" text-anchor="middle">needs?</text>
+    <text x="410" y="452" text-anchor="middle">governs?</text>
+    <text x="633" y="266" text-anchor="middle">runs on?</text>
+  </g>
+
+  <!-- term boxes: term + the three things people mean by it -->
+  <g>
+    <rect x="60" y="88" width="170" height="64" rx="8" fill="#ffffff" stroke="#1a1612" stroke-width="1.2"/>
+    <text x="145" y="110" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1612">AGENT</text>
+    <text x="145" y="127" text-anchor="middle" font-size="9.5" fill="#6b6358">an LLM in a loop? a product?</text>
+    <text x="145" y="141" text-anchor="middle" font-size="9.5" fill="#6b6358">a synthetic coworker?</text>
+  </g>
+  <g>
+    <rect x="530" y="88" width="170" height="64" rx="8" fill="#ffffff" stroke="#1a1612" stroke-width="1.2"/>
+    <text x="615" y="110" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1612">HARNESS</text>
+    <text x="615" y="127" text-anchor="middle" font-size="9.5" fill="#6b6358">runs agents? builds them?</text>
+    <text x="615" y="141" text-anchor="middle" font-size="9.5" fill="#6b6358">governs them?</text>
+  </g>
+  <g>
+    <rect x="295" y="46" width="160" height="58" rx="8" fill="#ffffff" stroke="#1a1612" stroke-width="1.2"/>
+    <text x="375" y="67" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1612">MEMORY</text>
+    <text x="375" y="83" text-anchor="middle" font-size="9.5" fill="#6b6358">a vector store? a graph?</text>
+    <text x="375" y="96" text-anchor="middle" font-size="9.5" fill="#6b6358">chat history?</text>
+  </g>
+  <g>
+    <rect x="48" y="300" width="150" height="64" rx="8" fill="#ffffff" stroke="#1a1612" stroke-width="1.2"/>
+    <text x="123" y="322" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1612">RAG</text>
+    <text x="123" y="339" text-anchor="middle" font-size="9.5" fill="#6b6358">retrieval? grounding?</text>
+    <text x="123" y="353" text-anchor="middle" font-size="9.5" fill="#6b6358">a whole pipeline?</text>
+  </g>
+  <g>
+    <rect x="560" y="300" width="150" height="64" rx="8" fill="#ffffff" stroke="#1a1612" stroke-width="1.2"/>
+    <text x="635" y="322" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1612">SKILLS</text>
+    <text x="635" y="339" text-anchor="middle" font-size="9.5" fill="#6b6358">prompts? plugins?</text>
+    <text x="635" y="353" text-anchor="middle" font-size="9.5" fill="#6b6358">verified capabilities?</text>
+  </g>
+  <g>
+    <rect x="130" y="196" width="150" height="58" rx="8" fill="#ffffff" stroke="#1a1612" stroke-width="1.2"/>
+    <text x="205" y="217" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1612">MCP</text>
+    <text x="205" y="233" text-anchor="middle" font-size="9.5" fill="#6b6358">a protocol? a marketplace?</text>
+    <text x="205" y="246" text-anchor="middle" font-size="9.5" fill="#6b6358">a runtime?</text>
+  </g>
+  <g>
+    <rect x="480" y="196" width="170" height="58" rx="8" fill="#ffffff" stroke="#1a1612" stroke-width="1.2"/>
+    <text x="565" y="217" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1612">GUARDRAILS</text>
+    <text x="565" y="233" text-anchor="middle" font-size="9.5" fill="#6b6358">content filters? policy?</text>
+    <text x="565" y="246" text-anchor="middle" font-size="9.5" fill="#6b6358">another model?</text>
+  </g>
+  <g>
+    <rect x="300" y="352" width="170" height="64" rx="8" fill="#ffffff" stroke="#1a1612" stroke-width="1.2"/>
+    <text x="385" y="374" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1612">GOVERNANCE</text>
+    <text x="385" y="391" text-anchor="middle" font-size="9.5" fill="#6b6358">of the model? of the actor?</text>
+    <text x="385" y="405" text-anchor="middle" font-size="9.5" fill="#6b6358">of the change?</text>
+  </g>
+  <g>
+    <rect x="120" y="404" width="150" height="58" rx="8" fill="#ffffff" stroke="#1a1612" stroke-width="1.2"/>
+    <text x="195" y="425" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1612">EVALS</text>
+    <text x="195" y="441" text-anchor="middle" font-size="9.5" fill="#6b6358">tests? benchmarks?</text>
+    <text x="195" y="454" text-anchor="middle" font-size="9.5" fill="#6b6358">a demo that went well?</text>
+  </g>
+  <g>
+    <rect x="500" y="404" width="180" height="58" rx="8" fill="#ffffff" stroke="#1a1612" stroke-width="1.2"/>
+    <text x="590" y="425" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1612">ORCHESTRATION</text>
+    <text x="590" y="441" text-anchor="middle" font-size="9.5" fill="#6b6358">pipelines? fleets?</text>
+    <text x="590" y="454" text-anchor="middle" font-size="9.5" fill="#6b6358">a bigger loop?</text>
+  </g>
+
+  <!-- the question underneath -->
+  <line x1="80" y1="496" x2="680" y2="496" stroke="#cfc8b4" stroke-width="1"/>
+  <text x="380" y="530" text-anchor="middle" font-family="'EB Garamond',serif" font-size="18" font-style="italic" fill="#E96A1A">The question none of the boxes answers: can you trust what just changed?</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg viewBox="0 0 640 330" xmlns="http://www.w3.org/2000/svg" aria-label="Trust postures: every execution carries its origin" font-family="'Inter',sans-serif">
+  <!-- origins -->
+  <g>
+    <rect x="40" y="48" width="160" height="58" rx="8" fill="#ffffff" stroke="#2F6B3A" stroke-width="1.4"/>
+    <text x="120" y="72" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2F6B3A">TRUSTED</text>
+    <text x="120" y="90" text-anchor="middle" font-size="9" fill="#6b6358">the team's own code, in-process</text>
+  </g>
+  <g>
+    <rect x="240" y="48" width="160" height="58" rx="8" fill="#ffffff" stroke="#0f8a7d" stroke-width="1.4"/>
+    <text x="320" y="72" text-anchor="middle" font-size="10.5" font-weight="700" fill="#0f8a7d">EXTERNAL</text>
+    <text x="320" y="90" text-anchor="middle" font-size="9" fill="#6b6358">other languages, other processes</text>
+  </g>
+  <g>
+    <rect x="440" y="48" width="160" height="58" rx="8" fill="#ffffff" stroke="#E96A1A" stroke-width="1.4"/>
+    <text x="520" y="72" text-anchor="middle" font-size="10.5" font-weight="700" fill="#E96A1A">MODEL-COMPOSED</text>
+    <text x="520" y="90" text-anchor="middle" font-size="9" fill="#6b6358">code an LLM wrote, sandboxed</text>
+  </g>
+
+  <!-- all flow into proposals with posture stamped -->
+  <g stroke="#9a9078" stroke-width="1.3" fill="none">
+    <path d="M120 106 C 140 150, 240 160, 296 172"/>
+    <path d="M320 106 L320 168"/>
+    <path d="M520 106 C 500 150, 400 160, 344 172"/>
+    <path d="M320 168 l-5 -9 l10 0 z" fill="#9a9078" stroke="none"/>
+  </g>
+  <rect x="200" y="172" width="240" height="34" rx="8" fill="#efe9d6" stroke="#cfc8b4"/>
+  <text x="320" y="193" text-anchor="middle" font-size="9.5" fill="#1a1612">every proposal arrives stamped with its origin</text>
+
+  <!-- gate + trust floor -->
+  <g stroke="#1a1612" stroke-width="1.4" fill="none">
+    <path d="M320 206 L320 228"/><path d="M320 228 l-5 -9 l10 0 z" fill="#1a1612" stroke="none"/>
+  </g>
+  <path d="M294 258 l26 -26 l26 26 l-26 26 z" fill="#E96A1A"/>
+  <text x="320" y="262" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">gate</text>
+  <g font-size="9" fill="#6b6358">
+    <text x="392" y="250">a point may declare a trust floor —</text>
+    <text x="392" y="264" font-style="italic">“policy/* refuses model-composed proposals”</text>
+    <text x="392" y="282">and the posture lands in the audit, always</text>
+  </g>
+  <text x="320" y="316" text-anchor="middle" font-family="'EB Garamond',serif" font-size="13.5" font-style="italic" fill="#1a1612">Where code came from is part of what the change is.</text>
+</svg>

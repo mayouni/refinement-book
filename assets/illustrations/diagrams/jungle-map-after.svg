@@ -1,0 +1,102 @@
+<svg viewBox="0 0 760 560" xmlns="http://www.w3.org/2000/svg" aria-label="The same map, redrawn legible" font-family="'Inter',sans-serif">
+  <!-- ======== the center: the change, through the gate ======== -->
+  <!-- authors -->
+  <rect x="46" y="196" width="130" height="52" rx="8" fill="#ffffff" stroke="#1a1612" stroke-width="1.2"/>
+  <text x="111" y="218" text-anchor="middle" font-size="11" font-weight="700" fill="#1a1612">A HUMAN</text>
+  <text x="111" y="234" text-anchor="middle" font-size="8.5" fill="#6b6358">Amina, Kofi, the intern</text>
+  <rect x="46" y="262" width="130" height="52" rx="8" fill="#ffffff" stroke="#1a1612" stroke-width="1.2"/>
+  <text x="111" y="284" text-anchor="middle" font-size="11" font-weight="700" fill="#1a1612">AN AGENT</text>
+  <text x="111" y="300" text-anchor="middle" font-size="8.5" fill="#6b6358">programmatic or model-backed</text>
+
+  <!-- proposals -->
+  <g stroke="#1a1612" stroke-width="1.4" fill="none">
+    <path d="M176 222 C 220 232, 240 244, 262 252"/>
+    <path d="M176 288 C 220 278, 240 266, 262 258"/>
+    <path d="M262 255 l-9 -4 l1 9 z" fill="#1a1612" stroke="none"/>
+  </g>
+  <text x="212" y="222" text-anchor="middle" font-size="9" font-style="italic" fill="#6b6358">proposes</text>
+  <text x="212" y="302" text-anchor="middle" font-size="9" font-style="italic" fill="#6b6358">proposes</text>
+
+  <!-- the change -->
+  <rect x="266" y="228" width="120" height="54" rx="9" fill="#ffffff" stroke="#B83838" stroke-width="1.6"/>
+  <text x="326" y="251" text-anchor="middle" font-size="11" font-weight="700" fill="#B83838">THE CHANGE</text>
+  <text x="326" y="267" text-anchor="middle" font-size="8.5" fill="#6b6358">typed · bounded · attributed</text>
+
+  <!-- the gate -->
+  <g stroke="#1a1612" stroke-width="1.4" fill="none">
+    <line x1="386" y1="255" x2="416" y2="255"/><path d="M416 255 l-9 -4.5 l0 9 z" fill="#1a1612" stroke="none"/>
+  </g>
+  <path d="M420 255 l34 -34 l34 34 l-34 34 z" fill="#E96A1A"/>
+  <text x="454" y="252" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">THE GATE</text>
+  <text x="454" y="266" text-anchor="middle" font-size="7.5" fill="#fff">four stages</text>
+
+  <!-- lands -->
+  <g stroke="#1a1612" stroke-width="1.4" fill="none">
+    <line x1="488" y1="255" x2="518" y2="255"/><path d="M518 255 l-9 -4.5 l0 9 z" fill="#1a1612" stroke="none"/>
+  </g>
+  <rect x="522" y="222" width="192" height="66" rx="9" fill="#ffffff" stroke="#2F6B3A" stroke-width="1.6"/>
+  <text x="618" y="246" text-anchor="middle" font-size="11" font-weight="700" fill="#2F6B3A">THE SYSTEM</text>
+  <text x="618" y="262" text-anchor="middle" font-size="8.5" fill="#6b6358">lands reversible · recorded</text>
+  <text x="618" y="276" text-anchor="middle" font-size="8.5" fill="#6b6358">on the graph, under its rules</text>
+
+  <!-- refuse path -->
+  <g stroke="#B83838" stroke-width="1.2" fill="none" stroke-dasharray="4 3">
+    <path d="M454 289 L454 318"/>
+  </g>
+  <text x="454" y="334" text-anchor="middle" font-size="8.5" fill="#B83838">or refuses, with reasons — recorded too</text>
+
+  <!-- foundation bands -->
+  <rect x="266" y="352" width="448" height="30" rx="15" fill="#efe9d6" stroke="#cfc8b4"/>
+  <text x="490" y="371" text-anchor="middle" font-size="9.5" fill="#1a1612">THE GRAPH — the system by its meaning · the cascade computed here</text>
+  <rect x="266" y="390" width="448" height="30" rx="15" fill="#efe9d6" stroke="#cfc8b4"/>
+  <text x="490" y="409" text-anchor="middle" font-size="9.5" fill="#1a1612">THE AUDIT CHAIN — every verdict, both clocks, every return path</text>
+
+  <!-- ======== the edges: every word, one job ======== -->
+  <g font-size="9.5">
+    <rect x="46" y="44" width="156" height="52" rx="8" fill="#ffffff" stroke="#cfc8b4"/>
+    <text x="124" y="64" text-anchor="middle" font-weight="700" fill="#1a1612">MEMORY</text>
+    <text x="124" y="80" text-anchor="middle" font-size="8.5" fill="#6b6358">a governed view of the graph</text>
+
+    <rect x="222" y="44" width="156" height="52" rx="8" fill="#ffffff" stroke="#cfc8b4"/>
+    <text x="300" y="64" text-anchor="middle" font-weight="700" fill="#1a1612">RAG / CONTEXT</text>
+    <text x="300" y="80" text-anchor="middle" font-size="8.5" fill="#6b6358">what a model reads — with provenance</text>
+
+    <rect x="398" y="44" width="156" height="52" rx="8" fill="#ffffff" stroke="#cfc8b4"/>
+    <text x="476" y="64" text-anchor="middle" font-weight="700" fill="#1a1612">SKILLS</text>
+    <text x="476" y="80" text-anchor="middle" font-size="8.5" fill="#6b6358">capabilities that verify, registered</text>
+
+    <rect x="574" y="44" width="140" height="52" rx="8" fill="#ffffff" stroke="#cfc8b4"/>
+    <text x="644" y="64" text-anchor="middle" font-weight="700" fill="#1a1612">HARNESS</text>
+    <text x="644" y="80" text-anchor="middle" font-size="8.5" fill="#6b6358">where agents are built and run</text>
+
+    <rect x="46" y="440" width="156" height="52" rx="8" fill="#ffffff" stroke="#cfc8b4"/>
+    <text x="124" y="460" text-anchor="middle" font-weight="700" fill="#1a1612">GUARDRAILS · EVALS</text>
+    <text x="124" y="476" text-anchor="middle" font-size="8.5" fill="#6b6358">filter content · measure models</text>
+
+    <rect x="222" y="440" width="156" height="52" rx="8" fill="#ffffff" stroke="#cfc8b4"/>
+    <text x="300" y="460" text-anchor="middle" font-weight="700" fill="#1a1612">MCP</text>
+    <text x="300" y="476" text-anchor="middle" font-size="8.5" fill="#6b6358">a door proposals arrive through</text>
+
+    <rect x="398" y="440" width="156" height="52" rx="8" fill="#ffffff" stroke="#cfc8b4"/>
+    <text x="476" y="460" text-anchor="middle" font-weight="700" fill="#1a1612">ORCHESTRATION</text>
+    <text x="476" y="476" text-anchor="middle" font-size="8.5" fill="#6b6358">how much runs in parallel</text>
+
+    <rect x="574" y="440" width="140" height="52" rx="8" fill="#ffffff" stroke="#E96A1A" stroke-width="1.4"/>
+    <text x="644" y="460" text-anchor="middle" font-weight="700" fill="#E96A1A">GOVERNANCE</text>
+    <text x="644" y="476" text-anchor="middle" font-size="8.5" fill="#6b6358">of the change — this gate</text>
+  </g>
+
+  <!-- quiet connectors from edge boxes toward their place -->
+  <g stroke="#cfc8b4" stroke-width="1" fill="none">
+    <path d="M124 96 L124 196"/>
+    <path d="M300 96 L300 160"/><text x="308" y="140" font-size="8" fill="#9a9078" font-style="italic">feeds the model-backed author</text>
+    <path d="M476 96 C 470 130, 462 160, 456 218"/>
+    <path d="M644 96 C 650 130, 660 160, 640 220"/>
+    <path d="M124 440 C 130 400, 150 330, 170 300"/>
+    <path d="M300 440 L300 288"/>
+    <path d="M476 440 C 470 420, 464 400, 458 292"/>
+    <path d="M644 440 C 600 420, 520 330, 492 276"/>
+  </g>
+
+  <text x="380" y="534" text-anchor="middle" font-family="'EB Garamond',serif" font-size="17" font-style="italic" fill="#1a1612">The same words as Chapter 1 — each doing one job, around a governed center.</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" aria-label="The reversibility timeline" font-family="'Inter',sans-serif">
+  <!-- the timeline -->
+  <line x1="50" y1="120" x2="590" y2="120" stroke="#1a1612" stroke-width="1.6"/>
+  <path d="M590 120 l-10 -5 l0 10 z" fill="#1a1612"/>
+  <text x="592" y="104" text-anchor="end" font-size="9.5" fill="#6b6358">time</text>
+
+  <!-- landed refinements -->
+  <g>
+    <circle cx="120" cy="120" r="9" fill="#2F6B3A"/>
+    <text x="120" y="96" text-anchor="middle" font-size="9.5" font-weight="600" fill="#1a1612">rfn-0090</text>
+    <text x="120" y="148" text-anchor="middle" font-size="9" fill="#6b6358">set bounds</text>
+    <text x="120" y="163" text-anchor="middle" font-size="8.5" fill="#9a9078">↺ inverse stored</text>
+  </g>
+  <g>
+    <circle cx="260" cy="120" r="9" fill="#2F6B3A"/>
+    <text x="260" y="96" text-anchor="middle" font-size="9.5" font-weight="600" fill="#1a1612">rfn-0163</text>
+    <text x="260" y="148" text-anchor="middle" font-size="9" fill="#6b6358">20 → 18</text>
+    <text x="260" y="163" text-anchor="middle" font-size="8.5" fill="#9a9078">↺ inverse stored</text>
+  </g>
+  <g>
+    <circle cx="400" cy="120" r="9" fill="#2F6B3A"/>
+    <text x="400" y="96" text-anchor="middle" font-size="9.5" font-weight="600" fill="#1a1612">rfn-0207</text>
+    <text x="400" y="148" text-anchor="middle" font-size="9" fill="#6b6358">18 → 16</text>
+    <text x="400" y="163" text-anchor="middle" font-size="8.5" fill="#9a9078">↺ inverse stored</text>
+  </g>
+
+  <!-- a revert: one atomic act back along the stored inverse -->
+  <g>
+    <circle cx="520" cy="120" r="9" fill="#ffffff" stroke="#E96A1A" stroke-width="2"/>
+    <text x="520" y="96" text-anchor="middle" font-size="9.5" font-weight="600" fill="#E96A1A">revert rfn-0207</text>
+    <path d="M512 128 C 470 168, 442 168, 408 130" stroke="#E96A1A" stroke-width="1.8" fill="none" stroke-dasharray="5 4"/>
+    <path d="M408 130 l10 -1 l-4 9 z" fill="#E96A1A"/>
+    <text x="462" y="188" text-anchor="middle" font-size="9.5" font-style="italic" fill="#E96A1A">one atomic act — the stored inverse, applied</text>
+  </g>
+
+  <text x="320" y="234" text-anchor="middle" font-family="'EB Garamond',serif" font-size="14" font-style="italic" fill="#1a1612">Undo is not an emergency counter-edit. It is a return path, packed before departure.</text>
+</svg>

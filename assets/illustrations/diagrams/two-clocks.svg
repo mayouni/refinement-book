@@ -1,0 +1,37 @@
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" aria-label="The two clocks: in force versus recorded" font-family="'Inter',sans-serif">
+  <!-- world clock: when facts were IN FORCE -->
+  <text x="50" y="66" font-size="10.5" font-weight="700" letter-spacing="0.05em" fill="#1a1612">THE WORLD'S CLOCK — when the rule was in force</text>
+  <line x1="50" y1="100" x2="590" y2="100" stroke="#1a1612" stroke-width="1.4"/>
+  <g font-size="9.5" fill="#6b6358">
+    <text x="110" y="120" text-anchor="middle">Mar</text>
+    <text x="230" y="120" text-anchor="middle">Apr</text>
+    <text x="350" y="120" text-anchor="middle">May</text>
+    <text x="470" y="120" text-anchor="middle">Jun</text>
+    <text x="560" y="120" text-anchor="middle">Jul</text>
+  </g>
+  <!-- the rule holds from April, retroactively -->
+  <rect x="230" y="88" width="330" height="10" rx="5" fill="#2F6B3A" opacity="0.85"/>
+  <text x="238" y="82" font-size="9.5" fill="#2F6B3A" font-weight="600">cap = 16 in force from 1 April …</text>
+
+  <!-- system clock: when the system RECORDED it -->
+  <text x="50" y="176" font-size="10.5" font-weight="700" letter-spacing="0.05em" fill="#1a1612">THE SYSTEM'S CLOCK — when the change was recorded</text>
+  <line x1="50" y1="210" x2="590" y2="210" stroke="#1a1612" stroke-width="1.4"/>
+  <g font-size="9.5" fill="#6b6358">
+    <text x="110" y="230" text-anchor="middle">Mar</text>
+    <text x="230" y="230" text-anchor="middle">Apr</text>
+    <text x="350" y="230" text-anchor="middle">May</text>
+    <text x="470" y="230" text-anchor="middle">Jun</text>
+    <text x="560" y="230" text-anchor="middle">Jul</text>
+  </g>
+  <circle cx="560" cy="210" r="8" fill="#E96A1A"/>
+  <text x="552" y="196" text-anchor="end" font-size="9.5" fill="#E96A1A" font-weight="600">circular arrives · recorded 3 July</text>
+
+  <!-- the connector: the record points back at the world -->
+  <path d="M560 202 C 540 150, 320 130, 236 98" stroke="#E96A1A" stroke-width="1.3" fill="none" stroke-dasharray="4 4"/>
+  <path d="M236 98 l10 0 l-5 9 z" fill="#E96A1A"/>
+
+  <!-- the auditor's question -->
+  <line x1="350" y1="88" x2="350" y2="216" stroke="#9a9078" stroke-width="1" stroke-dasharray="3 4"/>
+  <text x="350" y="256" text-anchor="middle" font-size="10" font-style="italic" fill="#6b6358">“As of May: what was in force — and what did your system know?”</text>
+  <text x="350" y="272" text-anchor="middle" font-size="10" font-style="italic" fill="#1a1612">Two clocks, two honest answers: in force, yes — recorded, not yet.</text>
+</svg>

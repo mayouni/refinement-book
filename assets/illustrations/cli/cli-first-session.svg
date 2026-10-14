@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 558" width="760" height="558" role="img" aria-label="Terminal session: stz — your first refinement">
+<defs><clipPath id="clip-cli-first-session"><rect x="0" y="0" width="760" height="558" rx="12"/></clipPath></defs>
+<g clip-path="url(#clip-cli-first-session)">
+<rect x="0" y="0" width="760" height="558" fill="#211c15"/>
+<rect x="0" y="0" width="760" height="38" fill="#2a241c"/>
+<circle cx="24" cy="19.0" r="5.5" fill="#5a5248"/>
+<circle cx="44" cy="19.0" r="5.5" fill="#6b6358"/>
+<circle cx="64" cy="19.0" r="5.5" fill="#8d8471"/>
+<text x="380.0" y="23.5" text-anchor="middle" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="12.5" fill="#8d8471">stz — your first refinement</text>
+<text x="26" y="73.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">❯ </tspan><tspan fill="#e8e1d1">stz lift pricing.py</tspan></text>
+<text x="26" y="97.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#cfc7b5">lifted </tspan><tspan fill="#82c0ae">214</tspan><tspan fill="#cfc7b5"> nodes into the graph </tspan><tspan fill="#8d8471">· parser: python (its own ast)</tspan></text>
+<text x="26" y="145.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">❯ </tspan><tspan fill="#e8e1d1">stz points</tspan></text>
+<text x="26" y="169.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">  vat_rate     </tspan><tspan fill="#cfc7b5">param   </tspan><tspan fill="#82c0ae">0.18</tspan><tspan fill="#cfc7b5">   bounds </tspan><tspan fill="#82c0ae">0.00..0.25</tspan></text>
+<text x="26" y="193.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">  rounding     </tspan><tspan fill="#cfc7b5">algo    </tspan><tspan fill="#cfc7b5">banker's   </tspan><tspan fill="#8d8471">2 alternatives declared</tspan></text>
+<text x="26" y="217.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">  penalty_cap  </tspan><tspan fill="#cfc7b5">param   </tspan><tspan fill="#82c0ae">18</tspan><tspan fill="#cfc7b5">     bounds </tspan><tspan fill="#82c0ae">10..20</tspan></text>
+<text x="26" y="265.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">❯ </tspan><tspan fill="#e8e1d1">stz refine vat_rate --to 0.20</tspan></text>
+<text x="26" y="289.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#cfc7b5">proposal </tspan><tspan fill="#82c0ae">rfn-0114</tspan><tspan fill="#cfc7b5"> recorded </tspan><tspan fill="#8d8471">· a typed proposal, not a diff</tspan></text>
+<text x="26" y="337.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">❯ </tspan><tspan fill="#e8e1d1">stz cascade</tspan></text>
+<text x="26" y="361.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#cfc7b5">3 nodes revalidate: </tspan><tspan fill="#f0914f">pricing.quote</tspan><tspan fill="#cfc7b5"> · </tspan><tspan fill="#f0914f">invoice.total</tspan><tspan fill="#cfc7b5"> · </tspan><tspan fill="#f0914f">tests/pricing</tspan></text>
+<text x="26" y="409.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">❯ </tspan><tspan fill="#e8e1d1">stz apply</tspan></text>
+<text x="26" y="433.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#9fc98f">  structural   pass</tspan><tspan fill="#8d8471">   python re-validated the file</tspan></text>
+<text x="26" y="457.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#9fc98f">  constraint   pass</tspan><tspan fill="#8d8471">   0.20 within declared bounds</tspan></text>
+<text x="26" y="481.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#9fc98f">  derivation   pass</tspan><tspan fill="#8d8471">   cascade verdicts unchanged elsewhere</tspan></text>
+<text x="26" y="505.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#9fc98f">  governance   pass</tspan><tspan fill="#8d8471">   author authorized for this point</tspan></text>
+<text x="26" y="529.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#9fc98f">landed.</tspan><tspan fill="#cfc7b5"> reversible </tspan><tspan fill="#8d8471">· stz revert undoes it atomically</tspan></text>
+</g>
+<rect x="0.5" y="0.5" width="759" height="557" rx="12" fill="none" stroke="#35302a"/>
+</svg>

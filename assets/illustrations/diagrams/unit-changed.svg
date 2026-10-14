@@ -1,0 +1,34 @@
+<svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" aria-label="The diff and the refinement" font-family="'Inter',sans-serif">
+  <!-- left: the diff -->
+  <rect x="20" y="60" width="220" height="170" rx="6" fill="#ffffff" stroke="#cfc8b4" stroke-width="1"/>
+  <rect x="20" y="60" width="220" height="26" rx="6" fill="#efe9d6"/>
+  <text x="34" y="78" font-size="11" font-weight="700" fill="#1a1612">loan_pricing.py</text>
+  <g font-size="11">
+    <rect x="20" y="100" width="220" height="20" fill="#fbe9e7"/>
+    <text x="32" y="114" fill="#B83838">- penalty_cap = 18</text>
+    <rect x="20" y="122" width="220" height="20" fill="#e7f3e9"/>
+    <text x="32" y="136" fill="#2F6B3A">+ penalty_cap = 16</text>
+    <text x="32" y="160" fill="#6b6358">  rate = base + cap</text>
+    <text x="32" y="178" fill="#6b6358">  ...</text>
+  </g>
+  <text x="130" y="252" text-anchor="middle" font-family="'EB Garamond',serif" font-size="13" font-style="italic" fill="#6b6358">the diff — which bytes moved</text>
+
+  <!-- arrow -->
+  <g stroke="#1a1612" stroke-width="1.6" fill="none">
+    <line x1="258" y1="145" x2="318" y2="145"/><path d="M318 145 l-9 -5 l0 10 z" fill="#1a1612" stroke="none"/>
+  </g>
+
+  <!-- right: the refinement card -->
+  <rect x="338" y="56" width="242" height="178" rx="10" fill="#ffffff" stroke="#1a1612" stroke-width="1.3"/>
+  <circle cx="368" cy="86" r="6" fill="#E96A1A"/>
+  <text x="384" y="90" font-size="12" font-weight="700" fill="#1a1612">tighten_penalty_cap</text>
+  <line x1="354" y1="102" x2="564" y2="102" stroke="#cfc8b4" stroke-width="1"/>
+  <g font-size="10.5" fill="#1a1612">
+    <text x="356" y="124"><tspan fill="#6b6358">intent</tspan>   BCEAO 4.2 · cap 18 → 16</text>
+    <text x="356" y="146"><tspan fill="#6b6358">author</tspan>  amina@sonibank</text>
+    <text x="356" y="168"><tspan fill="#6b6358">cascade</tspan> 14 products · hooks, reports</text>
+    <text x="356" y="190"><tspan fill="#6b6358">gate</tspan>    <tspan fill="#2F6B3A" font-weight="700">tests ✓ · policy ✓</tspan></text>
+    <text x="356" y="212"><tspan fill="#6b6358">inverse</tspan> ↺ pre-computed</text>
+  </g>
+  <text x="459" y="252" text-anchor="middle" font-family="'EB Garamond',serif" font-size="13" font-style="italic" fill="#6b6358">the refinement — what the change means</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" aria-label="Illustration of the Refine IDE graph facet" font-family="'Inter',sans-serif">
+  <rect x="12" y="12" width="576" height="296" rx="10" fill="#eef0ec" stroke="#cfc8b4" stroke-width="1"/>
+  <!-- facet tabs -->
+  <rect x="12" y="12" width="576" height="34" rx="10" fill="#ffffff"/>
+  <rect x="12" y="38" width="576" height="8" fill="#ffffff"/>
+  <g font-size="11" fill="#6b6358">
+    <text x="34" y="34">Code</text><text x="86" y="34">RFN</text><text x="140" y="34">Cascade</text>
+    <rect x="196" y="18" width="58" height="22" rx="5" fill="#2F6B3A"/><text x="225" y="34" text-anchor="middle" fill="#fff" font-weight="700">Graph</text>
+    <text x="270" y="34">Tests</text>
+  </g>
+  <!-- canvas: the lifted graph -->
+  <g stroke="#9a9078" stroke-width="1" fill="none" opacity="0.75">
+    <line x1="150" y1="120" x2="240" y2="90"/>
+    <line x1="150" y1="120" x2="238" y2="170"/>
+    <line x1="240" y1="90" x2="330" y2="120"/>
+    <line x1="238" y1="170" x2="330" y2="120"/>
+    <line x1="330" y1="120" x2="330" y2="230"/>
+  </g>
+  <line x1="150" y1="120" x2="240" y2="238" stroke="#6e2a86" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <text x="164" y="192" font-size="9" font-style="italic" fill="#6e2a86">satisfies</text>
+  <circle cx="150" cy="120" r="16" fill="#E96A1A"/><text x="150" y="124" text-anchor="middle" font-size="7.5" fill="#fff">penalty_cap</text>
+  <circle cx="240" cy="90" r="13" fill="#2F6B3A"/><text x="240" y="94" text-anchor="middle" font-size="8" fill="#fff">pricing</text>
+  <circle cx="238" cy="170" r="13" fill="#2F6B3A"/><text x="238" y="174" text-anchor="middle" font-size="8" fill="#fff">risk</text>
+  <rect x="316" y="106" width="28" height="26" rx="4" fill="#0f8a7d"/><text x="330" y="123" text-anchor="middle" font-size="7.5" fill="#fff">report</text>
+  <circle cx="240" cy="238" r="13" fill="#6e2a86"/><text x="240" y="242" text-anchor="middle" font-size="7" fill="#fff">BCEAO-4.2</text>
+  <circle cx="330" cy="230" r="11" fill="#7FC272"/><text x="330" y="234" text-anchor="middle" font-size="7.5" fill="#fff">tests</text>
+
+  <!-- inspector -->
+  <rect x="404" y="60" width="170" height="234" rx="8" fill="#ffffff" stroke="#cfc8b4"/>
+  <text x="418" y="84" font-size="10.5" font-weight="700" fill="#1a1612">penalty_cap</text>
+  <line x1="418" y1="94" x2="560" y2="94" stroke="#cfc8b4"/>
+  <g font-size="9" fill="#1a1612">
+    <text x="418" y="114"><tspan fill="#6b6358">kind</tspan>      param</text>
+    <text x="418" y="134"><tspan fill="#6b6358">value</tspan>     18</text>
+    <text x="418" y="154"><tspan fill="#6b6358">bounds</tspan>    10..20</text>
+    <text x="418" y="174"><tspan fill="#6b6358">satisfies</tspan> BCEAO-4.2</text>
+    <text x="418" y="194"><tspan fill="#6b6358">history</tspan>   2 refinements</text>
+    <text x="418" y="214"><tspan fill="#6b6358">touches</tspan>   17 nodes</text>
+  </g>
+  <rect x="418" y="238" width="140" height="24" rx="12" fill="#2F6B3A"/>
+  <text x="488" y="254" text-anchor="middle" font-size="9.5" fill="#fff" font-weight="600">Refine this point…</text>
+</svg>
