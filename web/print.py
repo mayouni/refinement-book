@@ -175,9 +175,9 @@ A programmer answers.</blockquote>
 <div class="attr">— traditional adage, attribution lost</div>
 </div>"""
 
-THE_ASK = """<div class="pg-ask"><p class="ask-line">If this book was useful to you, and you can, pay what it was worth.</p>
-<p>How to pay what it was worth: https://mayouni.github.io/ayouni/offer/</p>
-<p>Free to read and share under CC BY-NC-ND 4.0; code under the library's licence; pay what it was worth, if it was.</p>
+THE_ASK = """<div class="pg-ask"><p class="ask-line">If this book is useful to your organisation, I work with organisations on its subjects: paper copies in quantity, workshops and training, talks, consulting and the building of solutions. Write to kalidianow@gmail.com.</p>
+<p>How these books are offered: https://mayouni.github.io/ayouni/offer/</p>
+<p>Free to read and share under CC BY-NC-ND 4.0; code under the library's licence.</p>
 <p>https://mayouni.github.io/ayouni/licence/</p></div>"""
 
 BACK_COVER = """<div class="pg-back">
