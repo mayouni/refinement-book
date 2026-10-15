@@ -83,5 +83,6 @@ reader (`briefs/voice-reader.md`) and the fixer (`briefs/fixer.md`).
 ## Working state
 
 - 2026-10-15: phase 0 (the read) done; the author's rulings ROP-01 to ROP-11 recorded, ROP-02 onward on his delegation; the run tools copied
-  from the Softanza book (`tools/`); chapter 1, *The letter*, drafted (`src/en/01-the-letter.md`, five blocks kept at 93d7a39bd).
+  from the Softanza book (`tools/`); Part I drafted, run and verified: chapters 1 to 3, 10 of 10 blocks kept at 93d7a39bd, 125 claims checked by fresh verifiers and fixed
+  (`sessions/2026-10-15-rewrite-part-1.md`). Next: Part II, chapters 4 to 8.
 - Session notes: `sessions/YYYY-MM-DD-topic.md`.
