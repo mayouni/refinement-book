@@ -9,3 +9,9 @@ Done in the Softanza book session, on the author's words relayed by the AYOUNI P
 - The standing invitation keeps "If this book is useful to your organisation".
 
 The CLAUDE.md of this book still says, in places, "Default body font size 22px" and "ayouni.press" as the domain: both are superseded by the above and by the house decisions (HOUSE-10 to HOUSE-15); the dedicated rewrite session reconciles the file.
+
+## Later the same day (logo, cover, zoom)
+
+- The logo is the house's corrected SVG (a red dot): `assets/covers/ayouni-logo.svg` and `.png`, the sprite in `web/logo-sprite.html` and in `web/shell.template.html`. One logo per reader page, the header link home; the hero's copy is removed. In the PDF it is on the title page and the back cover and, with the cover, on the cover.
+- The cover is the archived flat cover on white with the corrected logo in the old wordmark's place and the type as first designed (`web/make_cover.py`, 2194 x 2868). The larger-type redesign of the morning is not wanted.
+- A zoom icon at the cover's lower right opens the cover in a lightbox at full size (`web/build.py`).

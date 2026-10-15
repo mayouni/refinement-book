@@ -328,6 +328,15 @@ h4.subsubsection-h{font-family:var(--sans);font-weight:700;font-size:0.76em;lett
 .hero-author{font-size:20px;}
 .hero-meta,.hero-series,.hero-status,.hb-label,.search-clear-hl{font-size:14px;}
 .spine-badge,.code-cell .cell-label,.stage,.aside-h,.src-k,.cnb-dir,.eyebrow,.ch-eyebrow,.card-words,.fig-label{font-size:14px;}
+.cover-wrap{position:relative;display:inline-block;line-height:0;}
+.cover-wrap .cover-img{cursor:zoom-in;}
+.cover-zoom{position:absolute;right:14px;bottom:14px;width:46px;height:46px;border-radius:50%;border:1px solid var(--rule-strong);background:var(--paper);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:zoom-in;padding:0;box-shadow:0 2px 10px rgba(23,20,15,.25);}
+.cover-zoom svg{width:22px;height:22px;}
+.cover-zoom:hover{background:var(--ink);color:var(--paper);}
+.cover-lightbox{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1000;background:rgba(23,20,15,.88);display:flex;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;}
+.cover-lightbox[hidden]{display:none;}
+.cover-lightbox img{max-width:calc(100vw - 48px);max-height:calc(100vh - 48px);width:auto;height:auto;background:var(--paper);box-shadow:0 8px 40px rgba(23,20,15,.45);}
+.cover-close{position:absolute;top:14px;right:18px;width:46px;height:46px;border-radius:50%;border:1px solid var(--rule-strong);background:var(--paper);color:var(--ink);font-size:28px;line-height:1;cursor:pointer;padding:0;}
 .the-invite{margin:3.2em 0 1em;padding:1.6em 0 0;border-top:1px solid var(--rule);}
 .the-invite p{text-indent:0;text-align:left;hyphens:none;}
 .the-invite .invite-line{font-style:italic;}
@@ -360,6 +369,8 @@ figure figcaption .fig-hint{font-family:var(--sans);font-size:0.82em;color:var(-
 if "manifesto edition additions" not in head_header:   # idempotent: inject CSS only once
     head_header = head_header.replace("</style>", EXTRA_CSS + "\n</style>", 1)
 
+COVER_ZOOM_JS = "(function(){var z=document.querySelector('.cover-zoom'),lb=document.getElementById('coverLightbox'),im=document.querySelector('.hero-cover .cover-img');if(!z||!lb||!im)return;var big=lb.querySelector('img'),x=lb.querySelector('.cover-close');function open(){big.src=im.src;lb.hidden=false;document.body.style.overflow='hidden';x.focus();}function close(){lb.hidden=true;big.removeAttribute('src');document.body.style.overflow='';z.focus();}z.addEventListener('click',open);im.addEventListener('click',open);lb.addEventListener('click',function(e){if(e.target!==big)close();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)close();});})();"
+
 # --------------------------------------------------------------------------
 # 7. Overview + chapter views
 # --------------------------------------------------------------------------
@@ -369,10 +380,11 @@ overview = f"""{OV_MARK}
 
 <section class="book-hero">
 <div class="hero-cover">
-<img src="cover.png" alt="Refinement-Oriented Programming — book cover" class="cover-img">
+<div class="cover-wrap"><img src="cover.png" alt="Refinement-Oriented Programming — book cover" class="cover-img"><button type="button" class="cover-zoom" aria-label="View the cover large" title="View the cover large"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10.5" y1="7.5" x2="10.5" y2="13.5"/><line x1="7.5" y1="10.5" x2="13.5" y2="10.5"/></svg></button></div>
 </div>
+<div class="cover-lightbox" id="coverLightbox" role="dialog" aria-modal="true" aria-label="View the cover large" hidden><button type="button" class="cover-close" aria-label="Close">&times;</button><img alt="Refinement-Oriented Programming — book cover"></div>
+<script>{COVER_ZOOM_JS}</script>
 <div class="hero-info">
-<div class="hero-imprint"><a class="ayouni-home" href="https://mayouni.github.io/ayouni/" aria-label="AYOUNI Press: home"><svg viewBox="0 0 2095 518" aria-hidden="true" focusable="false"><use href="#ayouni-logo"/></svg></a></div>
 <h1 class="hero-title">Refinement-Oriented Programming</h1>
 <p class="hero-subtitle">{SUBTITLE}</p>
 <p class="hero-author">Mansour Ayouni</p>
