@@ -1,6 +1,6 @@
 {
  "run": {
-  "date": "2026-10-15 13:09 UTC+01:00",
+  "date": "2026-10-15 13:19 UTC+01:00",
   "library": {
    "commit": "93d7a39bdd040f82eae21d949460d69c32a75c70",
    "short": "93d7a39bd",
@@ -81,8 +81,8 @@
    "kept": 5,
    "runnable": 5,
    "exercises": 1,
-   "ran": "2026-10-15 13:09 UTC+01:00",
-   "seconds": 3.6
+   "ran": "2026-10-15 13:19 UTC+01:00",
+   "seconds": 5.7
   },
   "en/02-what-broke": {
    "id": "what-broke",
@@ -114,8 +114,8 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-15 13:09 UTC+01:00",
-   "seconds": 3.4
+   "ran": "2026-10-15 13:19 UTC+01:00",
+   "seconds": 4.4
   },
   "en/03-the-unit-of-change": {
    "id": "the-unit-of-change",
@@ -155,8 +155,8 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-10-15 13:09 UTC+01:00",
-   "seconds": 3.7
+   "ran": "2026-10-15 13:19 UTC+01:00",
+   "seconds": 3.4
   },
   "en/04-the-point": {
    "id": "the-point",
@@ -196,8 +196,8 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-10-15 13:09 UTC+01:00",
-   "seconds": 3.9
+   "ran": "2026-10-15 13:19 UTC+01:00",
+   "seconds": 3.4
   },
   "en/05-the-gate": {
    "id": "the-gate",
@@ -229,8 +229,8 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-15 13:09 UTC+01:00",
-   "seconds": 3.8
+   "ran": "2026-10-15 13:19 UTC+01:00",
+   "seconds": 3.5
   },
   "en/06-the-cascade": {
    "id": "the-cascade",
@@ -270,8 +270,8 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-10-15 13:09 UTC+01:00",
-   "seconds": 3.6
+   "ran": "2026-10-15 13:19 UTC+01:00",
+   "seconds": 3.7
   },
   "en/07-the-timeline": {
    "id": "the-timeline",
@@ -321,8 +321,8 @@
    "kept": 4,
    "runnable": 4,
    "exercises": 1,
-   "ran": "2026-10-15 13:09 UTC+01:00",
-   "seconds": 3.4
+   "ran": "2026-10-15 13:19 UTC+01:00",
+   "seconds": 3.9
   },
   "en/08-trust-and-governance": {
    "id": "trust-and-governance",
@@ -370,8 +370,74 @@
    "kept": 4,
    "runnable": 4,
    "exercises": 1,
-   "ran": "2026-10-15 13:09 UTC+01:00",
-   "seconds": 3.4
+   "ran": "2026-10-15 13:19 UTC+01:00",
+   "seconds": 3.8
+  },
+  "en/09-the-ai-model-comes-last": {
+   "id": "the-ai-model-comes-last",
+   "blocks": [
+    {
+     "hash": "f766300d5912",
+     "promise": "admitted: 'cap_auto' 0.18 -> 0.16 [:trusted] (structural + constraint + derivation + governance + trust passed)\nadmitted: 'cap_school' 0.18 -> 0.16 [:trusted] (structural + constraint + derivation + governance + trust passed)\nadmitted: 'cap_harvest' 0.18 -> 0.16 [:trusted] (structural + constraint + derivation + governance + trust passed)\n3",
+     "effects": [],
+     "unprinted": 0,
+     "verdict": "kept",
+     "out": "admitted: 'cap_auto' 0.18 -> 0.16 [:trusted] (structural + constraint + derivation + governance + trust passed)\nadmitted: 'cap_school' 0.18 -> 0.16 [:trusted] (structural + constraint + derivation + governance + trust passed)\nadmitted: 'cap_harvest' 0.18 -> 0.16 [:trusted] (structural + constraint + derivation + governance + trust passed)\n3"
+    },
+    {
+     "hash": "2e3ff6057505",
+     "promise": "[ \"cap_school\", \"0.61\" ]\nconstraint: 0.61 above max 0.20\ntrust: posture :llm below the required floor for 'cap_school'\n1",
+     "effects": [],
+     "unprinted": 0,
+     "verdict": "kept",
+     "out": "[ \"cap_school\", \"0.61\" ]\nconstraint: 0.61 above max 0.20\ntrust: posture :llm below the required floor for 'cap_school'\n1"
+    },
+    {
+     "hash": "19692c2a1878",
+     "promise": "",
+     "effects": [],
+     "verdict": "exercise",
+     "out": ""
+    }
+   ],
+   "kept": 2,
+   "runnable": 2,
+   "exercises": 1,
+   "ran": "2026-10-15 13:19 UTC+01:00",
+   "seconds": 4.0
+  },
+  "en/10-the-safest-write-surface": {
+   "id": "the-safest-write-surface",
+   "blocks": [
+    {
+     "hash": "a44dd6c83445",
+     "promise": "[ [ \"cap_auto\", \"param\", \"0.18\" ], [ \"cap_school\", \"param\", \"0.18\" ], [ \"cap_harvest\", \"param\", \"0.18\" ] ]\nstructural: no refinement point 'interest_rate'",
+     "effects": [],
+     "unprinted": 0,
+     "verdict": "kept",
+     "out": "[ [ \"cap_auto\", \"param\", \"0.18\" ], [ \"cap_school\", \"param\", \"0.18\" ], [ \"cap_harvest\", \"param\", \"0.18\" ] ]\nstructural: no refinement point 'interest_rate'"
+    },
+    {
+     "hash": "ca0cb9981105",
+     "promise": "1\nstructural: no refinement point 'interest_rate'\n1\n0\n0.18",
+     "effects": [],
+     "unprinted": 0,
+     "verdict": "kept",
+     "out": "1\nstructural: no refinement point 'interest_rate'\n1\n0\n0.18"
+    },
+    {
+     "hash": "c8283c8a3698",
+     "promise": "",
+     "effects": [],
+     "verdict": "exercise",
+     "out": ""
+    }
+   ],
+   "kept": 2,
+   "runnable": 2,
+   "exercises": 1,
+   "ran": "2026-10-15 13:19 UTC+01:00",
+   "seconds": 4.0
   }
  }
 }

@@ -87,5 +87,6 @@ reader (`briefs/voice-reader.md`) and the fixer (`briefs/fixer.md`).
 - 2026-10-15: phase 0 (the read) done; the author's rulings ROP-01 to ROP-11 recorded, ROP-02 onward on his delegation; the run tools copied
   from the Softanza book (`tools/`); Part I drafted, run and verified: chapters 1 to 3, 10 of 10 blocks kept at 93d7a39bd, 125 claims checked by fresh verifiers and fixed
   (`sessions/2026-10-15-rewrite-part-1.md`). Part II drafted the same day: chapters 4 to 8, 26 of 26 blocks kept in the scene form,
-  131 claims verified and fixed (`sessions/2026-10-15-rewrite-part-2.md`). Next: Part III, chapters 9 and 10.
+  131 claims verified and fixed (`sessions/2026-10-15-rewrite-part-2.md`). Part III the same day: chapters 9 and 10, 30 of 30 blocks kept,
+  66 claims verified and fixed (`sessions/2026-10-15-rewrite-part-3.md`). Next: Part IV, chapters 11 and 12.
 - Session notes: `sessions/YYYY-MM-DD-topic.md`.
