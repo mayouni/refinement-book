@@ -29,3 +29,7 @@ venv/
 # Local-only working notes (Mansour's draft scratch)
 scratch/
 NOTES_local.md
+
+# the rewrite's local builds (tools/build_reader.py): rebuilt from src/en, never published from here
+reader/
+print/

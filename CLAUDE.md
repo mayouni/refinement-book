@@ -18,7 +18,7 @@ Age* (`../softanza-book/`) is the first and this book's technical foundation.
 | | The live Teaching Edition | The rewrite |
 |---|---|---|
 | Source | `manuscript/rop-book.md` | `src/en/NN-slug.md`, one page per chapter (ROP-11) |
-| Build | `web/build.py`, `web/print.py` | `tools/book_run.py` (runs every block); the reader build comes before the handover |
+| Build | `web/build.py`, `web/print.py` | `tools/book_run.py` (runs every block); `tools/build_reader.py [--pdf]` writes `reader/index.html` and `print/book.pdf` locally (ignored by git), reusing the web builders with their output redirected |
 | Who edits | the house desk and the Softanza book session, for the house's corrections | this book's session |
 | Online | yes, at `/books/refinement/en/` and `book.pdf` | no, until the author has read it and handed it over (HOUSE-13(c), ROP-08) |
 
@@ -91,5 +91,6 @@ reader (`briefs/voice-reader.md`) and the fixer (`briefs/fixer.md`).
   66 claims verified and fixed (`sessions/2026-10-15-rewrite-part-3.md`). Part IV the same day: chapters 11 and 12, 35 of 35 blocks kept,
   66 claims verified and fixed (`sessions/2026-10-15-rewrite-part-4.md`); AUTHOR-01 open. Part V the same day: chapter 13, the coda, the glossary and the start page; the first full draft is 16 pages, 36 of 36
   blocks kept, 476 claims verified across the book (`sessions/2026-10-15-rewrite-part-5.md`). The voice pass (four readers) and the readers' pass (eight readers) done
-  the same day and fixed; chapter 11 renamed `11-the-refinement-the-bank-made.md` (`sessions/2026-10-15-voice-and-readers.md`). Next: the reader and PDF build.
+  the same day and fixed; chapter 11 renamed `11-the-refinement-the-bank-made.md` (`sessions/2026-10-15-voice-and-readers.md`). The reader and the PDF
+  built locally the same day (`tools/build_reader.py`: 21 reader pages, a 127-page PDF), checked in the browser and page by page; nothing published.
 - Session notes: `sessions/YYYY-MM-DD-topic.md`.
