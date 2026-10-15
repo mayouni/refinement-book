@@ -28,7 +28,7 @@ It does not matter whether the proposal comes from Amina, from a script or from 
 
 ## Five refusals
 
-Run it. Here is the cap and, beside it, a floor below which the cap may not fall, one the bank's risk committee might set, say; both are declared as points. The code is governed: an AI agent acts on it as the actor `pricing-agent`, with delegated authority, and the cap's refinement is a risk of tier two. A floor of trust is set on the cap, and a rule across the two points says the cap may not fall below the floor.
+Run it. Here is the cap and, beside it, a floor below which the cap may not fall, one the bank's risk committee sets; both are declared as points. The code is governed: an AI agent acts on it as the actor `pricing-agent`, with delegated authority, and the cap's refinement is a risk of tier two. A floor of trust is set on the cap, and a rule across the two points says the cap may not fall below the floor.
 
 ```haro
 g = new stzRefinableCode('cap   = <R:PARAM name="penalty_cap" value="0.18" min="0.10" max="0.20">' + nl +
@@ -103,7 +103,7 @@ That is also the gate's honest edge. It proves a change against what was declare
 
 **I refused a gate that asks an AI model.** A verdict that could differ after lunch cannot be replayed for an auditor. The checks are plain comparisons and declared rules.
 
-**I refused a gate that half-lands.** A refusal at any of the five checks leaves the source as it was; the one check that applies a value first takes it back when it refuses. There is nothing to clean up after a refusal, so a refusal costs seconds.
+**I refused a gate that half-lands.** A refusal at any of the five checks leaves the source as it was; the one check that applies a value first takes it back when it refuses. There is nothing to clean up after a refusal.
 
 ## The court
 
@@ -119,7 +119,7 @@ What is built: the five checks, in the order the code runs them; a refusal that 
 
 What is designed: the gate composed from the rules of the code graph, so that a change is judged against what it reaches beyond its line; the architecture document describes it.
 
-What is absent: a check that the language still parses the changed source; and an admitted message that prints the checks in the order they ran, which is a line.
+What is absent: a check that the language still parses the changed source; and an admitted message that prints the checks in the order they ran, a change of one line in the library.
 
 ## In your hands
 
@@ -132,6 +132,6 @@ g.DeclareDerivation("cap-committee-minimum",
 ? g.Refine("penalty_cap").As(:external).To("0.11")[:why]
 ```
 
-The refusal names one rule, not two. Read the code of the gate and find how it chooses. Then ask yourself whether the order in which rules were declared should decide which one a refusal names, or whether a refusal should name every rule it breaks. A compliance officer reading the refusal would want one of the two answers, and I leave the choice open.
+Read the refusal, then read the code of the gate and find how it chooses. Then ask yourself whether the order in which rules were declared should decide which one a refusal names, or whether a refusal should name every rule it breaks. A compliance officer reading the refusal would want one of the two answers, and I leave the choice open.
 
 The gate judged a change against its point and its rules. The next chapter asks what the change reaches: the cascade, which a reviewer reads instead of the diff.

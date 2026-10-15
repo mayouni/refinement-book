@@ -18,13 +18,13 @@ In this chapter I open Part III and the question everyone asks first: what happe
 
 The field's agent is, by its own common definition, an AI model in a loop: given a goal, it calls tools, keeps some memory, and repeats until it is done. This is general knowledge, and it is a real and useful design. Its mind is one faculty, the AI model, and the safety of what it does is sought mostly in the AI model and around it: instructions, filters, a sandbox, a person who confirms.
 
-The Teaching Edition of this book took that loop apart on a ladder: a pattern, a reflex, a thinking machine, an agent. My Softanza book runs that ladder against the library in its chapter 9, and the agent in its chapters 17 to 20, with what is built and what is designed. I do not repeat it here. I keep the one result this book needs: the mind of an agent is a component, and you may choose it per task.
+My Softanza book takes that loop apart in its chapter 9 and runs the agent in its chapters 17 to 20. I keep the one result this book needs: the mind of an agent is a component, and you may choose it per task.
 
 ## The principle
 
 **The mind is programmatic by default; an AI model is one faculty among others, the last one called, and what it says is a proposal that the gate admits or refuses.**
 
-The sentence is adapted from the Softanza book's chapter 17, which says "a model" and "the court" where this book says an AI model and the gate; this chapter runs it at a bank.
+The sentence is the Softanza book's chapter 17, with its words for the model and the court given as this book's; this chapter runs it at a bank.
 
 ## The rules first
 
@@ -70,7 +70,7 @@ o2 {
 }
 ```
 
-Read the three answers in order. The slip is refused by the point's own bounds, before anyone asks where it came from. The corrected draft, still declared as the AI model's, is refused by the floor of trust: on this point, an AI model may suggest and may not land. The same value, proposed with the default trusted posture, as a person's proposal would be after reading the circular and agreeing with the draft, is admitted.
+Read the three answers in order. (Governance passes here because none is declared, as chapter 2 said.) The slip is refused by the point's own bounds, before anyone asks where it came from. The corrected draft, still declared as the AI model's, is refused by the floor of trust: on this point, an AI model may suggest and may not land. The same value, proposed with the default trusted posture, as a person's proposal would be after reading the circular and agreeing with the draft, is admitted.
 
 That is admission over generation. The AI model generated; the gate admitted or refused; and the person did what the gate cannot, which is to read the circular and decide that sixteen is what it says.
 
@@ -78,7 +78,7 @@ That is admission over generation. The AI model generated; the gate admitted or 
 
 **I refused to make the AI model the mind.** The loop above did the work that had to be exactly right, and an AI model would have added cost and doubt to it. The Softanza book's chapter 17 states it as a law: programmatic by default.
 
-**I refused to trust the AI model's text because it is fluent.** A draft is read into the same typed proposal as everything else, with its origin declared, and judged by the same five checks. Governance passes here because none is declared, as chapter 2 said. Fluency is not a check.
+**I refused to trust the AI model's text because it is fluent.** A draft is read into the same typed proposal as everything else, with its origin declared, and judged by the same five checks. Fluency is not a check.
 
 ## The court
 
@@ -86,7 +86,7 @@ That is admission over generation. The AI model generated; the gate admitted or 
 
 ## Where the field leads
 
-The field leads in what an AI agent can do on its own. An AI agent in a loop can read a repository, write a change across many files, run the tests and open a request for review, all without a person; this is general knowledge. The discipline here hands it less: a set of declared points, a typed proposal, and a gate. Much of what such an AI agent does in the field is outside this gate, and stays a diff for review.
+The field leads in what an AI agent can do on its own. An AI agent in a loop can read a repository, write a change across many files, run the tests and open a request for review, all without a person. The discipline here hands it less: a set of declared points, a typed proposal, and a gate. Much of what such an AI agent does in the field is outside this gate, and stays a diff for review.
 
 The field also leads in the AI model itself. The library's own language models, the domain language model of the Softanza book's chapter 19, are small and built for a closed vocabulary; reading a circular in French prose is work for the field's large AI models, which the bank brings and the library does not ship.
 

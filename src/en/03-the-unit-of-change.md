@@ -42,7 +42,7 @@ o = new stzRefinableCode(cPatched)
 #--> 0
 ```
 
-The point now holds `0.61`, three times the ceiling it declares, and nothing refused it! The timeline is empty: as far as the library knows, nothing was ever changed. A text edit does not pass through the gate, the judge of chapter 1, because the gate judges proposals and a patch is not one.
+The point now holds `0.61`, three times the ceiling it declares, and nothing refused it! The timeline is empty: as far as the library knows, nothing was ever changed. A text edit does not pass through the gate of chapter 1, because the gate judges proposals and a patch is not one.
 
 That is the diff's blind spot, run. The bounds were in the code, written next to the value, and the edit walked past them. A reviewer might have caught it. The code could not, because the change did not arrive in a form the code could judge.
 
@@ -87,7 +87,7 @@ m {
 
 The rounding rule may be `half_up` or `bankers`, and nothing else; a proposal of `truncate` is refused by name. The library that prints the customer statements may be swapped between the two declared engines, and the swap is admitted. In each case the point says what it may become, and the gate holds it to that.
 
-A bank changes more than numbers. Swapping a rounding rule across a bank's products would be a change a regulator may ask about, and here it is a typed proposal like the cap.
+Amina's notebook in chapter 1 listed the statement generator among what the cap touched, and a statement rounds what it prints. A change of rounding rule is a change a regulator may ask about. Here it is a typed proposal, like the cap.
 
 ## What I refused
 

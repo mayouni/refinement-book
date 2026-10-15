@@ -16,7 +16,7 @@ In this chapter I run what happens after a change lands: the timeline. I take a 
 
 ## The field
 
-The field's way back is the revert commit: a new change that undoes an old one. Version control makes it easy to write, and it is general knowledge that it is often hard to land: the system moved on after the old change, other changes grew around it, and the revert is a new change written under pressure, reviewed as one.
+The field's way back is the revert commit: a new change that undoes an old one. Version control makes it easy to write, and, as the Teaching Edition of this book put it, undoing a landed change is often a small project of its own: the system moved on after the old change, other changes grew around it, and the revert is a new change written under pressure, reviewed as one.
 
 A rollback of a deployment is faster, and it takes back everything that release carried, not one change.
 
@@ -120,7 +120,7 @@ When the code is governed, as in chapter 5, there is a second record, and it kee
 
 The field leads in memory. Version control keeps every change on disk, on every clone, with its author, its time and its message; this is general knowledge. The timeline of this chapter lives in the running object: when the program that holds it ends, the timeline ends with it. The library saves the source with its current values, in a file with the suffix `.zrfn`, and the steps are not in it.
 
-The Teaching Edition of this book told of two clocks on every record: when a rule was in force, and when the system recorded it. That is how an auditor's question "as of May: what was in force, and what did your system believe?" gets an honest answer. The library's refinement does not carry it, and neither does its architecture document; the governance lineage carries one time, the moment of the decision.
+The Teaching Edition of this book told of two clocks on every record: when a rule was in force, and when the system recorded it. That is how an auditor's question "as of May: what was in force, and what did your system believe?" gets an answer. The library's refinement does not carry it, and neither does its architecture document; the governance lineage carries one time, the moment of the decision.
 
 ## The limit
 
@@ -142,6 +142,6 @@ t2 = new stzRefinableCode(read(cFile))
 ? t2.CanRevert()
 ```
 
-Before you run it, write what you expect each line to print. The value comes back. What else does? When you have the answer, write the four fields a saved step would need for chapter 12's auditor, and the one field the step does not have today that the auditor will ask for first.
+Before you run it, write what you expect each line to print. The value comes back. What else does? When you have the answer, write the fields a saved step would need for chapter 12's auditor, and mark those the step does not have today.
 
 The timeline says what changed and how to go back. The next chapter is about who may change, and from where: trust and governance.

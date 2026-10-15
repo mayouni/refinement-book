@@ -24,7 +24,7 @@ Two questions are often mixed in it. Who is acting? And where did the change com
 
 **Ask who may turn the knob, and ask where the turn came from, as two separate questions, before anything changes.**
 
-The library's own comment says it in three words: origin is not identity. Governance judges the actor. Trust judges the origin.
+The library's own comment says it in its own short form: origin is not identity. Governance judges the actor. Trust judges the origin.
 
 ## The floor of trust
 
@@ -104,7 +104,7 @@ aD = gq.DecisionsOf("pricing-agent")[1]
 #--> refine-penalty_cap
 ```
 
-One decision, and it is the one that landed: the refused proposal changed nothing and recorded nothing. It names the actor, the authority it held at that moment, `autonomous`, the risk of the action, and the action; it also keeps an id and a rationale that names the origin of the proposal. It also carries a time, read from the clock when it was decided, which I do not print because it changes at every run. The lineage can be asked by actor, as here, by action, or by a span of time.
+One decision, and it is the one that landed: the refused proposal changed nothing and recorded nothing. It keeps an id, a rationale that names the origin, the actor, the authority it held at that moment, `autonomous`, the risk of the action, the action, and a time read from the clock, which I do not print because it changes at every run. The lineage can be asked by actor, as here, by action, or by a span of time.
 
 The authority is recorded as it was, not as it is. If the pricing agent's authority is lowered tomorrow, this decision still says it was autonomous when it decided. That is what an auditor needs: what the actor was allowed to do at the time it did it.
 
@@ -147,4 +147,4 @@ h.SetAllowRefine("penalty_cap").SetAuthorityLevel(:Delegated)
 
 Then decide whether the refusal says enough for the AI agent to correct its proposal without asking a person. If it does not, write the sentence it should say. That sentence is a specification.
 
-Part II ends here: the point, the gate, the cascade, the timeline, and the trust that decides who and from where. Part III opens the door to the author everyone is asking about: the AI agent, at the point.
+An origin, then, is declared and not proven. Part III turns to the AI agent at the point, and to the program around it that would have to prove it.

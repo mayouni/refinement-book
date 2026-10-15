@@ -28,8 +28,8 @@ Do not edit `manuscript/`, `web/`, `assets/covers/` or `site/` from the rewrite 
 
 ## The story
 
-Softibank (ROP-01), a fictional commercial bank in Niamey, receives a letter from the BCEAO: Directive 4.5 lowers the penalty cap on consumer
-credit lines from twenty per cent to sixteen, with six weeks to comply across fourteen loan products. Amina Bello, its IT methodologist, is the
+Softibank (ROP-01), a fictional commercial bank in Niamey, receives a letter from the BCEAO: a revised directive lowers the cap on late-payment
+penalties from eighteen per cent to sixteen, compliance within ninety days, across fourteen loan products (ROP-12). Amina Bello, its IT methodologist, is the
 centre of the story; the methodologist (the author's stand-in) is never named; the auditor visits at month eighteen. The bank, its people and
 the directive are invented and the book says so once (ROP-05); BCEAO, WAEMU, Niamey and the CFA franc are real. The particulars of the story
 are those of `manuscript/01-what-broke/` and `docs/characters-and-grounding.md`, renamed; nothing is added to them without the author.
@@ -39,7 +39,7 @@ The story is told in the third person; "I" in the book is always the author spea
 
 I The discipline: 1 The letter, 2 What broke, 3 The unit of change. II The gate, run: 4 The point, 5 The gate, 6 The cascade, 7 The timeline,
 8 Trust and governance. III The AI agent at the point: 9 The AI model comes last, 10 The safest write surface. IV Softibank, eighteen months:
-11 The refinement Amina made, 12 What the auditor saw. V Refine, the product and the IDE: 13 The environment, specified. Coda, The next letter.
+11 The refinement the bank made, 12 What the auditor saw. V Refine, the product and the IDE: 13 The environment, specified. Coda, The next letter.
 Glossary, aligned with Softanza's appendix D. About 2,000 words a chapter.
 
 ## The shape of a chapter

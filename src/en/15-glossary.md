@@ -40,13 +40,13 @@ Each entry gives the word as this book uses it and the chapter where it is run o
 
 **floor of trust.** The lowest origin a point accepts; a proposal from a lower origin is refused, whoever proposes it. Chapter 8.
 
-**gate.** The judge every proposal passes before it lands: five checks, in the order the code runs them, structural, constraint, governance, trust and derivation. A refusal names its check and leaves the source whole. Softanza's appendix D uses the word for any place where something is refused before it goes on; this is that place for a change to code. Chapter 5.
+**gate.** The judge every proposal passes before it lands: five checks, in the order the code runs them, structural, constraint, governance, trust and derivation; the admitted message lists them in another order. A refusal names its check and leaves the source whole. Softanza's appendix D uses the word for any place where something is refused before it goes on; this is that place for a change to code. Chapter 5.
 
 **governance.** Permission, authority and risk, compared before an act, fail-closed, with the decision kept. As in Softanza's appendix D. Chapters 5, 8.
 
 **guard.** A file of the library's test tree that holds assertions, and that proves a chapter. As in Softanza's appendix D. Every chapter's court.
 
-**Haro.** The language this book's blocks are written in. Its charter and runtime are under construction; the blocks run today on the library's present runtime. Softanza's chapters 3 and 27.
+**Haro.** The language this book's blocks are written in. Its charter and runtime are in development; the blocks run today on the library's present runtime. Softanza's chapters 3 and 27.
 
 **lineage.** The record of governance's decisions, with the authority and the risk of each decision's moment, asked by action, by actor or by time. As in Softanza's appendix D. Chapters 8, 12.
 
@@ -60,15 +60,15 @@ Each entry gives the word as this book uses it and the chapter where it is run o
 
 **refinement.** A change to code that was declared to be changeable, proposed in a typed form, judged by a gate, recorded as a step, and reversible. Softanza's appendix D calls it the write surface, judged by a gate of five checks. Chapters 1, 3.
 
-**refinement point.** A named knob declared in the source as a tag, with a kind, a value and bounds or options. Three kinds are judged today: a parameter, an algorithm, a library (the library kind not yet guarded). Chapters 3, 4.
-
 **Refine.** The product built on the foundation: the governed-change environment over code, interface and data. Specified, shown as an interactive prototype, and started as a command whose first three verbs run. Never the subject of the gate. Chapter 13.
+
+**refinement point.** A named knob declared in the source as a tag, with a kind, a value and bounds or options. Three kinds are judged today: a parameter, an algorithm, a library (the library kind not yet guarded). Chapters 3, 4.
 
 **rehearse.** To run on what touches nothing, and read what it would have done: here, proposals to a copy of a refinable code. As in Softanza's appendix D. Chapter 10.
 
 **risk tier.** The number governance declares for an action; an action with none never proceeds. Chapters 5, 8.
 
-**Softibank.** The bank of this book's story, in Niamey: invented, with its people and its letters. Chapter 1.
+**Softibank.** The bank of this book's story, in Niamey. Chapter 1.
 
 **stage words.** Built, designed, absent: what each chapter says of every piece it names, each read from the record: built and absent from the code, designed from the documents. Every chapter's front matter.
 

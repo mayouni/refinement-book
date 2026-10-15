@@ -28,7 +28,7 @@ Every verdict in this book came from the library, which is open. Refine is where
 
 Refine's command is the first piece of the product that runs. Its plan names a ledger of milestones, each ending in a working verb with passing tests, and the command reports which are real. At its first milestone, three verbs run: `version`, `status` and `init`, which creates a project. Six are queued, in order: `validate`, `plan`, `apply`, `revert`, `show` and `export`. Asked for a queued verb, the command does not fail silently: it says the verb is not built yet, why, what to run instead, and where to read the plan. I ran it on 15 October 2026, and it answered so.
 
-That is the honest form of a product at its start: the command is its own ledger, and it reads the same one this paragraph does.
+The command is its own ledger, and it reads the same one this paragraph does.
 
 What a verdict card on Refine's screen would show is the kind of answer this book has run. Refine's own `validate` is specified as a pipeline of four stages, without the library's governance and trust checks; here is the library's judgement:
 
@@ -50,7 +50,7 @@ Refine is specified in over a hundred documents, a hundred and thirteen in its f
 
 Three parts of the specification answer limits this book found in the library.
 
-**Change as transformations.** The specification of Refine's graph model reduces every refinement to twelve primitive operations on a graph. They are creating, deleting and updating nodes; creating, deleting and retargeting edges; setting a refinement's value and changing its options; and inserting, removing and reordering the stages of a pipeline. A transformation is a sequence of them, applied transactionally: all commit, or none. That is the frame, specified, for the equality of chapter 11, two points that must move together; the specification handles a coordinated change through proposals produced by its derivation rules and judged on the state after them (its section 5).
+**Change as transformations.** The specification of Refine's graph model reduces every refinement to twelve primitive operations on a graph. They are creating, deleting and updating nodes; creating, deleting and retargeting edges; setting a refinement's value, adding an option and removing one; and inserting, removing and reordering the stages of a pipeline. A transformation is a sequence of them, applied transactionally: all commit, or none. That is the frame, specified, for the equality of chapter 11, two points that must move together; the specification handles a coordinated change through proposals produced by its derivation rules and judged on the state after them (its section 5).
 
 **The interface and the data world.** The interface and the data domains each have their own specification, with their own primitives. A change to a screen's wording or a report's column is then a refinement like a change to a cap. That is the direction chapter 11 named, as Refine specifies it.
 

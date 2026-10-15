@@ -1,6 +1,6 @@
 {
  "run": {
-  "date": "2026-10-15 13:46 UTC+01:00",
+  "date": "2026-10-15 22:30 UTC+01:00",
   "library": {
    "commit": "93d7a39bdd040f82eae21d949460d69c32a75c70",
    "short": "93d7a39bd",
@@ -88,7 +88,7 @@
    "kept": 5,
    "runnable": 5,
    "exercises": 1,
-   "ran": "2026-10-15 13:46 UTC+01:00",
+   "ran": "2026-10-15 22:30 UTC+01:00",
    "seconds": 3.3
   },
   "en/02-what-broke": {
@@ -121,8 +121,8 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-15 13:47 UTC+01:00",
-   "seconds": 3.3
+   "ran": "2026-10-15 22:31 UTC+01:00",
+   "seconds": 3.2
   },
   "en/03-the-unit-of-change": {
    "id": "the-unit-of-change",
@@ -162,8 +162,8 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-10-15 13:47 UTC+01:00",
-   "seconds": 3.4
+   "ran": "2026-10-15 22:31 UTC+01:00",
+   "seconds": 3.3
   },
   "en/04-the-point": {
    "id": "the-point",
@@ -203,7 +203,7 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-10-15 13:47 UTC+01:00",
+   "ran": "2026-10-15 22:31 UTC+01:00",
    "seconds": 3.3
   },
   "en/05-the-gate": {
@@ -236,8 +236,8 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-15 13:47 UTC+01:00",
-   "seconds": 3.6
+   "ran": "2026-10-15 22:31 UTC+01:00",
+   "seconds": 3.2
   },
   "en/06-the-cascade": {
    "id": "the-cascade",
@@ -277,8 +277,8 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-10-15 13:47 UTC+01:00",
-   "seconds": 3.7
+   "ran": "2026-10-15 22:31 UTC+01:00",
+   "seconds": 3.2
   },
   "en/07-the-timeline": {
    "id": "the-timeline",
@@ -328,8 +328,8 @@
    "kept": 4,
    "runnable": 4,
    "exercises": 1,
-   "ran": "2026-10-15 13:47 UTC+01:00",
-   "seconds": 4.0
+   "ran": "2026-10-15 22:31 UTC+01:00",
+   "seconds": 3.1
   },
   "en/08-trust-and-governance": {
    "id": "trust-and-governance",
@@ -377,8 +377,8 @@
    "kept": 4,
    "runnable": 4,
    "exercises": 1,
-   "ran": "2026-10-15 13:47 UTC+01:00",
-   "seconds": 3.1
+   "ran": "2026-10-15 22:31 UTC+01:00",
+   "seconds": 3.2
   },
   "en/09-the-ai-model-comes-last": {
    "id": "the-ai-model-comes-last",
@@ -410,8 +410,8 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-15 13:47 UTC+01:00",
-   "seconds": 3.4
+   "ran": "2026-10-15 22:31 UTC+01:00",
+   "seconds": 3.5
   },
   "en/10-the-safest-write-surface": {
    "id": "the-safest-write-surface",
@@ -443,8 +443,8 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-15 13:47 UTC+01:00",
-   "seconds": 3.2
+   "ran": "2026-10-15 22:31 UTC+01:00",
+   "seconds": 3.3
   },
   "en/11-the-refinement-amina-made": {
    "id": "the-refinement-amina-made",
@@ -484,8 +484,8 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-10-15 13:47 UTC+01:00",
-   "seconds": 3.5
+   "ran": "2026-10-15 22:31 UTC+01:00",
+   "seconds": 3.3
   },
   "en/12-what-the-auditor-saw": {
    "id": "what-the-auditor-saw",
@@ -519,8 +519,8 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-15 13:47 UTC+01:00",
-   "seconds": 3.0
+   "ran": "2026-10-15 22:31 UTC+01:00",
+   "seconds": 3.2
   },
   "en/13-the-environment-specified": {
    "id": "the-environment-specified",
@@ -544,8 +544,8 @@
    "kept": 1,
    "runnable": 1,
    "exercises": 1,
-   "ran": "2026-10-15 13:47 UTC+01:00",
-   "seconds": 3.0
+   "ran": "2026-10-15 22:31 UTC+01:00",
+   "seconds": 3.2
   },
   "en/14-coda-the-next-letter": {
    "id": "coda-the-next-letter",

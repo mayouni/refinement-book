@@ -2,7 +2,7 @@
 id: the-refinement-amina-made
 part: 4
 number: 11
-title: The refinement Amina made
+title: The refinement the bank made
 stage:
   built: "a rule of the regulator declared as a point and refined under compliance authority; the code and the customer's letter held in one refinable text, tied by a rule; two actors with different permissions and authorities on one governed code; an order of refinements the gate enforces, step by step"
   designed: "several points refined together as one change, ordered by their dependencies (the planner of the architecture document)"
@@ -12,7 +12,7 @@ research: research/ch11.md
 guards: [gate_deepening_narrated]
 ---
 
-In this chapter Part IV returns to Softibank. I take the letter of chapter 1 to its end: the change Amina's team made, as the library can carry it today. The rule of the regulator becomes a point of its own, refined by the compliance officer; the customer's letter is governed with the code; and the gate decides the order in which the changes may land. Then I show the change the gate cannot make one step at a time.
+In this chapter Part IV returns to Softibank. I take the letter of chapter 1 to its end: the change Amina's team made, as the library can carry it today. The record of the story gives the letter, Amina's notebook and the auditor's visit; it does not give the scenes of the weeks between, and I do not invent them. The rule of the regulator becomes a point of its own, refined by the compliance officer; the customer's letter is governed with the code; and the gate decides the order in which the changes may land. Then I show the change the gate cannot make one step at a time.
 
 ## The field
 
@@ -82,7 +82,7 @@ b {
 }
 ```
 
-Five proposals, and the rules wrote the order; the gate enforced it. The letter could not go first: for a moment the bank would have charged eighteen per cent while telling customers sixteen, and the rule refused that moment. The cap went first, then the letter. The pricing agent could not move the regulation, because it holds no permission for it; the compliance officer could, last, when nothing in the code still exceeded the new maximum. The Teaching Edition told the rule moving first and the code following it; with these rules, the library lets the rule move only once the code is already under it.
+Five proposals, and the rules wrote the order; the gate enforced it. The admissions print `[:trusted]` because no proposal declared another origin: chapter 8 said the origin is what a proposal declares. The letter could not go first: for a moment the bank would have charged eighteen per cent while telling customers sixteen, and the rule refused that moment. The cap went first, then the letter. The pricing agent could not move the regulation, because it holds no permission for it; the compliance officer could, last, when nothing in the code still exceeded the new maximum. The Teaching Edition told the rule moving first and the code following it; with these rules, the library lets the rule move only once the code is already under it.
 
 Read the rules again, and see what they encode. The letter may state more than the cap for the length of one step, which is the safe direction: a customer is charged less than the letter says. It may never state less. Nobody had to remember that order. It was declared once, and every proposal met it.
 
@@ -102,10 +102,6 @@ c.DeclareDerivation("letter-matches-cap",
 ```
 
 Neither can move first, so neither moves at all! The rule is right, and the gate keeps it at every step, and a change that needs two points to move together has no step in which the rule holds. The library judges one point at a time. A change of several points as one, ordered by what depends on what, is what the architecture document calls the planner; it is designed.
-
-## Many languages
-
-Softibank's code is not one language, and neither is a bank's anywhere. The Teaching Edition promised that each language would be the authority on its own structure: its own parser would read a file and judge the changed one. The library's refinable code reads tags in any text, so the gate above works on any text with tags in it. The tags stay in the text, so a tagged file is not valid source in its own language until it is rendered without them, which chapter 4 named as absent. What it does not do is ask that language whether the changed file still parses; chapter 5 named that as absent. My Softanza book tells, in its chapters 11 to 16, how the platform declares and closes languages, and which run at this commit.
 
 ## What I refused
 
@@ -127,7 +123,7 @@ What is built: a regulator's rule as a point under compliance authority; code an
 
 What is designed: several points refined as one change, ordered by their dependencies; the equality showed what its absence costs today.
 
-What is absent: the language's own parser as the structural check; and points of the interface and the data world in their own structures, the Teaching Edition's direction.
+What is absent: the language's own parser as the structural check; the gate works on any text with tags in it, and the tags stay in it, so a tagged file is not valid source in its own language until it is rendered without them (chapter 4). And points of the interface and the data world in their own structures, the Teaching Edition's direction. My Softanza book tells, in its chapters 11 to 16, how the platform declares and closes languages, and which run at this commit.
 
 ## In your hands
 

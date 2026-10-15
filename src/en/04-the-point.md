@@ -12,13 +12,13 @@ research: research/ch04.md
 guards: [refinablecode_narrated]
 ---
 
-In this chapter I take the first piece of the discipline apart: the point, the place where code declares that it may change. I run the grammar of a tag, then three things a point says, and three it does not say yet. Part II begins here because every other piece, the gate, the cascade, the timeline and the trust, is a question asked of a point.
+In this chapter I take the first piece of the discipline apart: the point, the place where code declares that it may change. I run the grammar of a tag, then what a point says and what it does not say yet. Part II begins here because every other piece, the gate, the cascade, the timeline and the trust, is a question asked of a point.
 
 When Amina listed what the penalty cap touched, she was doing by hand what this chapter does in the code: naming the places where the letter would land.
 
 ## The field
 
-The field keeps its knobs in many places. A configuration file holds settings outside the code; an environment variable changes a value per machine; a feature flag turns a path on or off without a release. All of this is general knowledge and good practice, and each answers a real need: change a behaviour without rewriting the program.
+The field keeps its knobs in many places. A configuration file holds settings outside the code; an environment variable changes a value per machine; a feature flag turns a path on or off without a release. All of this is general knowledge, and each answers a real need: change a behaviour without rewriting the program.
 
 What they share is that the knob has a value and rarely a law. A configuration file will accept a penalty cap of sixty-one per cent if someone types it; the bounds, when they exist, live in a reviewer's memory or in a test somewhere else. The knob is declared. How far it may turn is not.
 
@@ -74,7 +74,7 @@ A parameter's kind says that it has bounds. It does not say what sort of number 
 
 Seven days, admitted. Seven and a half days, admitted too! The value is inside the bounds, and a parameter checks its bounds. Nothing in the point says that a day is a whole number, so nothing refuses half of one.
 
-This is not a fault of the gate. The gate holds a point to what the point declares, and this point declared a range, not a type. The library's design names, among eight kinds of point, a variable type, which carries a type and a validation; it is designed, and today the parameter is the kind that carries a number.
+The gate holds a point to what the point declares, and this point declared a range, not a type. The library's design names, among eight kinds of point, a variable type, which carries a type and a validation; it is designed, and today the parameter is the kind that carries a number.
 
 ## What I refused
 
@@ -90,7 +90,7 @@ This is not a fault of the gate. The gate holds a point to what the point declar
 
 The field leads in reach. A configuration file can be changed without touching the code, by an operator who never sees it, and the program reads the new value at its next start. A refinement point lives in the source: changing it is a change to the code, through the gate, and the program built from that code carries the new value once the tagged source is rendered for a compiler, which the limit names as absent. That is the point of the discipline, and it is also its cost: a knob an operator turns at night is outside this gate.
 
-The field also leads in types. Configuration schemas in common use, as general knowledge has it, can say that a value is a whole number, a date or one of a list; the library's parameter says a range, and its variable type is designed.
+The field also leads in types. A configuration schema can say that a value is a whole number, a date or one of a list; the library's parameter says a range, and its variable type is designed.
 
 ## The limit
 

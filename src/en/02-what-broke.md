@@ -18,9 +18,9 @@ In this chapter I say what broke in the way software is changed, and why the let
 
 By the time the letter reached Softibank, an AI agent could draft the whole change in an afternoon: all fourteen products, the compliance report, the statement templates, the text messages, the tests.
 
-That sentence is the hinge of this book. The draft would not be careless work. In my view, today's AI agents write code that is plausible, idiomatic and often correct, and they write it at a speed no team matches: many changes at once, at any hour, at a small cost. In a few years, writing code went from the most expensive step in making software to one of the cheapest. These are views drawn from the work I see, not measured results.
+The draft would not be careless work. In my view, today's AI agents write code that is plausible, idiomatic and often correct, and they write it at a speed no team matches: many changes at once, at any hour, at a small cost. In a few years, writing code went from the most expensive step in making software to one of the cheapest. These are views drawn from the work I see, not measured results.
 
-Every earlier era of programming had the same slow step: writing. Languages, tools and methods were shaped around that scarcity. When it ended, a question arrived in every serious software team at once.
+In my view, every earlier era of programming had the same slow step: writing. Languages, tools and methods were shaped around that scarcity. When it ended, a question arrived in every serious software team at once.
 
 If the change can be written in an afternoon by something that is not accountable for it, who makes sure it is right?
 

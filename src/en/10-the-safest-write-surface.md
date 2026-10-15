@@ -16,15 +16,15 @@ In this chapter I say what a bank can hand an AI agent when it lets one change i
 
 ## The field
 
-When people picture "giving an AI write access", they picture the file system: an AI agent alone with the repository, able to edit anything, the way a contractor with a master key is alone with a building. The field's answers to that picture are real: a sandbox, a branch, a review before merge, a list of tools the AI agent may call. This is general knowledge, and each answer narrows what the AI agent can reach.
+When people picture "giving an AI write access", they picture the file system: an AI agent alone with the repository, able to edit anything. The field's answers to that picture are real: a sandbox, a branch, a review before merge, a list of tools the AI agent may call. This is general knowledge, and each answer narrows what the AI agent can reach.
 
 What they share is that the surface stays the file system, narrowed. The AI agent still writes text, and a person still reads the diff.
 
 ## The principle
 
-**Hand an AI agent typed knobs, not your files: the declared points are its map, a typed proposal is its only pen, and the gate reads everything it writes.**
+**Hand an AI agent typed knobs, not your files: the declared points are its map, a typed proposal is the only change it may make, and the gate judges every one.**
 
-The Softanza book says the same thing at the scale of the world, in its chapter 20: do not build safe agents; build a safe world, and let ordinary agents loose inside it. This chapter is that sentence at the scale of one bank's code.
+The Softanza book says the same thing at the scale of the world, in its chapter 20, quoting the library's doctrine: "Do not build safe agents. Build a safe world, and let ordinary agents loose inside it." The agents of that sentence are AI agents. This chapter is that sentence at the scale of one bank's code.
 
 ## The map
 
@@ -88,7 +88,7 @@ The door is ratified and not built. Today an AI agent reaches the refinable code
 
 ## Where the field leads
 
-The field leads in what its AI agents can reach and do today, through doors that are built: protocols by which tools and AI agents connect to a system, command lines, editor integrations. This is general knowledge. The platform's door is decided and not built; its application tier already serves a declared project to AI tools, read-only and audited, and until the door is built, an AI agent reaches the refinable code through a program someone writes.
+The field leads in what its AI agents can reach and do today, through doors that are built: protocols by which tools and AI agents connect to a system, command lines, editor integrations. The platform's door is decided and not built; its application tier already serves a declared project to AI tools, read-only and audited, and until the door is built, an AI agent reaches the refinable code through a program someone writes.
 
 The field also leads in the rehearsal of whole changes, as the field holds it: a branch, a preview environment, a plan for infrastructure. The rehearsal here is of a refinable code, one object, and the Softanza book's chapter 24 tells the larger twins that are built, of files and of the process environment.
 

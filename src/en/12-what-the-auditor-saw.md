@@ -18,7 +18,7 @@ In this chapter the auditor comes to Softibank, eighteen months after the letter
 
 Eighteen months after the letter, on a Monday in March, the auditor came to Softibank. It was the scheduled kind of visit, with a checklist refined over many visits to many banks. He opened with the question he always opens with:
 
-"The penalty-cap revision, last September. Show me who approved it, what it affected, and how you know your customer communications matched the new rate."
+"The penalty-cap revision, the September before last. Show me who approved it, what it affected, and how you know your customer communications matched the new rate."
 
 In many banks that question starts a small project: tickets pulled, emails found, a binder assembled. In the Teaching Edition of this book, Amina typed for a few seconds and turned the screen around. This chapter runs what she could turn around today.
 
@@ -62,7 +62,7 @@ b {
 #--> softibank_audit.zgov
 ```
 
-Two files: the code with its current values, and the governance. Eighteen months later the program that made the change is long gone, and the files are not. Here a new governance loads the file at once; what the run proves is the round trip:
+Two files: the code with its current values, and the governance. Eighteen months later the program that made the change is long gone, and the files are not. Load it back:
 
 ```haro
 g = new stzGovernance("audit")
@@ -80,7 +80,7 @@ aD = g.DecisionsAbout("refine-regulatory_max")[1]
 #--> 2
 ```
 
-Three decisions. The move of the regulation was decided by the compliance officer, holding autonomous authority, on an action of risk tier three. The pricing agent made two decisions: the cap and the letter. Each decision also carries the time it was made, read from the clock, which I do not print because it changes at every run.
+Three decisions. The move of the regulation was decided by the compliance officer, holding autonomous authority, on an action of risk tier three. The pricing agent, an AI agent, made two decisions: the cap and the letter. Each decision also carries the time it was made, read from the clock, which I do not print because it changes at every run.
 
 That is the first part of the auditor's question, answered from a file as *who acted*, with the authority each actor held at the moment it acted. Nobody wrote this record; it is what the gate leaves when it admits a change under governance.
 
@@ -92,7 +92,7 @@ Read the auditor's question in three parts, against what the file holds.
 
 **What it affected.** Answered in part. The decisions name their actions, `refine-penalty_cap`, `refine-letter_rate`, `refine-regulatory_max`, and the source saved with its current values, `softibank_code.zrfn`, shows where the points stand now. The values before and after are in the timeline of the running object, and chapter 7 said the timeline is not saved. The cascade of chapter 6 is asked of a point today; it is not kept with the decision.
 
-**How you know the communications matched.** Answered by a rule, not by a record. The rule `letter-covers-cap` was declared, and the gate refused the one order of changes that would have broken it, as chapter 11 ran. But the file does not keep the rule, nor the refusal: the governance saves its regime and its decisions, and a rule across points belongs to the refinable code. An auditor has to take the rule from the code, and the refusal from nowhere.
+**How you know the communications matched.** Answered by a rule, not by a record. The rule `letter-covers-cap` was declared, and the gate refused the one order of changes that would have broken it, as chapter 11 ran. But the file does not keep the rule, nor the refusal: the governance saves its regime and its decisions, and a rule across points belongs to the refinable code. An auditor has to take the rule from the code; the refusal is not kept yet.
 
 So the screen Amina could turn around today answers the first part of the question as who acted and under what authority, the second in part, and the third by pointing at the code. The Teaching Edition drew a screen that answered all three, with an export scoped to the question and two clocks on every line. That screen is the direction. The architecture document describes a refinement that carries its cascade, its author, its verification and its history; the file above is the part of it that is built.
 
@@ -120,7 +120,7 @@ What the Softanza book's chapters 29 and 31 say is absent is worth repeating her
 
 ## Where the field leads
 
-The field leads in the audit itself. Tools built for compliance keep evidence from many systems, map it to controls and export it for an examiner; this is general knowledge, and banks use them. The library keeps one kind of evidence, the decision to admit a refinement, and keeps it well: with the authority at the time, written by the act. Joining it to the rest of a bank's evidence is a program the bank or a product writes.
+The field leads in the audit itself. Tools built for compliance keep evidence from many systems, map it to controls and export it for an examiner, and banks use them. The library keeps one kind of evidence, the decision to admit a refinement, and keeps it well: with the authority at the time, written by the act. Joining it to the rest of a bank's evidence is a program the bank or a product writes.
 
 ## The limit
 

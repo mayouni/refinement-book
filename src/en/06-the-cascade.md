@@ -74,7 +74,7 @@ That is the line between what is built and what is designed, and I want it read 
 
 ## The cascade of a class
 
-The code graph has a cascade of its own, and it is built. My Softanza book runs it in its chapter 10: given a class, the library scans the source into a graph and answers which classes descend from it, and which of them inherit a method rather than redefine it. Change the rate of a tariff class, and the graph names the three classes in the blast radius and the two that inherit the method. I do not run it again here; the page is there, with its blocks and their answers.
+The code graph has a cascade of its own, and it is built. My Softanza book runs it in its chapter 10: given a class, the library scans the source into a graph and answers which classes descend from it, and which of them inherit a method rather than redefine it. I do not run it again here; the page is there, with its blocks and their answers.
 
 So two cascades are built. One belongs to the point and stops at its line; the other belongs to the class and follows the structure of the code. They are separate, and joining them is the direction: a point anchored as a node of the code graph, whose cascade is the graph's reachability from that node.
 
@@ -90,7 +90,7 @@ So two cascades are built. One belongs to the point and stops at its line; the o
 
 ## Where the field leads
 
-The field leads in reach. Code-intelligence tools in common use follow calls, imports and references across a whole repository and many languages, and some draw the result beside the diff; this is general knowledge. The library's point cascade follows one line. What the discipline adds is the kind of answer: a cascade computed from what was declared, asked before the change, in the same object the gate judges. What the field adds today is distance.
+The field leads in reach. Code-intelligence tools in common use follow calls, imports and references across a whole repository and many languages, and some draw the result beside the diff. The library's point cascade follows one line. What the discipline adds is the kind of answer: a cascade computed from what was declared, asked before the change, in the same object the gate judges. What the field adds today is distance.
 
 ## The limit
 
@@ -102,7 +102,7 @@ What is absent, in the code: the reach of a point beyond its own line, as line 3
 
 ## In your hands
 
-Make the cascade lie by omission. Write a source where a point's value is read on three other lines, and predict what `Cascade()` answers before you run it:
+Find where the cascade stops today. Write a source where a point's value is reached through three other lines, and predict what `Cascade()` answers before you run it:
 
 ```haro exercise
 cMine = 'rate = <R:PARAM name="base_rate" value="0.05" min="0" max="0.10">' + nl +

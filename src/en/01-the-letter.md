@@ -73,11 +73,13 @@ r = o.Refine("penalty_cap").To("0.16")
 #--> 1
 ```
 
-Admitted, and the answer says why. It names the value before and after, the origin of the proposal, `[:trusted]`, and the five checks of the gate, in the order the message prints them. On this point only the first two had anything to judge, the structure of the proposal and the bounds of the point: no governance, floor of trust or rule across points was declared yet, and chapter 5 runs the five in the order the code runs them. One step is recorded. The admission prints as `1`, because that is how this verb answers, and I print the run.
+Admitted, and the answer says why. It names the value before and after, the origin of the proposal, `[:trusted]`, and the five checks of the gate, in the order the message prints them. On this point only the first two had anything to judge, the structure of the proposal and the bounds of the point: no governance, floor of trust or rule across points was declared yet, and chapter 5 runs the five in the order the code runs them. One step is recorded. The admission prints as `1`.
 
 ## The slip
 
 Ninety days is enough time to write the change, and people type fast. Suppose the proposal arrives with two digits swapped:
+
+The next block is written as a scene: the object is named once, `o { ... }`, and each line inside the braces speaks to it. The first two blocks named the object on every line, the classic form, and a proposal is one sentence, the chain `Refine(...).To(...)`. This book uses the scene where three or more things are said to one object, and the chain where the thought is one sentence.
 
 ```haro
 o {
@@ -92,8 +94,6 @@ o {
 	#--> 1
 }
 ```
-
-The block is written as a scene: the object is named once, `o { ... }`, and each line inside the braces speaks to it. The first two blocks named the object on every line, the classic form, and a proposal is one sentence, the chain `Refine(...).To(...)`. This book uses the scene where three or more things are said to one object, and the chain where the thought is one sentence.
 
 Refused! The refusal names its check first, `constraint`, then says what was wrong: `0.61 above max 0.20`. The value is still `0.16`, and the timeline did not grow by a step. Nobody had to read a diff to see that sixty-one per cent is not a penalty cap a bank may charge. The point said so.
 
