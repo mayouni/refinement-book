@@ -22,6 +22,12 @@ LOGO_BOX = (80, 73, 305, 129)          # where the old wordmark sat (x0, y0, x1,
 def make():
     im = Image.open(OLD).convert("RGB")
     px = im.load()
+    for x in range(im.width):                         # the archived cover's one-pixel grey edge line: painted out
+        for y in list(range(0, 4)) + list(range(im.height - 4, im.height)):
+            px[x, y] = OLD_PAPER
+    for y in range(im.height):
+        for x in list(range(0, 4)) + list(range(im.width - 4, im.width)):
+            px[x, y] = OLD_PAPER
     x0, y0, x1, y1 = LOGO_BOX
     for y in range(y0 - 8, y1 + 10):                 # the old wordmark and its dot: painted out
         for x in range(x0 - 8, x1 + 10):

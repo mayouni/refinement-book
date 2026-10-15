@@ -40,7 +40,7 @@ FIG_UNIT = f"""<figure>
   <line x1="354" y1="102" x2="564" y2="102" stroke="{RULE}" stroke-width="1"/>
   <g font-family="{SANS}" font-size="10.5" fill="{INK}">
     <text x="356" y="124"><tspan fill="{SOFT}">intent</tspan>   BCEAO 4.2 · cap 18 → 16</text>
-    <text x="356" y="146"><tspan fill="{SOFT}">author</tspan>  amina@sonibank</text>
+    <text x="356" y="146"><tspan fill="{SOFT}">author</tspan>  amina@softibank</text>
     <text x="356" y="168"><tspan fill="{SOFT}">cascade</tspan> 14 products · +hooks, reports</text>
     <text x="356" y="190"><tspan fill="{SOFT}">gate</tspan>    <tspan fill="{GREEN}" font-weight="700">tests ✓ · policy ✓</tspan></text>
     <text x="356" y="212"><tspan fill="{SOFT}">inverse</tspan> ↺ pre-computed</text>

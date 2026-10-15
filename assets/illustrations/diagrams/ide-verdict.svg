@@ -12,7 +12,7 @@
   <rect x="60" y="66" width="480" height="200" rx="10" fill="#ffffff" stroke="#1a1612" stroke-width="1.2"/>
   <circle cx="88" cy="94" r="7" fill="#2F6B3A"/>
   <text x="104" y="98" font-size="12" font-weight="700" fill="#1a1612">tighten_penalty_cap</text>
-  <text x="520" y="98" text-anchor="end" font-size="9.5" fill="#6b6358">rfn-0207 · amina@sonibank</text>
+  <text x="520" y="98" text-anchor="end" font-size="9.5" fill="#6b6358">rfn-0207 · amina@softibank</text>
   <line x1="76" y1="110" x2="524" y2="110" stroke="#cfc8b4"/>
   <g font-size="10">
     <text x="92" y="132" fill="#2F6B3A" font-weight="700">✓</text><text x="110" y="132" fill="#1a1612">structural</text><text x="240" y="132" fill="#6b6358">python re-validated 14 files</text>

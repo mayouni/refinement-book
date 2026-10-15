@@ -8,7 +8,7 @@
 <circle cx="64" cy="19.0" r="5.5" fill="#8d8471"/>
 <text x="380.0" y="23.5" text-anchor="middle" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="12.5" fill="#8d8471">stz — a refusal worth reading</text>
 <text x="26" y="73.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">❯ </tspan><tspan fill="#e8e1d1">stz refine penalty_cap --to 22</tspan></text>
-<text x="26" y="97.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#cfc7b5">proposal </tspan><tspan fill="#82c0ae">rfn-0208</tspan><tspan fill="#cfc7b5"> recorded · author kofi@sonibank</tspan></text>
+<text x="26" y="97.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#cfc7b5">proposal </tspan><tspan fill="#82c0ae">rfn-0208</tspan><tspan fill="#cfc7b5"> recorded · author kofi@softibank</tspan></text>
 <text x="26" y="145.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">❯ </tspan><tspan fill="#e8e1d1">stz apply</tspan></text>
 <text x="26" y="169.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#9fc98f">  structural   pass</tspan></text>
 <text x="26" y="193.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#e0796a">  constraint   FAIL</tspan></text>

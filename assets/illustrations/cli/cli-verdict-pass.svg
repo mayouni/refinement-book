@@ -8,12 +8,12 @@
 <circle cx="64" cy="19.0" r="5.5" fill="#8d8471"/>
 <text x="380.0" y="23.5" text-anchor="middle" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="12.5" fill="#8d8471">stz — a verdict that lands</text>
 <text x="26" y="73.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">❯ </tspan><tspan fill="#e8e1d1">stz refine penalty_cap --to 16 --reason "BCEAO circular 2026-Q3"</tspan></text>
-<text x="26" y="97.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#cfc7b5">proposal </tspan><tspan fill="#82c0ae">rfn-0207</tspan><tspan fill="#cfc7b5"> recorded · author amina@sonibank</tspan></text>
+<text x="26" y="97.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#cfc7b5">proposal </tspan><tspan fill="#82c0ae">rfn-0207</tspan><tspan fill="#cfc7b5"> recorded · author amina@softibank</tspan></text>
 <text x="26" y="145.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">❯ </tspan><tspan fill="#e8e1d1">stz apply</tspan></text>
 <text x="26" y="169.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#9fc98f">  structural   pass</tspan><tspan fill="#8d8471">    python re-validated 14 files</tspan></text>
 <text x="26" y="193.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#9fc98f">  constraint   pass</tspan><tspan fill="#8d8471">    16 within declared bounds 10..20</tspan></text>
 <text x="26" y="217.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#9fc98f">  derivation   pass</tspan><tspan fill="#8d8471">    17 nodes revalidated · verdicts hold</tspan></text>
-<text x="26" y="241.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#9fc98f">  governance   pass</tspan><tspan fill="#8d8471">    amina@sonibank may refine policy/*</tspan></text>
+<text x="26" y="241.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#9fc98f">  governance   pass</tspan><tspan fill="#8d8471">    amina@softibank may refine policy/*</tspan></text>
 <text x="26" y="265.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#9fc98f">landed.</tspan><tspan fill="#cfc7b5"> reversible · audit entry sealed</tspan></text>
 </g>
 <rect x="0.5" y="0.5" width="759" height="293" rx="12" fill="none" stroke="#35302a"/>

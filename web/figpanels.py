@@ -99,7 +99,7 @@ PANELS = {
             seg(("field", "  value     "), ("num", "0.18")),
             seg(("field", "  bounds    "), ("num", "0.00..0.25"), ("dim", "    declared in pricing.py:41")),
             seg(("field", "  policy    "), ("out", "DGI-2024-7 "), ("dim", "“VAT stays within the legal band”")),
-            seg(("field", "  history   "), ("num", "3"), ("out", " refinements "), ("dim", "· last: amina@sonibank, 2026-03-12")),
+            seg(("field", "  history   "), ("num", "3"), ("out", " refinements "), ("dim", "· last: amina@softibank, 2026-03-12")),
             seg(("field", "  cascade   "), ("num", "3"), ("out", " nodes would revalidate")),
         ],
     },
@@ -120,18 +120,18 @@ PANELS = {
         ],
     },
 
-    # Chapter 5 — a landing verdict (the canon Sonibank change)
+    # Chapter 5 — a landing verdict (the canon Softibank change)
     "cli-verdict-pass": {
         "title": "stz — a verdict that lands",
         "lines": [
             cmd('stz refine penalty_cap --to 16 --reason "BCEAO circular 2026-Q3"'),
-            seg(("out", "proposal "), ("num", "rfn-0207"), ("out", " recorded · author amina@sonibank")),
+            seg(("out", "proposal "), ("num", "rfn-0207"), ("out", " recorded · author amina@softibank")),
             blank(),
             cmd("stz apply"),
             seg(("ok", "  structural   pass"), ("dim", "    python re-validated 14 files")),
             seg(("ok", "  constraint   pass"), ("dim", "    16 within declared bounds 10..20")),
             seg(("ok", "  derivation   pass"), ("dim", "    17 nodes revalidated · verdicts hold")),
-            seg(("ok", "  governance   pass"), ("dim", "    amina@sonibank may refine policy/*")),
+            seg(("ok", "  governance   pass"), ("dim", "    amina@softibank may refine policy/*")),
             seg(("ok", "landed."), ("out", " reversible · audit entry sealed")),
         ],
     },
@@ -141,7 +141,7 @@ PANELS = {
         "title": "stz — a refusal worth reading",
         "lines": [
             cmd("stz refine penalty_cap --to 22"),
-            seg(("out", "proposal "), ("num", "rfn-0208"), ("out", " recorded · author kofi@sonibank")),
+            seg(("out", "proposal "), ("num", "rfn-0208"), ("out", " recorded · author kofi@softibank")),
             blank(),
             cmd("stz apply"),
             seg(("ok", "  structural   pass")),
@@ -174,12 +174,12 @@ PANELS = {
         "title": "stz — the history that answers back",
         "lines": [
             cmd("stz history penalty_cap"),
-            seg(("out", "  "), ("num", "rfn-0207"), ("out", "   18 → 16      amina@sonibank    2026-09-30   "), ("ok", "landed")),
-            seg(("out", "  "), ("num", "rfn-0163"), ("out", "   20 → 18      amina@sonibank    2025-11-02   "), ("ok", "landed")),
+            seg(("out", "  "), ("num", "rfn-0207"), ("out", "   18 → 16      amina@softibank   2026-09-30   "), ("ok", "landed")),
+            seg(("out", "  "), ("num", "rfn-0163"), ("out", "   20 → 18      amina@softibank   2025-11-02   "), ("ok", "landed")),
             seg(("out", "  "), ("num", "rfn-0090"), ("out", "   set bounds   methodologist     2025-03-17   "), ("ok", "landed")),
             blank(),
             cmd("stz why rfn-0207"),
-            seg(("field", "  proposed  "), ("out", "2026-09-30 14:02 by amina@sonibank")),
+            seg(("field", "  proposed  "), ("out", "2026-09-30 14:02 by amina@softibank")),
             seg(("field", "  reason    "), ("out", "“BCEAO circular 2026-Q3”")),
             seg(("field", "  checked   "), ("out", "4 stages passed · "), ("num", "17"), ("out", " nodes revalidated")),
             seg(("field", "  landed    "), ("out", "2026-09-30 14:06 · inverse stored "), ("dim", "(16 → 18)")),

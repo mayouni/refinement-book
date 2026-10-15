@@ -34,7 +34,7 @@ If you have felt lost in the vocabulary of modern AI — agents, harnesses, memo
 
 *Every word in modern AI means three things. Underneath all of them is one question.*
 
-In the spring of 2026, in a meeting room at Sonibank Niger in Niamey, a vendor presented the future. The slides were handsome. They spoke of *agentic workflows* and *orchestration layers*, of *RAG pipelines* grounding *LLM agents*, of *guardrails* and *evals* and a *skills marketplace*, all connected over *MCP*. The bank's leadership nodded along. The future sounded expensive and near.
+In the spring of 2026, in a meeting room at Softibank Niger in Niamey, a vendor presented the future. The slides were handsome. They spoke of *agentic workflows* and *orchestration layers*, of *RAG pipelines* grounding *LLM agents*, of *guardrails* and *evals* and a *skills marketplace*, all connected over *MCP*. The bank's leadership nodded along. The future sounded expensive and near.
 
 Amina Bello, the bank's methodologist, asked one question. "When your agent changes the penalty rate in our loan system — who checked that change, against which rule, and how do I undo it on Thursday when the regulator calls?"
 
@@ -117,11 +117,11 @@ In Chapter 10, this same map will be drawn again — every box in its place, eve
 
 *Writing code stopped being the bottleneck. Trusting it became the bottleneck.*
 
-On a Tuesday in September, a letter arrived at Sonibank Niger — paper, stamped, from the *Banque Centrale des États de l'Afrique de l'Ouest* in Dakar. BCEAO is the central bank of the eight countries of the West African Economic and Monetary Union; when it issues a circular, every commercial bank in the union adjusts. This one was routine, as regulation goes: under a revised directive, the cap on late-payment penalties was to drop from 18 percent to 16 percent. Compliance within ninety days.
+On a Tuesday in September, a letter arrived at Softibank Niger — paper, stamped, from the *Banque Centrale des États de l'Afrique de l'Ouest* in Dakar. BCEAO is the central bank of the eight countries of the West African Economic and Monetary Union; when it issues a circular, every commercial bank in the union adjusts. This one was routine, as regulation goes: under a revised directive, the cap on late-payment penalties was to drop from 18 percent to 16 percent. Compliance within ninety days.
 
 Amina Bello read it twice, then opened a notebook and started listing what the number touched. The penalty cap was not one line in one file. It fed the pricing of fourteen loan products. It appeared in the risk-assessment module, in the quarterly compliance report, in the statement generator that printed customer letters, in the SMS templates that warned late payers, and in a scattering of tests that asserted, in effect, *the world is 18 percent*. Some of these she knew. Others she would discover, she wrote dryly, "when they break."
 
-Ninety days was comfortable. That is worth saying plainly, because it is about to stop being true: in the world where Sonibank's systems were built, a change like this was a project, and ninety days was a reasonable size for it. Someone would write the change, someone else would review it, the test suite would run, a manager would sign, and the bank would file its compliance report with time to spare.
+Ninety days was comfortable. That is worth saying plainly, because it is about to stop being true: in the world where Softibank's systems were built, a change like this was a project, and ninety days was a reasonable size for it. Someone would write the change, someone else would review it, the test suite would run, a manager would sign, and the bank would file its compliance report with time to spare.
 
 The letter was routine. What had quietly stopped being routine was everything after the letter.
 
@@ -224,7 +224,7 @@ Before changing anything, ask the system what it knows about the knob.
 
 {{fig:cli-explain|Everything the system knows about one refinement point: its kind, current value, declared bounds, the policy that constrains it, its history — and what a change here would touch. All of this exists before any change is proposed.}}
 
-`stz explain vat_rate` returns the point's whole biography. Its kind and current value. Its bounds — and *where* they were declared, file and line, because bounds are code, not folklore. The policy the bounds serve, with its human-readable reason: *"VAT stays within the legal band."* Its history — three refinements, most recently by `amina@sonibank` in March. And a preview: a change here would send three nodes back for revalidation.
+`stz explain vat_rate` returns the point's whole biography. Its kind and current value. Its bounds — and *where* they were declared, file and line, because bounds are code, not folklore. The policy the bounds serve, with its human-readable reason: *"VAT stays within the legal band."* Its history — three refinements, most recently by `amina@softibank` in March. And a preview: a change here would send three nodes back for revalidation.
 
 Pause on how much of Chapter 2's broken world this one screen quietly repairs. The auditor's questions — *who last changed this? under what rule? what does it affect?* — are answered before anything has even happened. In the diff era, assembling this screen took an afternoon of `git log`, ticket archaeology, and asking around. Here it is a query, because the change history is data, not sediment.
 
@@ -492,7 +492,7 @@ The industry's agent is an LLM in a loop. This part takes the loop apart, shows 
 
 *An agent is a mind with a body and stakes. The mind does not have to be a language model.*
 
-Of all the jungle words, *agent* has done the most damage, because it is the one executives buy. So before Sonibank lets anything called an agent near its loan system, this chapter does to the word what a watchmaker does to a watch: takes it apart on a clean table, names every piece, and puts it back together — running, and understood.
+Of all the jungle words, *agent* has done the most damage, because it is the one executives buy. So before Softibank lets anything called an agent near its loan system, this chapter does to the word what a watchmaker does to a watch: takes it apart on a clean table, names every piece, and puts it back together — running, and understood.
 
 The industry's definition is easy to state, because for once the industry agrees: an agent is *a language model in a loop* — give it a goal, let it call tools, let it keep some memory, repeat until done. This is a real and useful design; nothing in this chapter mocks it. But notice what kind of definition it is. It names the parts, not the properties. It says what an agent is *made of*, and nothing about what an agent can be *held to* — which is the only question a bank, or anyone accountable, actually has.
 
@@ -520,7 +520,7 @@ The **programmatic agent** has a mind made of rules, planners, and optimizers �
 
 The **model-backed agent** has a language model where its mind's creative faculty goes. It can read a new BCEAO circular — prose, French, ambiguous — and draft what the circular implies. No rule-based mind can do that; this is genuinely what models are for. The cost is the model's nature: probabilistic, brilliant on Tuesday, subtly different on Friday, eloquent even when wrong.
 
-The discipline's position is neither "always the model" nor "never the model." It is: **choose the mind per task, and govern them identically.** Both kinds expose the same interfaces — a goal, skills, memory, tools. Both propose changes the same way. And both face the same four-stage gate, where — say it once more — the gate examines proposals, not authors. Sonibank's directive-intake agent (model-backed, reads circulars) and its recompute agent (programmatic, moves numbers) are colleagues under one law.
+The discipline's position is neither "always the model" nor "never the model." It is: **choose the mind per task, and govern them identically.** Both kinds expose the same interfaces — a goal, skills, memory, tools. Both propose changes the same way. And both face the same four-stage gate, where — say it once more — the gate examines proposals, not authors. Softibank's directive-intake agent (model-backed, reads circulars) and its recompute agent (programmatic, moves numbers) are colleagues under one law.
 
 ## §3 — Memory and skills, held to the same standard
 
@@ -544,7 +544,7 @@ Two of the loop's components deserve their own sentences, because Part II alread
 
 *Give an agent typed knobs, not your file system. Wise coding asks; vibe coding guesses.*
 
-The month Sonibank first let an agent propose changes to the loan system, nobody in the compliance department slept badly. This chapter is about why that sentence is possible — because it is not possible in most organizations, and the difference is not courage. It is surface area.
+The month Softibank first let an agent propose changes to the loan system, nobody in the compliance department slept badly. This chapter is about why that sentence is possible — because it is not possible in most organizations, and the difference is not courage. It is surface area.
 
 When people imagine "giving an AI write access," they imagine the file system: the agent, alone with the code, editing anything, the way a contractor with a master key is alone with the building. Every fear about agentic coding is downstream of that picture, and the fears are rational — *against that picture*. Unbounded surface, untyped edits, consequences discovered later, undo by archaeology. The discipline's answer is not a braver key policy. It is a different building.
 
@@ -562,7 +562,7 @@ One honest complication, and the discipline meets it head-on. Agents do not only
 
 {{fig:trust-postures|Every execution carries its origin — the team's own code, an external process, or model-composed code in a sandbox — stamped on the proposal and preserved in the audit. Sensitive points can declare a trust floor: some knobs simply refuse lower-trust origins, structurally.}}
 
-No: **where code came from is part of what the change is.** Every execution in the discipline carries a *trust posture* — the team's own trusted code, an external process, or model-composed code running in a sandbox with only the capabilities it was explicitly handed. The posture is stamped on the proposal, checked by the gate, and preserved forever in the audit chain. And a sensitive point can declare a **trust floor**: `policy/*` at Sonibank refuses model-composed proposals outright — not by convention, by construction. The auditor's question "did a model write this?" has a stored answer, for every change, in both directions.
+No: **where code came from is part of what the change is.** Every execution in the discipline carries a *trust posture* — the team's own trusted code, an external process, or model-composed code running in a sandbox with only the capabilities it was explicitly handed. The posture is stamped on the proposal, checked by the gate, and preserved forever in the audit chain. And a sensitive point can declare a **trust floor**: `policy/*` at Softibank refuses model-composed proposals outright — not by convention, by construction. The auditor's question "did a model write this?" has a stored answer, for every change, in both directions.
 
 ## §3 — Wise coding: the system asks
 
@@ -678,7 +678,7 @@ So the rules themselves are refinable. When BCEAO's circular arrived, the deepes
 
 ## §3 — Any language
 
-One boundary remains, and it is the one a polyglot world cares about most. Sonibank's estate is not one language — Python here, Java there, SQL everywhere, a vendor system speaking something older. Does the discipline require the one true language?
+One boundary remains, and it is the one a polyglot world cares about most. Softibank's estate is not one language — Python here, Java there, SQL everywhere, a vendor system speaking something older. Does the discipline require the one true language?
 
 It requires the opposite, and Chapter 4 already showed the mechanism in miniature: *the language is the authority in its own gate.*
 
@@ -700,7 +700,7 @@ One gate, many worlds — many crafts, many artifacts, many languages. The disci
 
 *Regulation no longer asks what you intend. It asks what you can prove.*
 
-Eighteen months after the Q3 letter, on a Monday in March, the auditor came to Sonibank. Not a crisis — the scheduled kind of visit, with a checklist refined over decades of asking banks to demonstrate that their systems do what their policies say. He had done a hundred of these. He opened with the question he always opens with, because it usually takes a week to answer.
+Eighteen months after the Q3 letter, on a Monday in March, the auditor came to Softibank. Not a crisis — the scheduled kind of visit, with a checklist refined over decades of asking banks to demonstrate that their systems do what their policies say. He had done a hundred of these. He opened with the question he always opens with, because it usually takes a week to answer.
 
 "The penalty-cap revision, last September. Show me who approved it, what it affected, and how you know your customer communications matched the new rate."
 
@@ -730,7 +730,7 @@ The auditor's craft does not disappear in this picture — it *concentrates*. Fr
 
 One more thing happened during that eighteen months, quieter than everything above and worth the chapter's last section. Regulation kept arriving — it always does. And the bank's *absorption* of it changed shape.
 
-A directive used to enter Sonibank as prose on paper, then diffuse — through meetings, memos, and individual judgment — into dozens of hand-made changes whose completeness nobody could prove. Now a directive enters as a **policy refinement**: the rule's node changes, under compliance authority, through the gate. The cascade then *computes* the compliance work — every function, wording, and report downstream of the rule — and the team works through a generated list instead of a remembered one. When the regulator later asks "how did you implement circular such-and-such?", the answer is the refinement's identifier, and everything it cascaded into, on the record, on both clocks.
+A directive used to enter Softibank as prose on paper, then diffuse — through meetings, memos, and individual judgment — into dozens of hand-made changes whose completeness nobody could prove. Now a directive enters as a **policy refinement**: the rule's node changes, under compliance authority, through the gate. The cascade then *computes* the compliance work — every function, wording, and report downstream of the rule — and the team works through a generated list instead of a remembered one. When the regulator later asks "how did you implement circular such-and-such?", the answer is the refinement's identifier, and everything it cascaded into, on the record, on both clocks.
 
 Ninety days of project, become an afternoon of proposal and a week of governed review. Not because anyone worked faster — because the work stopped being *rediscovered* each time and started being *computed*.
 
@@ -799,7 +799,7 @@ The jungle, at least, is behind you. What you build on the clearing is yours.
 
 # Coda — The next letter
 
-On a Tuesday in June — it is always a Tuesday — a letter arrived at Sonibank Niger from Dakar. Amina recognized the envelope before she opened it. A revision to provisioning ratios this time, effective in sixty days, with the usual annexes.
+On a Tuesday in June — it is always a Tuesday — a letter arrived at Softibank Niger from Dakar. Amina recognized the envelope before she opened it. A revision to provisioning ratios this time, effective in sixty days, with the usual annexes.
 
 She read it twice, out of habit. Then she opened a terminal and typed the proposal — a policy refinement, compliance authority, reason field quoting the circular's number. The cascade came back: forty-some nodes, two of them in wording, one in a report she had forgotten existed. She scheduled the review for Thursday, put the letter in the drawer, and went to lunch.
 

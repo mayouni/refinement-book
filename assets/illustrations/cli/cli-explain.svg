@@ -12,7 +12,7 @@
 <text x="26" y="121.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">  value     </tspan><tspan fill="#82c0ae">0.18</tspan></text>
 <text x="26" y="145.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">  bounds    </tspan><tspan fill="#82c0ae">0.00..0.25</tspan><tspan fill="#8d8471">    declared in pricing.py:41</tspan></text>
 <text x="26" y="169.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">  policy    </tspan><tspan fill="#cfc7b5">DGI-2024-7 </tspan><tspan fill="#8d8471">“VAT stays within the legal band”</tspan></text>
-<text x="26" y="193.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">  history   </tspan><tspan fill="#82c0ae">3</tspan><tspan fill="#cfc7b5"> refinements </tspan><tspan fill="#8d8471">· last: amina@sonibank, 2026-03-12</tspan></text>
+<text x="26" y="193.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">  history   </tspan><tspan fill="#82c0ae">3</tspan><tspan fill="#cfc7b5"> refinements </tspan><tspan fill="#8d8471">· last: amina@softibank, 2026-03-12</tspan></text>
 <text x="26" y="217.3" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="14.5" xml:space="preserve"><tspan fill="#f0914f">  cascade   </tspan><tspan fill="#82c0ae">3</tspan><tspan fill="#cfc7b5"> nodes would revalidate</tspan></text>
 </g>
 <rect x="0.5" y="0.5" width="759" height="245" rx="12" fill="none" stroke="#35302a"/>

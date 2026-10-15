@@ -4,7 +4,7 @@
   <rect x="12" y="12" width="576" height="30" rx="10" fill="#ffffff"/>
   <rect x="12" y="34" width="576" height="8" fill="#ffffff"/>
   <circle cx="32" cy="27" r="4" fill="#cfc8b4"/><circle cx="48" cy="27" r="4" fill="#cfc8b4"/><circle cx="64" cy="27" r="4" fill="#cfc8b4"/>
-  <text x="300" y="31" text-anchor="middle" font-size="10" fill="#6b6358">Sonibank — customer portal (running) · Live Mode on</text>
+  <text x="300" y="31" text-anchor="middle" font-size="10" fill="#6b6358">Softibank — customer portal (running) · Live Mode on</text>
 
   <!-- the running UI -->
   <rect x="40" y="60" width="250" height="26" rx="4" fill="#ffffff" stroke="#cfc8b4"/>
