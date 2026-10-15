@@ -45,10 +45,10 @@ At a bank, that drift has a consequence. When the auditor of this story visits S
 So trust has to move. It cannot rest on a person reading everything; it has to rest on the change. For trust to survive the speed of the afternoon, a change must carry five things:
 
 - it is **validated**: judged before it lands, against rules declared in advance;
+- it is **explainable**: it can say why it was allowed;
 - it is **scoped**: what it reaches is computed and shown, not discovered in production;
 - it is **attributed**: it carries where it came from;
-- it is **reversible**: it carries its way back;
-- it is **explainable**: it can say, later, why it was allowed.
+- it is **reversible**: it carries its way back.
 
 Read the list again and notice what it never mentions: the author. Whether the change came from Amina, from a script or from an AI agent, the five are properties of the change, checkable either way. Judging authors does not keep pace with an afternoon. Judging changes can.
 
@@ -91,7 +91,7 @@ o {
 
 Read the five answers against the list.
 
-**Validated:** the proposal was judged before it landed, and admitted, `1`. Here only the structure of the proposal and the bounds of the point had rules to apply; the other three checks pass when nothing is declared for them, and Part II declares them. **Explainable:** the answer says why, at the moment of the judgement: the value before and after, and the checks of the gate. **Scoped:** the cascade of the point names what else sits on its line, `[ "days_factor" ]`, the other factor of the late fee. **Attributed:** the history holds one step, and the step keeps the origin the proposal declared, `llm`: the kind of source, not its name. **Reversible:** `CanRevert()` printed `1`; the step keeps the value it replaced.
+**Validated:** the proposal was judged before it landed, and admitted, `1`. Here only the structure of the proposal and the bounds of the point had rules to apply; the other three checks pass when nothing is declared for them, and Part II declares them. **Explainable:** the answer says why, at the moment of the judgement: the value before and after, and the checks of the gate. **Scoped,** today on its own line: the cascade of the point names what else sits on that line, `[ "days_factor" ]`, the other factor of the late fee. **Attributed:** the history holds one step, and the step keeps the origin the proposal declared, `llm`: the kind of source, not its name. Who sets that origin, and what governs it, is chapter 8's question. **Reversible:** `CanRevert()` printed `1`; the step keeps the value it replaced.
 
 Five properties, and none of them came from reading a diff. The change and its point answered for them because the unit of the change was not a patch of text. It was a proposal to a declared point.
 
@@ -109,7 +109,7 @@ Five properties, and none of them came from reading a diff. The change and its p
 
 The field's instruments lead in reach. A diff covers every line of every file, declared or not, in any language; a pull request can discuss a change no point anticipated. A refinement point covers what someone declared, and nothing more. A team that adopts this discipline keeps its reviews for the rest, and spends the work of declaring its points where change is frequent and costly.
 
-Version control leads in memory. It keeps every change forever, on disk, across machines. The timeline you just read lives in the running object; the next paragraph says so.
+Version control leads in memory. It keeps every change forever, on disk, across machines. The timeline you just read lives in the running object; the limit says so.
 
 ## The limit
 
@@ -127,6 +127,7 @@ Take the four points above and propose a change to each of them, one at a time, 
 ? o.Refine("rounding").As(:analyst).To("bankers")[:why]
 ? @@( o.Cascade("rounding")[:alsoTouches] )
 ? @@( o.History() )
+? o.Why()
 ```
 
 Then look at what the history keeps of the second change, and look for anything that still says why it was allowed: `Why()` answers only for the last proposal. You will find out what the timeline keeps and what it does not, and that gap is the one chapter 12's auditor would ask about. I leave it open: it is the place where this discipline has the most work still to do.

@@ -24,7 +24,7 @@ My Softanza book takes that loop apart in its chapter 9 and runs the agent in it
 
 **The mind is programmatic by default; an AI model is one faculty among others, the last one called, and what it says is a proposal that the gate admits or refuses.**
 
-The sentence is the Softanza book's chapter 17, with its words for the model and the court given as this book's; this chapter runs it at a bank.
+The sentence is the Softanza book's, from its chapter 17, in this book's words; this chapter runs it at a bank.
 
 ## The rules first
 
@@ -70,7 +70,7 @@ o2 {
 }
 ```
 
-Read the three answers in order. (Governance passes here because none is declared, as chapter 2 said.) The slip is refused by the point's own bounds, before anyone asks where it came from. The corrected draft, still declared as the AI model's, is refused by the floor of trust: on this point, an AI model may suggest and may not land. The same value, proposed with the default trusted posture, as a person's proposal would be after reading the circular and agreeing with the draft, is admitted.
+Read the three answers in order. (Governance passes here because none is declared, as chapter 2 said. And the origin `:llm` is set here by the program that read the draft, not by the AI model. The program sets the origin, as chapter 8 said.) The slip is refused by the point's own bounds, before anyone asks where it came from. The corrected draft, still declared as the AI model's, is refused by the floor of trust: on this point, an AI model may suggest and may not land. The same value, proposed with the default trusted posture, as a person's proposal would be after reading the circular and agreeing with the draft, is admitted.
 
 That is admission over generation. The AI model generated; the gate admitted or refused; and the person did what the gate cannot, which is to read the circular and decide that sixteen is what it says.
 

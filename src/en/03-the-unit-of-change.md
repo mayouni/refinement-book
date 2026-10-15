@@ -18,7 +18,7 @@ In this chapter I say why the unit of change had to change, from the line to the
 
 Every era of programming has had a unit of work: the thing you make, review and talk about. For decades the unit was the **line of code**. Version control raised it to the **diff**: the set of lines that changed, which can be stored, compared, shared and argued over. The diff is one of the good inventions of software, and this is general knowledge.
 
-Chapter 2 named its limit. A diff records which characters moved. It says nothing of what a trusting person needs: whether the place was meant to change, how far it may change, who proposed it, and how to take it back.
+Chapters 1 and 2 named its limit. A diff records which characters moved. It says nothing of what a trusting person needs: whether the place was meant to change, how far it may change, who proposed it, and how to take it back.
 
 ## The principle
 
@@ -30,7 +30,7 @@ The definition is the one my Softanza book gives, and the library carries all fi
 
 ## The edit the gate never sees
 
-Start with the old unit. Take the late-fee line of chapter 1 and change it as text, the way a patch changes it, with the same slip of the fingers:
+Start with the old unit. Take the penalty line of chapter 1 and change it as text, with `substr`, which replaces one piece of text by another, the way a patch changes it, with the same slip of the fingers:
 
 ```haro
 cSrc = 'penalty = balance * <R:PARAM name="penalty_cap" value="0.18" min="0.10" max="0.20">'
@@ -93,7 +93,7 @@ Amina's notebook in chapter 1 listed the statement generator among what the cap 
 
 **I refused to make the refinement a new kind of file.** The point lives in the code, as a tag next to the value it governs. A programmer reading the line sees the knob, its value and its bounds in one place, kept in the tag and not in a side file that can drift from the code. What a point needs beyond its bounds, its floor of trust and the rules across points, is declared in the program, and Part II declares it.
 
-**I refused to forbid the text edit.** Files remain files, and an emergency remains an emergency. The block above shows what a text edit does: it changes the code without a step. The discipline does not pretend that cannot happen; it makes the governed path the one that carries a reason, a record and a way back, and leaves the other path visible as what it is.
+**I refused to forbid the text edit.** Files remain files, and an emergency remains an emergency. The block above shows what a text edit does: it changes the code without a step. The discipline does not pretend that cannot happen; it makes the governed path the one that carries a reason, a record and a way back, and leaves the other path in the code, where a review of the diff can still see it, as what it is.
 
 ## The court
 
@@ -109,7 +109,7 @@ What is built: the refinement as a typed proposal to a declared point; a paramet
 
 What is designed: the point and the refinement as classes of their own, named in the library's architecture document (`stzRefinementPoint`, `stzRefinement`), and points of eight kinds: parameter, block, algorithm, function, pipeline, variable type, library and custom.
 
-What is absent: a check for a point of any other kind. A point tagged as a block of code, for instance, parses and is listed, and a proposal to it passes the constraint check without one, because the library checks three kinds. Checks for the other kinds are the next step. And the gate judges proposals, not the code as it stands: a text edit that set a value out of bounds, as above, is not flagged when the code is read again, and a later step records it as the value to return to. One more: a value that is not a number, proposed to a bounded parameter, stops the program with an error instead of a refusal with a reason. Both are the next steps of the gate, and I have asked the library for them.
+What is absent: a check for a point of any other kind. A point tagged as a block of code, for instance, parses and is listed, and a proposal to it passes the constraint check without one, because the library checks three kinds. Checks for the other kinds are the next step. And the gate judges proposals, not the code as it stands: a text edit that set a value out of bounds, as above, is not flagged when the code is read again, and a later step records it as the value to return to. One more: a value that is not a number, proposed to a bounded parameter, stops the program with an error instead of a refusal with a reason. These are the next steps of the gate.
 
 ## In your hands
 

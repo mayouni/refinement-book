@@ -32,7 +32,7 @@ The field's audit trail is assembled from many systems: the history of the repos
 
 ## The record that survives
 
-Run it. Here is the change of chapter 11 once more, made on a governed code, and at the end the governance is saved to a file, the way it would be kept at the bank:
+Run it. Here is the change of chapter 11, with the letter's rule, made on a governed code, and at the end the governance is saved to a file, the way it would be kept at the bank:
 
 ```haro
 cDoc = 'cap    = <R:PARAM name="penalty_cap" value="0.18" min="0.10" max="0.20">' + nl +
@@ -106,7 +106,7 @@ That is fiction, and I mark it as such. The record of this book holds no auditor
 
 My Softanza book tells, in its chapter 29, what was delivered to a commercial bank in Niamey, under the same regional regulator. It is an organisation-assessment product, installed on the bank's own network under licence, which judges an organisation chart under the regulator's rules. It uses the name Softibank for that bank too, and says the name is fictional. The letter, the people and the eighteen months of this book are not that bank's history; they are a story built to carry a discipline.
 
-What the Softanza book's chapters 29 and 31 say is absent is worth repeating here. It is the honest edge of Part IV: no word from the bank's own people, and no auditor's reading of a finding the library produced. The evidence of this discipline is the code that ran in these chapters, at the commit this book is pinned to. The evidence of its use at a bank is still to come.
+What the Softanza book's chapters 29 and 31 say is absent is worth repeating here. It is the honest edge of Part IV: no word from the bank's own people, and no auditor's reading of a finding the library produced. The evidence of this discipline is the code that ran in these chapters, at the commit this book is pinned to; the Softanza book's chapter 29 tells what is already delivered to a bank in Niamey, and the record of the discipline's use there is the next step.
 
 ## What I refused
 

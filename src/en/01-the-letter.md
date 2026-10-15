@@ -14,7 +14,7 @@ guards: [refinablecode_narrated, refine_deepening_narrated, gate_deepening_narra
 
 In this chapter I tell the letter that starts the story of this book, and I say what it asks of the software of a bank. Then I run the one thing the rest of the book is built on: a change proposed to a place in the code that was declared to be changeable, and judged before it lands. I close on what that one run does not yet do.
 
-The bank in this story is invented. Softibank, its people and the letter it receives are fiction, written to carry a discipline that is not. The central bank, the monetary union, the city and the currency are real, and I treat them as such.
+The bank in this story is invented. Softibank, its people and the letter it receives are fiction, written to carry a discipline that is not. The central bank, the monetary union, the city and the currency, the CFA franc, are real, and I treat them as such.
 
 ## The letter
 
@@ -75,11 +75,11 @@ r = o.Refine("penalty_cap").To("0.16")
 
 Admitted, and the answer says why. It names the value before and after, the origin of the proposal, `[:trusted]`, and the five checks of the gate, in the order the message prints them. On this point only the first two had anything to judge, the structure of the proposal and the bounds of the point: no governance, floor of trust or rule across points was declared yet, and chapter 5 runs the five in the order the code runs them. One step is recorded. The admission prints as `1`.
 
+The next blocks are written as scenes: the object is named once, `o { ... }`, and each line inside the braces speaks to it. The first two blocks named the object on every line, the classic form, and a proposal is one sentence, the chain `Refine(...).To(...)`. This book uses the scene where three or more things are said to one object, and the chain where the thought is one sentence.
+
 ## The slip
 
 Ninety days is enough time to write the change, and people type fast. Suppose the proposal arrives with two digits swapped:
-
-The next block is written as a scene: the object is named once, `o { ... }`, and each line inside the braces speaks to it. The first two blocks named the object on every line, the classic form, and a proposal is one sentence, the chain `Refine(...).To(...)`. This book uses the scene where three or more things are said to one object, and the chain where the thought is one sentence.
 
 ```haro
 o {
@@ -124,7 +124,7 @@ o {
 }
 ```
 
-Reverted: the value is `0.18` again and the timeline is empty. Then the same change is proposed by an AI model, which the proposal says with `As(:llm)`. It is admitted, and the step records its origin: `llm`.
+Reverted: the value is `0.18` again and the timeline is empty. Then the same change is proposed by an AI model, which the proposal says with `As(:llm)`. It is admitted, and the step records its origin, which the library calls its posture: `llm`.
 
 Read that last answer twice. Nothing in this point refuses a proposal from an AI model, because nothing was declared that would: the point has bounds and no floor of trust. The origin is recorded, not judged. Whether it should be judged is a declaration you make on the point, and chapter 8 makes it.
 
@@ -162,6 +162,6 @@ m = new stzRefinableCode(cMine)
 ? m.Refine("my_limit").To("11")[:why]
 ```
 
-Run it, then change the `min` to something above the current value and run it again. I will not tell you what the second run says. When you have read it, you will know whether the gate checks the value that is there, or only the value proposed.
+Run it. Then declare the point again with `min="15" max="20"`, keeping its value at 10, below the new `min`, and propose 12. I will not tell you what the second run says. When you have read it, you will know whether the gate checks the value that is there, or only the value proposed.
 
 The letter asked for one change. The next chapter asks why one change became hard, and what broke when writing stopped being the slow part of the work.

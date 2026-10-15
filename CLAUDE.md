@@ -90,5 +90,6 @@ reader (`briefs/voice-reader.md`) and the fixer (`briefs/fixer.md`).
   131 claims verified and fixed (`sessions/2026-10-15-rewrite-part-2.md`). Part III the same day: chapters 9 and 10, 30 of 30 blocks kept,
   66 claims verified and fixed (`sessions/2026-10-15-rewrite-part-3.md`). Part IV the same day: chapters 11 and 12, 35 of 35 blocks kept,
   66 claims verified and fixed (`sessions/2026-10-15-rewrite-part-4.md`); AUTHOR-01 open. Part V the same day: chapter 13, the coda, the glossary and the start page; the first full draft is 16 pages, 36 of 36
-  blocks kept, 476 claims verified across the book (`sessions/2026-10-15-rewrite-part-5.md`). Next: the voice reader, the readers' pass, the reader build.
+  blocks kept, 476 claims verified across the book (`sessions/2026-10-15-rewrite-part-5.md`). The voice pass (four readers) and the readers' pass (eight readers) done
+  the same day and fixed; chapter 11 renamed `11-the-refinement-the-bank-made.md` (`sessions/2026-10-15-voice-and-readers.md`). Next: the reader and PDF build.
 - Session notes: `sessions/YYYY-MM-DD-topic.md`.

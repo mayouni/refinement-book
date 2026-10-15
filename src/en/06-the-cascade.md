@@ -30,7 +30,7 @@ The cascade is the reviewer's object. It names what a change to a point would to
 
 ## The cascade of a point
 
-Run it. Here is a piece of the late-fee code, three lines, three points, and a line that uses the fee:
+Run it. Here is a piece of the late-fee code: three lines, three points on the first two, and a third line that uses the fee:
 
 ```haro
 cLate = 'late_fee = balance * <R:PARAM name="penalty_cap" value="0.18" min="0.10" max="0.20"> * <R:PARAM name="days_factor" value="1" min="1" max="3">' + nl +
@@ -80,7 +80,7 @@ So two cascades are built. One belongs to the point and stops at its line; the o
 
 ## What I refused
 
-**This book does not call the line-local cascade the whole cascade.** The Teaching Edition of this book drew a cascade of seventeen nodes in three depths, with a wave that stopped where verdicts came back unchanged. That drawing showed the direction. The library at this commit computes what this chapter ran, and the book now shows that.
+**I refused to call the line-local cascade the whole cascade.** The Teaching Edition of this book drew a cascade of seventeen nodes in three depths, with a wave that stopped where verdicts came back unchanged. That drawing showed the direction. The library at this commit computes what this chapter ran, and the book now shows that.
 
 **I refused the diff as the review object, and kept it as evidence.** A reviewer reads the cascade first, because it names consequences; the diff stays available, because the cascade does not yet reach every line.
 
@@ -113,6 +113,6 @@ m = new stzRefinableCode(cMine)
 ? @@( m.Cascade("base_rate") )
 ```
 
-Then write, by hand, the cascade you wanted: the lines, in order. That list is the specification of the cascade the library does not compute yet. Keep it; chapter 12 returns to it.
+Then write, by hand, the cascade you wanted: the lines, in order. That list is the specification of the cascade the library does not compute yet. Keep it: it is the cascade an auditor would want to read.
 
 A change is judged, and its reach is named. The next chapter is what happens after it lands: the timeline, and the way back.

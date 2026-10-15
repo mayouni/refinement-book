@@ -43,7 +43,9 @@ o = new stzRefinableCode(cBook)
 
 Three points, each with its name, kind and value; the bounds are in the tags the AI agent reads with them. And a proposal to the interest rate, which nobody declared as a point, is refused at the first check, by name. The AI agent did not have to be told not to touch the interest rate. The surface did not include it.
 
-That is what makes the surface safe, and it is worth saying in the words of chapter 2. A proposal on this surface is validated, scoped, attributed and reversible by construction: it names a declared point, it has bounds that are law, it carries its origin, and it is recorded as a step that can be taken back. A bank can let an AI agent propose on it at any hour, because nothing it proposes lands without the gate, provided the program around the code gives the AI agent `Refine` and nothing else; the timeline's `Redo`, for one, re-applies a step without the gate.
+That is what makes the surface safe, in the five properties of chapter 2. A proposal on this surface is validated against bounds that are law; explainable at the moment it is judged; scoped to a declared point and its line; attributed with its origin; and reversible as a step that can be taken back.
+
+One condition comes with it. A bank can let an AI agent propose on this surface at any hour only if the program around the code gives the AI agent `Refine` and nothing else, and sets the origin of every proposal itself, as `:llm`. An AI agent that could declare its own origin, or none, would be trusted; and the timeline's `Redo` re-applies a step without the gate.
 
 ## The rehearsal
 
@@ -88,7 +90,7 @@ The door is ratified and not built. Today an AI agent reaches the refinable code
 
 ## Where the field leads
 
-The field leads in what its AI agents can reach and do today, through doors that are built: protocols by which tools and AI agents connect to a system, command lines, editor integrations. The platform's door is decided and not built; its application tier already serves a declared project to AI tools, read-only and audited, and until the door is built, an AI agent reaches the refinable code through a program someone writes.
+The field leads in what its AI agents can reach and do today, through doors that are built: protocols by which tools and AI agents connect to a system, command lines, editor integrations. The platform's door is decided and not built; its application tier already serves a declared project to AI tools, read-only and audited, as the platform's page on AI agents says, and until the door is built, an AI agent reaches the refinable code through a program someone writes.
 
 The field also leads in the rehearsal of whole changes, as the field holds it: a branch, a preview environment, a plan for infrastructure. The rehearsal here is of a refinable code, one object, and the Softanza book's chapter 24 tells the larger twins that are built, of files and of the process environment.
 

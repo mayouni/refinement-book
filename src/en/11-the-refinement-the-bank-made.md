@@ -1,5 +1,5 @@
 ---
-id: the-refinement-amina-made
+id: the-refinement-the-bank-made
 part: 4
 number: 11
 title: The refinement the bank made
@@ -12,7 +12,7 @@ research: research/ch11.md
 guards: [gate_deepening_narrated]
 ---
 
-In this chapter Part IV returns to Softibank. I take the letter of chapter 1 to its end: the change Amina's team made, as the library can carry it today. The record of the story gives the letter, Amina's notebook and the auditor's visit; it does not give the scenes of the weeks between, and I do not invent them. The rule of the regulator becomes a point of its own, refined by the compliance officer; the customer's letter is governed with the code; and the gate decides the order in which the changes may land. Then I show the change the gate cannot make one step at a time.
+In this chapter Part IV returns to Softibank. I take the letter of chapter 1 to its end: the change Amina's team made, as the library can carry it today. The Teaching Edition gives the letter, Amina's notebook and the auditor's visit, and I add no scene to them. The rule of the regulator becomes a point of its own, refined by the compliance officer; the customer's letter is governed with the code; and the gate decides the order in which the changes may land. Then I show the change the gate cannot make one step at a time.
 
 ## The field
 
@@ -28,7 +28,7 @@ The Teaching Edition said the deepest change was not to any pricing function: it
 
 ## The rule, as a point
 
-Run it. Three points in one refinable text: the cap the code charges, the maximum the regulation allows, and the rate the customer's letter states. Two rules tie them: the cap may not exceed the regulatory maximum, and the letter may not state less than the cap in force. Two actors act on it: the compliance officer, who alone may move the regulatory maximum, a risk of tier three; and the pricing agent, an AI agent with delegated authority over the cap and the letter.
+Run it. Three points in one refinable text: the cap the code charges, the maximum the regulation allows, and the rate the customer's letter states. Two rules tie them: the cap may not exceed the regulatory maximum, and the letter may not state less than the cap in force. The regulatory maximum is the bank's own record of the legal limit, which only the compliance officer may move. Two actors act on it, each with the authority set while it was the actor named: the compliance officer, who alone may move the regulatory maximum, a risk of tier three; and the pricing agent, an AI agent with delegated authority over the cap and the letter.
 
 ```haro
 cDoc = 'cap    = <R:PARAM name="penalty_cap" value="0.18" min="0.10" max="0.20">' + nl +

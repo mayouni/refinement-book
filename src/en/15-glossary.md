@@ -6,7 +6,7 @@ status: draft
 research: research/ch14.md
 ---
 
-Each entry gives the word as this book uses it and the chapter where it is run or shown. Where my Softanza book defines the same word, the meaning here agrees with its appendix D, and the entry says so. A word names a state of a piece of work or a role held in a scope, never a person.
+Each entry gives the word as this book uses it and the chapter where it is run or shown. Where my Softanza book defines the same word, the meaning here agrees with its appendix D, and the entry says so. A word names a state of a piece of work or a role held in a scope, not a judgement of anyone.
 
 **absent.** One of the three stage words: what the record does not hold, in code or in files, as far as I looked. As in Softanza's appendix D. Every chapter's front matter.
 
@@ -18,13 +18,15 @@ Each entry gives the word as this book uses it and the chapter where it is run o
 
 **authority.** The level at which an actor may act: advisory, delegated, autonomous or emergency override, compared with the risk tier of the act. Distinct from permission: permission is held, and authority must cover the risk. As in Softanza's appendix D. Chapter 8.
 
-**built.** One of the three stage words: the code exists, a guard exists and a block ran. As in Softanza's appendix D. Every chapter's front matter.
+**built.** One of the three stage words: the code exists and a block ran. Softanza's appendix D also asks that a guard exists; this book counts as built what ran in its blocks, and each chapter's court says which guards assert it. Every chapter's front matter.
 
 **cascade.** What a change to a point reaches, asked before the change. Built today in two forms: a point's cascade, its line and the other points on it; a class's cascade, from the code graph. One cascade across the code graph, joined to the gate, is designed. Chapter 6.
 
 **checkpoint.** A named moment of a refinable code's timeline, to which it can be reverted. (Softanza's appendix D uses the word for a refusal kept for a person, another sense.) Chapter 7.
 
 **constraint.** The second check of the gate: a parameter's value within its bounds, an algorithm's or a library's within its options. Chapters 3, 5.
+
+**court.** The judge of a thing: here the gate for a change, and the guards for the library. As in Softanza's appendix D. Chapter 5.
 
 **decision.** What governance records when it admits a refinement: an id, a rationale naming the origin, the actor, the authority and risk at the time, a time and the action. Saved to a file with the governance. Chapters 8, 12.
 
@@ -40,6 +42,8 @@ Each entry gives the word as this book uses it and the chapter where it is run o
 
 **floor of trust.** The lowest origin a point accepts; a proposal from a lower origin is refused, whoever proposes it. Chapter 8.
 
+**form of code.** The classic form names the object on every line; the chain says one sentence, `Refine(...).To(...)`; the scene, `obj { ... }`, names the object once for three or more calls. Chapter 1.
+
 **gate.** The judge every proposal passes before it lands: five checks, in the order the code runs them, structural, constraint, governance, trust and derivation; the admitted message lists them in another order. A refusal names its check and leaves the source whole. Softanza's appendix D uses the word for any place where something is refused before it goes on; this is that place for a change to code. Chapter 5.
 
 **governance.** Permission, authority and risk, compared before an act, fail-closed, with the decision kept. As in Softanza's appendix D. Chapters 5, 8.
@@ -54,13 +58,15 @@ Each entry gives the word as this book uses it and the chapter where it is run o
 
 **planner.** The designed piece that would refine several points as one change, ordered by what depends on what. Chapter 11.
 
+**primitive.** One of the twelve operations on a graph to which Refine's specification reduces every change, applied together or not at all. Chapter 13.
+
 **programmatic agent.** An agent whose mind is rules and programs, with no AI model in it; deterministic. Chapter 9.
 
 **refinable code.** A text with refinement points in it, held by the library as one object: its points, its rules, its timeline and its governance. A value: assigning it makes a copy. Chapters 3, 10.
 
-**refinement.** A change to code that was declared to be changeable, proposed in a typed form, judged by a gate, recorded as a step, and reversible. Softanza's appendix D calls it the write surface, judged by a gate of five checks. Chapters 1, 3.
-
 **Refine.** The product built on the foundation: the governed-change environment over code, interface and data. Specified, shown as an interactive prototype, and started as a command whose first three verbs run. Never the subject of the gate. Chapter 13.
+
+**refinement.** A change to code that was declared to be changeable, proposed in a typed form, judged by a gate, recorded as a step, and reversible. Softanza's appendix D calls it the write surface, judged by a gate of five checks. Chapters 1, 3.
 
 **refinement point.** A named knob declared in the source as a tag, with a kind, a value and bounds or options. Three kinds are judged today: a parameter, an algorithm, a library (the library kind not yet guarded). Chapters 3, 4.
 
@@ -73,6 +79,8 @@ Each entry gives the word as this book uses it and the chapter where it is run o
 **stage words.** Built, designed, absent: what each chapter says of every piece it names, each read from the record: built and absent from the code, designed from the documents. Every chapter's front matter.
 
 **structural.** The first check of the gate: the point a proposal names exists. Chapter 5.
+
+**Teaching Edition.** The first edition of this book, 2026, cited where this one departs from it. Start here.
 
 **timeline.** A refinable code's admitted steps, each with the value it replaced and its origin; it can be reverted, checkpointed and redone, and lives in the running object. Chapter 7.
 

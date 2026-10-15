@@ -6,7 +6,7 @@ title: The timeline
 stage:
   built: "every admitted proposal recorded as a step with the value it replaced and its origin; revert by one step, to a step, to a named checkpoint and to zero; redo, cleared when the timeline forks; under governance, a decision recorded with its actor, authority, risk and time"
   designed: "the refinement as a typed transformation of the code graph, its inverse a graph event; the step carrying its cascade, author, verification and history"
-  absent: "a saved timeline: the file holds the source; a time on the step itself; a revert judged by the gate and recorded under governance; the two clocks of a rule, in force and recorded"
+  absent: "a saved timeline: the file holds the source; a time and an actor on the step itself; a revert judged by the gate and recorded under governance; the two clocks of a rule, in force and recorded"
 status: draft
 research: research/ch07.md
 guards: [refine_deepening_narrated, refinablecode_narrated]
@@ -28,7 +28,7 @@ A refinement is typed: the cap went from `0.18` to `0.16`. Its inverse is known 
 
 ## Steps, and a checkpoint
 
-Run it. The cap goes through two changes; between them the bank files its compliance position, and the team marks that moment on the timeline:
+Run it. The cap goes through two changes, an interim value first, say; between them the bank files its compliance position, and the team marks that moment on the timeline:
 
 ```haro
 t = new stzRefinableCode('cap = <R:PARAM name="penalty_cap" value="0.18" min="0.10" max="0.20">')

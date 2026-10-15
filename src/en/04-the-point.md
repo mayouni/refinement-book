@@ -44,7 +44,7 @@ o = new stzRefinableCode(cFees)
 #--> [ [ "penalty_cap", "param", "0.18" ], [ "grace_days", "param", "5" ] ]
 ```
 
-Three tags, two points. The third tag has no name, and a point without a name is not a point: nothing could refine it, because a proposal names the point it changes. The comment line and the rest of the code are left as they are. The library reads the tags and nothing else.
+Three tags, two points. The cap's bounds, ten to twenty per cent, are the bank's own; the regulator's ceiling is a point of its own, moved under compliance authority, in chapter 11. The third tag has no name, and a point without a name is not a point: nothing could refine it, because a proposal names the point it changes. The comment line and the rest of the code are left as they are. The library reads the tags and nothing else.
 
 The grammar is short. The kind after `R:` says what the point is; `name` says how to call it; `value` is its current value; `min` and `max` bound a parameter; `options`, separated by `|`, list what an algorithm or a library may become. Chapter 3 ran the three kinds the gate judges.
 

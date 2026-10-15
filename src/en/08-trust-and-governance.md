@@ -6,7 +6,7 @@ title: Trust and governance
 stage:
   built: "four postures of origin ranked from trusted to an AI model's; a floor of trust per point; governance by permission, authority and declared risk, decided before any change; a lineage of decisions with actor, authority and risk at the time, a time and the action, queried by actor"
   designed: "the refinement carrying its author and verification as a typed transformation of the code graph (the architecture document)"
-  absent: "an origin proven rather than declared: the posture is what the proposal says it is; an unknown origin refused or ranked lowest (requested, RL-04)"
+  absent: "an origin proven rather than declared: the posture is what the proposal says it is; an unknown origin refused or ranked lowest"
 status: draft
 research: research/ch08.md
 guards: [refine_deepening_narrated, gate_deepening_narrated]
@@ -60,7 +60,7 @@ Now a posture the library was never told about:
 #--> admitted: 'penalty_cap' 0.16 -> 0.15 [:auditor] (structural + constraint + derivation + governance + trust passed)
 ```
 
-Admitted! (The message lists the five checks as fixed text; here only the floor of trust had anything to judge.) `:auditor` is not one of the four, and an origin the library does not know is ranked as trusted, the top. The library's comment says why: an explicit posture opts in. I read it the other way for a bank. A floor exists to refuse what it does not recognise, and an unknown origin that clears the highest floor is the gap of this chapter. It is a one-line change; the book has written the request (RL-04), and the library's session has not yet received it.
+Admitted! (The message lists the five checks as fixed text; here only the floor of trust had anything to judge.) `:auditor` is not one of the four, and an origin the library does not know is ranked as trusted, the top. The library's comment says why: an explicit posture opts in. I read it the other way for a bank. A floor exists to refuse what it does not recognise, and an unknown origin that clears the highest floor is the gap of this chapter. It is a one-line change in the library.
 
 ## Governance
 
@@ -83,7 +83,7 @@ gv {
 
 The pricing agent, an AI agent acting under the name `pricing-agent`, holds the permission and a delegated authority, level 2, and the cap's refinement is a risk of tier 3. Refused, before anything changed; the cap is still `0.18`. Raised to autonomous authority, level 3, the same proposal is admitted.
 
-The four levels are advisory, delegated, autonomous and emergency override. A risk tier nobody declared refuses every actor, as chapter 5 ran: what nobody judged, nobody may change.
+The four levels are advisory (1), delegated (2), autonomous (3) and emergency override (4). In the refusals the library prints, permission is `CAN` and authority is `SHOULD`: "SHOULD does not cover it" means the actor's level is below the tier. A risk tier nobody declared refuses every actor, as chapter 5 ran: what nobody judged, nobody may change.
 
 ## The record governance keeps
 
@@ -130,7 +130,7 @@ What is built: the four postures and their ranks; the floor of trust per point; 
 
 What is designed: the refinement as a typed transformation of the code graph, carrying its author and its verification, in the architecture document.
 
-What is absent: an origin the library does not know, refused or ranked lowest; the book has written the request (RL-04). And an origin proven rather than declared. A proposal says `As(:external)`, and the library believes it; proving where a proposal came from is the work of the program that receives it, and Part III is about that program.
+What is absent: an origin the library does not know, refused or ranked lowest; it is a one-line change in the library. And an origin proven rather than declared. A proposal says `As(:external)`, and the library believes it; proving where a proposal came from is the work of the program that receives it. That program, not the AI agent, must set the origin: a proposal that declares nothing is `trusted`. Part III is about that program.
 
 ## In your hands
 

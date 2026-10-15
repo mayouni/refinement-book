@@ -24,11 +24,11 @@ What the field rarely has is one gate that knows the place being changed: its bo
 
 **One gate, every proposal, the same checks in the same order, and a refusal that says which check refused and why.**
 
-It does not matter whether the proposal comes from Amina, from a script or from an AI agent. Chapter 3 said the gate judges proposals and not authors; this chapter shows what judging means.
+It does not matter whether the proposal comes from Amina, from a script or from an AI agent. Chapter 1 said the gate judges proposals and not authors; this chapter shows what judging means.
 
 ## Five refusals
 
-Run it. Here is the cap and, beside it, a floor below which the cap may not fall, one the bank's risk committee sets; both are declared as points. The code is governed: an AI agent acts on it as the actor `pricing-agent`, with delegated authority, and the cap's refinement is a risk of tier two. A floor of trust is set on the cap, and a rule across the two points says the cap may not fall below the floor.
+Run it. Here is the cap and, beside it, a floor below which the cap may not fall, one the bank's risk committee sets; both are declared as points. The code is governed: an AI agent acts on it as the actor `pricing-agent`, with delegated authority. The cap's refinement is a risk of tier two: a number declared for the action, which delegated authority covers (chapter 8). Origins rank from trusted, through external and sandboxed, down to an AI model's (chapter 8), and a floor of trust is set on the cap, and a rule across the two points says the cap may not fall below the floor; in the rule, `0 +` reads a point's text value as a number.
 
 ```haro
 g = new stzRefinableCode('cap   = <R:PARAM name="penalty_cap" value="0.18" min="0.10" max="0.20">' + nl +
@@ -95,7 +95,7 @@ My design of the gate had four stages: structural, constraint, derivation, gover
 
 ## Deterministic
 
-The same proposal, against the same declarations, meets the same verdict, provided the declared rules are plain comparisons, as they are here. Nothing in the gate draws at random or asks an AI model; the checks compare a value with bounds, a name with a list, an authority with a tier, a posture with a floor, and run the rules a person declared. Whatever else in a bank's software is probabilistic, the moment of admission is not, and an auditor can replay it, given the declarations. `Save` does not keep the risk tiers, floors and rules today, so they must be kept with the code.
+The same proposal, against the same declarations, meets the same verdict, provided the declared rules are plain comparisons, as they are here. Nothing in the gate draws at random or asks an AI model. The checks compare a value with bounds, a name with a list, an authority with a tier, a posture with a floor, and run the rules a person declared. Whatever else in a bank's software is probabilistic, the moment of admission is not, and an auditor can replay it, given the declarations. `Save` does not keep the risk tiers, floors and rules today, so they must be kept with the code.
 
 That is also the gate's honest edge. It proves a change against what was declared. A rule nobody wrote down is not checked, and a change can pass all five checks and still be a poor idea. The gate does not replace judgement; it spends it where it is needed, on the declarations.
 
@@ -119,7 +119,7 @@ What is built: the five checks, in the order the code runs them; a refusal that 
 
 What is designed: the gate composed from the rules of the code graph, so that a change is judged against what it reaches beyond its line; the architecture document describes it.
 
-What is absent: a check that the language still parses the changed source; and an admitted message that prints the checks in the order they ran, a change of one line in the library.
+What is absent: the declarations kept with the code (`Save` keeps the source, not the risk tiers, floors and rules); a check that the language still parses the changed source; and an admitted message that prints the checks in the order they ran, a change of one line in the library.
 
 ## In your hands
 

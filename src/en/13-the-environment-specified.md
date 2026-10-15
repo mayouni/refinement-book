@@ -26,9 +26,9 @@ Every verdict in this book came from the library, which is open. Refine is where
 
 ## What runs today
 
-Refine's command is the first piece of the product that runs. Its plan names a ledger of milestones, each ending in a working verb with passing tests, and the command reports which are real. At its first milestone, three verbs run: `version`, `status` and `init`, which creates a project. Six are queued, in order: `validate`, `plan`, `apply`, `revert`, `show` and `export`. Asked for a queued verb, the command does not fail silently: it says the verb is not built yet, why, what to run instead, and where to read the plan. I ran it on 15 October 2026, and it answered so.
+Refine's command is the first piece of the product that runs. Its plan names a ledger of milestones, each ending in a working verb with passing tests, and the command reports which are real. At its first milestone, three verbs run: `version`, `status` and `init`, which creates a project. Six are queued, in order: `validate`, `plan`, `apply`, `revert`, `show` and `export`. Asked for a queued verb, the command does not fail silently: it says the verb is not built yet, why, what to run instead, and where to read the plan. I ran it on 15 October 2026; asked for `validate`, its first line was: "`validate` is not built yet."
 
-The command is its own ledger, and it reads the same one this paragraph does.
+The command reports its state from the same ledger its roadmap describes.
 
 What a verdict card on Refine's screen would show is the kind of answer this book has run. Refine's own `validate` is specified as a pipeline of four stages, without the library's governance and trust checks; here is the library's judgement:
 
@@ -92,6 +92,6 @@ Take the equality of chapter 11, the letter that must state exactly the cap, and
 # the rule letter_rate = 100 * penalty_cap, checked once, after both
 ```
 
-Then say what the gate would have to check, and when: after each primitive, or after the sequence. The specification's sections 5 and 6 frame an answer; the library does not yet have one. Write yours before you read theirs.
+Then say what the gate would have to check, and when: after each primitive, or after the sequence. The specification's sections 5 and 6 frame an answer, and Refine's repository is not public yet; the library does not have one. Write yours.
 
 The book's chapters end here. A coda returns to Softibank, for the next letter.
