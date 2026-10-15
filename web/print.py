@@ -40,6 +40,10 @@ CSS = """
 html { font-size: 10.8pt; }
 body { font-family: 'EB Garamond', Georgia, serif; color: #1a1612; line-height: 1.52; }
 
+/* ---------- the open book: the last page ---------- */
+.pg-ask { page: front; break-before: page; break-after: page; padding-top: 2.2in; font-family: 'Inter', sans-serif; font-size: 10pt; line-height: 1.6; color: #3a3326; }
+.pg-ask p { margin-bottom: 0.1in; text-indent: 0; }
+.pg-ask .ask-line { font-family: 'EB Garamond', Georgia, serif; font-style: italic; font-size: 13pt; color: #1a1612; }
 /* ---------- cover + back ---------- */
 .pg-cover, .pg-back { page: coverpage; break-after: page; }
 .pg-cover { height: 9in; background: #f7f6f2; display: flex; align-items: center; justify-content: center; }
@@ -171,6 +175,11 @@ A programmer answers.</blockquote>
 <div class="attr">— traditional adage, attribution lost</div>
 </div>"""
 
+THE_ASK = """<div class="pg-ask"><p class="ask-line">If this book was useful to you, and you can, pay what it was worth.</p>
+<p>How to pay what it was worth: https://mayouni.github.io/ayouni/offer/</p>
+<p>Free to read and share under CC BY-NC-ND 4.0; code under the library's licence; pay what it was worth, if it was.</p>
+<p>https://mayouni.github.io/ayouni/licence/</p></div>"""
+
 BACK_COVER = """<div class="pg-back">
 <div class="bb-blurb">
 <p><strong>Software is now written faster than anyone can trust it.</strong> An AI agent can draft in an
@@ -240,6 +249,7 @@ DOC = f"""<!DOCTYPE html>
 {EPIGRAPH}
 {chr(10).join(toc)}
 {chr(10).join(body)}
+{THE_ASK}
 {BACK_COVER}
 </body>
 </html>"""
