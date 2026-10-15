@@ -52,13 +52,15 @@ Now the new unit. The same slip, proposed to the point instead of written into t
 
 ```haro
 o2 = new stzRefinableCode(cSrc)
-r = o2.Refine("penalty_cap").To("0.61")
-? r[:why]
-#--> constraint: 0.61 above max 0.20
-? o2.Refine("penalty_cap").To("0.16")[:admitted]
-#--> 1
-? @@( o2.History() )
-#--> [ [ "penalty_cap", "0.18", "0.16", "trusted" ] ]
+o2 {
+	r = Refine("penalty_cap").To("0.61")
+	? r[:why]
+	#--> constraint: 0.61 above max 0.20
+	? Refine("penalty_cap").To("0.16")[:admitted]
+	#--> 1
+	? @@( History() )
+	#--> [ [ "penalty_cap", "0.18", "0.16", "trusted" ] ]
+}
 ```
 
 The slip is refused with its reason; the intended change is admitted; and the step is recorded with the value it replaced, `0.18`, the value it set, `0.16`, and its origin. The two changes looked the same as text. As proposals, one is a refusal and one is a step.
@@ -73,12 +75,14 @@ A point has a kind, and the kind says what a proposal to it must respect. The li
 cMix = 'rounding = <R:ALGO name="rounding" value="half_up" options="half_up|bankers">' + nl +
        'pdf = <R:LIB name="statements" value="engine_a" options="engine_a|engine_b">'
 m = new stzRefinableCode(cMix)
-? @@( m.RefinementPoints() )
-#--> [ [ "rounding", "algo", "half_up" ], [ "statements", "lib", "engine_a" ] ]
-? m.Refine("rounding").To("truncate")[:why]
-#--> constraint: 'truncate' not in options half_up|bankers
-? m.Refine("statements").To("engine_b")[:admitted]
-#--> 1
+m {
+	? @@( RefinementPoints() )
+	#--> [ [ "rounding", "algo", "half_up" ], [ "statements", "lib", "engine_a" ] ]
+	? Refine("rounding").To("truncate")[:why]
+	#--> constraint: 'truncate' not in options half_up|bankers
+	? Refine("statements").To("engine_b")[:admitted]
+	#--> 1
+}
 ```
 
 The rounding rule may be `half_up` or `bankers`, and nothing else; a proposal of `truncate` is refused by name. The library that prints the customer statements may be swapped between the two declared engines, and the swap is admitted. In each case the point says what it may become, and the gate holds it to that.

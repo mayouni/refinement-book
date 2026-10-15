@@ -80,16 +80,20 @@ Admitted, and the answer says why. It names the value before and after, the orig
 Ninety days is enough time to write the change, and people type fast. Suppose the proposal arrives with two digits swapped:
 
 ```haro
-r2 = o.Refine("penalty_cap").To("0.61")
-? r2[:admitted]
-#--> 0
-? r2[:why]
-#--> constraint: 0.61 above max 0.20
-? o.ValueOf("penalty_cap")
-#--> 0.16
-? o.NumberOfSteps()
-#--> 1
+o {
+	r2 = Refine("penalty_cap").To("0.61")
+	? r2[:admitted]
+	#--> 0
+	? r2[:why]
+	#--> constraint: 0.61 above max 0.20
+	? ValueOf("penalty_cap")
+	#--> 0.16
+	? NumberOfSteps()
+	#--> 1
+}
 ```
+
+The block is written as a scene: the object is named once, `o { ... }`, and each line inside the braces speaks to it. The first two blocks named the object on every line, the classic form, and a proposal is one sentence, the chain `Refine(...).To(...)`. This book uses the scene where three or more things are said to one object, and the chain where the thought is one sentence.
 
 Refused! The refusal names its check first, `constraint`, then says what was wrong: `0.61 above max 0.20`. The value is still `0.16`, and the timeline did not grow by a step. Nobody had to read a diff to see that sixty-one per cent is not a penalty cap a bank may charge. The point said so.
 
@@ -107,15 +111,17 @@ The tag carries the new value, and the bounds are still there for the next propo
 A change made early may have to wait for the day the new cap applies, and a change made wrongly has to be undone. Can the step be taken back?
 
 ```haro
-o.Revert()
-? o.ValueOf("penalty_cap")
-#--> 0.18
-? o.NumberOfSteps()
-#--> 0
-? o.Refine("penalty_cap").As(:llm).To("0.16")[:admitted]
-#--> 1
-? o.PostureOf(1)
-#--> llm
+o {
+	Revert()
+	? ValueOf("penalty_cap")
+	#--> 0.18
+	? NumberOfSteps()
+	#--> 0
+	? Refine("penalty_cap").As(:llm).To("0.16")[:admitted]
+	#--> 1
+	? PostureOf(1)
+	#--> llm
+}
 ```
 
 Reverted: the value is `0.18` again and the timeline is empty. Then the same change is proposed by an AI model, which the proposal says with `As(:llm)`. It is admitted, and the step records its origin: `llm`.

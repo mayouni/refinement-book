@@ -74,24 +74,26 @@ Four points, each with its name, its kind and its value. Three are parameters wi
 Now the afternoon. An AI agent proposes the new cap:
 
 ```haro
-r = o.Refine("penalty_cap").As(:llm).To("0.16")
-? r[:admitted]
-#--> 1
-? r[:why]
-#--> admitted: 'penalty_cap' 0.18 -> 0.16 [:llm] (structural + constraint + derivation + governance + trust passed)
-? @@( o.Cascade("penalty_cap")[:alsoTouches] )
-#--> [ "days_factor" ]
-? @@( o.History() )
-#--> [ [ "penalty_cap", "0.18", "0.16", "llm" ] ]
-? o.CanRevert()
-#--> 1
+o {
+	r = Refine("penalty_cap").As(:llm).To("0.16")
+	? r[:admitted]
+	#--> 1
+	? r[:why]
+	#--> admitted: 'penalty_cap' 0.18 -> 0.16 [:llm] (structural + constraint + derivation + governance + trust passed)
+	? @@( Cascade("penalty_cap")[:alsoTouches] )
+	#--> [ "days_factor" ]
+	? @@( History() )
+	#--> [ [ "penalty_cap", "0.18", "0.16", "llm" ] ]
+	? CanRevert()
+	#--> 1
+}
 ```
 
 Read the five answers against the list.
 
 **Validated:** the proposal was judged before it landed, and admitted, `1`. Here only the structure of the proposal and the bounds of the point had rules to apply; the other three checks pass when nothing is declared for them, and Part II declares them. **Explainable:** the answer says why, at the moment of the judgement: the value before and after, and the checks of the gate. **Scoped:** the cascade of the point names what else sits on its line, `[ "days_factor" ]`, the other factor of the late fee. **Attributed:** the history holds one step, and the step keeps the origin the proposal declared, `llm`: the kind of source, not its name. **Reversible:** `CanRevert()` printed `1`; the step keeps the value it replaced.
 
-Five properties, and none of them came from reading a diff! The change and its point answered for them because the unit of the change was not a patch of text. It was a proposal to a declared point.
+Five properties, and none of them came from reading a diff. The change and its point answered for them because the unit of the change was not a patch of text. It was a proposal to a declared point.
 
 ## What I refused
 

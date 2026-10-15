@@ -54,6 +54,8 @@ open question, with a `haro exercise` fence); a closing bridge to the next chapt
 
 - The library is pinned at **93d7a39bd** (ROP-07), the Softanza book's pin, and run from a snapshot, never from `D:\GitHub\stzlib`'s working
   tree. `tools/book_common.py` reads the Softanza book's snapshot when present (it is not copied) and exports its own into `.cache/` otherwise.
+- Code follows HOUSE-CODE-01 (ROP-14): the brace scene `obj { ... }` for three or more calls on one object, the chain for one sentence, the
+  classic form shown; `@@()` kept. A brace works on a named object, not on `new X() { }`.
 - Every block is a ```` ```haro ```` fence whose `#-->` lines are its promise; `python tools/book_run.py` runs each chapter in one process and
   writes the verdicts to `data/book-run.json`. A chapter whose blocks do not all keep their promise is not done.
 - Research per chapter in `research/chNN.md`, every block probed in `base/test/_probe_ropNN` inside the snapshot and the folder removed.
@@ -84,5 +86,6 @@ reader (`briefs/voice-reader.md`) and the fixer (`briefs/fixer.md`).
 
 - 2026-10-15: phase 0 (the read) done; the author's rulings ROP-01 to ROP-11 recorded, ROP-02 onward on his delegation; the run tools copied
   from the Softanza book (`tools/`); Part I drafted, run and verified: chapters 1 to 3, 10 of 10 blocks kept at 93d7a39bd, 125 claims checked by fresh verifiers and fixed
-  (`sessions/2026-10-15-rewrite-part-1.md`). Next: Part II, chapters 4 to 8.
+  (`sessions/2026-10-15-rewrite-part-1.md`). Part II drafted the same day: chapters 4 to 8, 26 of 26 blocks kept in the scene form,
+  131 claims verified and fixed (`sessions/2026-10-15-rewrite-part-2.md`). Next: Part III, chapters 9 and 10.
 - Session notes: `sessions/YYYY-MM-DD-topic.md`.
