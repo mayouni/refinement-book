@@ -3,6 +3,10 @@
 > **Location (2026-10-08):** this book now lives at `ayouni/books/refinement-book/`, the first of the AYOUNI
 > books. The second, *Softanza*, is at `ayouni/books/softanza-book/`. All paths below are relative to this folder.
 
+> **The rewrite (2026-10-15, HOUSE-13):** this book is now the second of the AYOUNI books and is being rewritten radically; the author's
+> rulings for the rewrite are in `DECISIONS.md` and override this file where they conflict. ROP-01: the bank is renamed **Softibank**, a
+> fictional name; "Sonibank" below is the old name, kept until the rewrite replaces this file.
+
 **Read this first.** This file is the durable working memory for the AYOUNI book project. Any new Claude Chat session that opens this repo should treat this document as authoritative for project context, locked decisions, hard constraints, and current state. It supersedes Claude's prior assumptions where they conflict.
 
 ---
