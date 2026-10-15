@@ -318,6 +318,16 @@ EXTRA_CSS = """
 .ch-lede{font-style:italic;color:var(--soft);font-size:1.04em;line-height:1.55;margin:0 0 1.7em;padding-bottom:1.1em;border-bottom:1px solid var(--rule);}
 h4.subsubsection-h{font-family:var(--sans);font-weight:700;font-size:0.76em;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink-soft);margin:2em 0 0.5em;line-height:1.4;}
 .chapter-page ul,.chapter-page ol{margin:1.1em 0 1.1em 1.3em;padding:0;}
+.ayouni-home{display:inline-flex;align-items:center;}
+.top-header .ayouni-home{height:38px;margin-right:6px;}
+.top-header .ayouni-home svg{height:22px;width:auto;aspect-ratio:2095/518;}
+.hero-imprint .ayouni-home svg{height:46px;width:auto;aspect-ratio:2095/518;}
+@media (max-width: 900px){.top-header .ayouni-home svg{height:16px;}}
+.card-preview{font-size:18px;line-height:1.55;color:var(--ink);max-height:340px;}
+.hero-subtitle{font-size:24px;color:var(--ink);}
+.hero-author{font-size:20px;}
+.hero-meta,.hero-series,.hero-status,.hb-label,.search-clear-hl{font-size:14px;}
+.spine-badge,.code-cell .cell-label,.stage,.aside-h,.src-k,.cnb-dir,.eyebrow,.ch-eyebrow,.card-words,.fig-label{font-size:14px;}
 .the-invite{margin:3.2em 0 1em;padding:1.6em 0 0;border-top:1px solid var(--rule);}
 .the-invite p{text-indent:0;text-align:left;hyphens:none;}
 .the-invite .invite-line{font-style:italic;}
@@ -362,7 +372,7 @@ overview = f"""{OV_MARK}
 <img src="cover.png" alt="Refinement-Oriented Programming — book cover" class="cover-img">
 </div>
 <div class="hero-info">
-<div class="hero-imprint ayouni">AYOUN<span class="i-dot">I</span></div>
+<div class="hero-imprint"><a class="ayouni-home" href="https://mayouni.github.io/ayouni/" aria-label="AYOUNI Press: home"><svg viewBox="0 0 2095 518" aria-hidden="true" focusable="false"><use href="#ayouni-logo"/></svg></a></div>
 <h1 class="hero-title">Refinement-Oriented Programming</h1>
 <p class="hero-subtitle">{SUBTITLE}</p>
 <p class="hero-author">Mansour Ayouni</p>

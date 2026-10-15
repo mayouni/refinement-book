@@ -146,7 +146,7 @@ TITLE_PAGE = """<div class="fm fm-title">
 <div class="t">Refinement-Oriented<br>Programming</div>
 <div class="s">A discipline for software in the agentic era</div>
 <div class="a">Mansour Ayouni</div>
-<div class="imprint">AYOUN<span class="dot">I</span></div>
+<div class="imprint"><img alt="AYOUNI" src="../assets/covers/ayouni-logo.png" style="height:0.34in;width:auto"></div>
 <div class="cities">TUNIS · NIAMEY · PARIS · 2026</div>
 </div>"""
 
@@ -156,8 +156,7 @@ COPYRIGHT = """<div class="fm fm-copyright">
 <p>The text of this book is released under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
 International (CC BY-NC-ND 4.0). Illustrations are released under CC BY-NC-SA 4.0 unless otherwise noted.
 Terminal sessions and code fragments are released under the MIT License.</p>
-<p>The free digital edition is available at ayouni.press. Print editions are distributed through
-IngramSpark worldwide.</p>
+<p>The free digital edition is at https://mayouni.github.io/ayouni/books/refinement/en/. Paper copies in quantity are supplied to organisations on request: https://mayouni.github.io/ayouni/offer/.</p>
 <p>First edition: 2026 — the Teaching Edition. Typeset in EB Garamond, Inter, and Archivo Black.
 Cover illustration: a giraffe in patchwork coat, for Niger. [Artist credit to be added.]</p>
 <p>ISBN: pending.</p>
@@ -199,8 +198,8 @@ agents, memory, RAG, and governance has resolved into one legible map.</p>
 <div class="bb-author">Mansour Ayouni is the author of <em>Beginning Ring Programming</em> (Apress) and the
 founder of Softanza Labs. He works between Tunis, Niamey, and Paris.</div>
 <div class="bb-foot">
-<div class="bb-imprint">AYOUN<span class="dot">I</span></div>
-<div class="bb-meta">ayouni.press<br>TUNIS · NIAMEY · PARIS · 2026<br><span class="bb-isbn">ISBN pending</span></div>
+<div class="bb-imprint"><img alt="AYOUNI" src="../assets/covers/ayouni-logo.png" style="height:0.34in;width:auto"></div>
+<div class="bb-meta">mayouni.github.io/ayouni<br>TUNIS · NIAMEY · PARIS · 2026<br><span class="bb-isbn">ISBN pending</span></div>
 </div>
 </div>"""
 
