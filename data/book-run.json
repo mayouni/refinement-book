@@ -1,0 +1,88 @@
+{
+ "run": {
+  "date": "2026-10-15 12:16 UTC+01:00",
+  "library": {
+   "commit": "93d7a39bdd040f82eae21d949460d69c32a75c70",
+   "short": "93d7a39bd",
+   "ref": "origin/main",
+   "commit_date": "2026-10-05 21:50:23 +0100",
+   "exported": "2026-10-08 21:12 UTC+01:00",
+   "engine_binaries": {
+    "count": 92,
+    "copied_from": "D:/GitHub/_wtt/libraries/stzlib/engine/zig-out/bin",
+    "built_in_a_tree_at_this_commit": true,
+    "newest_build": "2026-10-05 20:27 UTC+01:00",
+    "engine_commits_after_build": [
+     "55876012f 2026-10-05 20:41:17 +0100 testoor TR1: the runner -- one process, many tours, the exit code is the runner's"
+    ],
+    "pinned": false,
+    "why": "build products are in no commit; a pinned engine build was not run (the machine's build-load rule)"
+   }
+  },
+  "runtime": {
+   "name": "Ring",
+   "version": "1.27",
+   "path": "D:/Ring127/bin/ring.EXE"
+  },
+  "failed": []
+ },
+ "chapters": {
+  "en/01-the-letter": {
+   "id": "the-letter",
+   "blocks": [
+    {
+     "hash": "bed7c600445e",
+     "promise": "1\n0.18",
+     "effects": [],
+     "unprinted": 0,
+     "verdict": "kept",
+     "out": "1\n0.18"
+    },
+    {
+     "hash": "1f961f665914",
+     "promise": "1\nadmitted: 'penalty_cap' 0.18 -> 0.16 [:trusted] (structural + constraint + derivation + governance + trust passed)\n1",
+     "effects": [],
+     "unprinted": 0,
+     "verdict": "kept",
+     "out": "1\nadmitted: 'penalty_cap' 0.18 -> 0.16 [:trusted] (structural + constraint + derivation + governance + trust passed)\n1"
+    },
+    {
+     "hash": "a4dc0138a7e6",
+     "promise": "0\nconstraint: 0.61 above max 0.20\n0.16\n1",
+     "effects": [],
+     "unprinted": 0,
+     "verdict": "kept",
+     "out": "0\nconstraint: 0.61 above max 0.20\n0.16\n1"
+    },
+    {
+     "hash": "b0ab36eb1f0b",
+     "promise": "penalty = balance * <R:PARAM name=\"penalty_cap\" value=\"0.16\" min=\"0.10\" max=\"0.20\">",
+     "effects": [],
+     "unprinted": 0,
+     "verdict": "kept",
+     "out": "penalty = balance * <R:PARAM name=\"penalty_cap\" value=\"0.16\" min=\"0.10\" max=\"0.20\">"
+    },
+    {
+     "hash": "a894757c7f7e",
+     "promise": "0.18\n0\n1\nllm",
+     "effects": [],
+     "unprinted": 0,
+     "verdict": "kept",
+     "out": "0.18\n0\n1\nllm"
+    },
+    {
+     "hash": "a40fa7c4f942",
+     "promise": "",
+     "effects": [],
+     "verdict": "exercise",
+     "out": ""
+    }
+   ],
+   "kept": 5,
+   "runnable": 5,
+   "exercises": 1,
+   "ran": "2026-10-15 12:16 UTC+01:00",
+   "seconds": 3.5
+  }
+ }
+}
