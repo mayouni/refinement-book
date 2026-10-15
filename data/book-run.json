@@ -1,6 +1,6 @@
 {
  "run": {
-  "date": "2026-10-15 13:19 UTC+01:00",
+  "date": "2026-10-15 13:36 UTC+01:00",
   "library": {
    "commit": "93d7a39bdd040f82eae21d949460d69c32a75c70",
    "short": "93d7a39bd",
@@ -81,8 +81,8 @@
    "kept": 5,
    "runnable": 5,
    "exercises": 1,
-   "ran": "2026-10-15 13:19 UTC+01:00",
-   "seconds": 5.7
+   "ran": "2026-10-15 13:36 UTC+01:00",
+   "seconds": 3.4
   },
   "en/02-what-broke": {
    "id": "what-broke",
@@ -114,8 +114,8 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-15 13:19 UTC+01:00",
-   "seconds": 4.4
+   "ran": "2026-10-15 13:36 UTC+01:00",
+   "seconds": 3.6
   },
   "en/03-the-unit-of-change": {
    "id": "the-unit-of-change",
@@ -155,8 +155,8 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-10-15 13:19 UTC+01:00",
-   "seconds": 3.4
+   "ran": "2026-10-15 13:36 UTC+01:00",
+   "seconds": 3.5
   },
   "en/04-the-point": {
    "id": "the-point",
@@ -196,8 +196,8 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-10-15 13:19 UTC+01:00",
-   "seconds": 3.4
+   "ran": "2026-10-15 13:37 UTC+01:00",
+   "seconds": 3.6
   },
   "en/05-the-gate": {
    "id": "the-gate",
@@ -229,7 +229,7 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-15 13:19 UTC+01:00",
+   "ran": "2026-10-15 13:37 UTC+01:00",
    "seconds": 3.5
   },
   "en/06-the-cascade": {
@@ -270,8 +270,8 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-10-15 13:19 UTC+01:00",
-   "seconds": 3.7
+   "ran": "2026-10-15 13:37 UTC+01:00",
+   "seconds": 3.5
   },
   "en/07-the-timeline": {
    "id": "the-timeline",
@@ -321,8 +321,8 @@
    "kept": 4,
    "runnable": 4,
    "exercises": 1,
-   "ran": "2026-10-15 13:19 UTC+01:00",
-   "seconds": 3.9
+   "ran": "2026-10-15 13:37 UTC+01:00",
+   "seconds": 3.7
   },
   "en/08-trust-and-governance": {
    "id": "trust-and-governance",
@@ -370,8 +370,8 @@
    "kept": 4,
    "runnable": 4,
    "exercises": 1,
-   "ran": "2026-10-15 13:19 UTC+01:00",
-   "seconds": 3.8
+   "ran": "2026-10-15 13:37 UTC+01:00",
+   "seconds": 3.6
   },
   "en/09-the-ai-model-comes-last": {
    "id": "the-ai-model-comes-last",
@@ -403,8 +403,8 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-15 13:19 UTC+01:00",
-   "seconds": 4.0
+   "ran": "2026-10-15 13:37 UTC+01:00",
+   "seconds": 3.6
   },
   "en/10-the-safest-write-surface": {
    "id": "the-safest-write-surface",
@@ -436,8 +436,84 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-15 13:19 UTC+01:00",
-   "seconds": 4.0
+   "ran": "2026-10-15 13:37 UTC+01:00",
+   "seconds": 3.7
+  },
+  "en/11-the-refinement-amina-made": {
+   "id": "the-refinement-amina-made",
+   "blocks": [
+    {
+     "hash": "0afaddb60433",
+     "promise": "3\n2",
+     "effects": [],
+     "unprinted": 0,
+     "verdict": "kept",
+     "out": "3\n2"
+    },
+    {
+     "hash": "ab048e0f3148",
+     "promise": "derivation: rule 'letter-covers-cap' violated -- the letter may not state less than the cap in force\nadmitted: 'penalty_cap' 0.18 -> 0.16 [:trusted] (structural + constraint + derivation + governance + trust passed)\nadmitted: 'letter_rate' 18 -> 16 [:trusted] (structural + constraint + derivation + governance + trust passed)\ngovernance: refused: 'pricing-agent' lacks PERMISSION (can) for 'refine-regulatory_max'\nadmitted: 'regulatory_max' 0.18 -> 0.16 [:trusted] (structural + constraint + derivation + governance + trust passed)",
+     "effects": [],
+     "unprinted": 0,
+     "verdict": "kept",
+     "out": "derivation: rule 'letter-covers-cap' violated -- the letter may not state less than the cap in force\nadmitted: 'penalty_cap' 0.18 -> 0.16 [:trusted] (structural + constraint + derivation + governance + trust passed)\nadmitted: 'letter_rate' 18 -> 16 [:trusted] (structural + constraint + derivation + governance + trust passed)\ngovernance: refused: 'pricing-agent' lacks PERMISSION (can) for 'refine-regulatory_max'\nadmitted: 'regulatory_max' 0.18 -> 0.16 [:trusted] (structural + constraint + derivation + governance + trust passed)"
+    },
+    {
+     "hash": "0a6765e84b55",
+     "promise": "derivation: rule 'letter-matches-cap' violated -- the letter must state the cap in force\nderivation: rule 'letter-matches-cap' violated -- the letter must state the cap in force",
+     "effects": [],
+     "unprinted": 0,
+     "verdict": "kept",
+     "out": "derivation: rule 'letter-matches-cap' violated -- the letter must state the cap in force\nderivation: rule 'letter-matches-cap' violated -- the letter must state the cap in force"
+    },
+    {
+     "hash": "86a9a87ba1de",
+     "promise": "",
+     "effects": [],
+     "verdict": "exercise",
+     "out": ""
+    }
+   ],
+   "kept": 3,
+   "runnable": 3,
+   "exercises": 1,
+   "ran": "2026-10-15 13:37 UTC+01:00",
+   "seconds": 3.6
+  },
+  "en/12-what-the-auditor-saw": {
+   "id": "what-the-auditor-saw",
+   "blocks": [
+    {
+     "hash": "c5c0a8f9e1be",
+     "promise": "softibank_code.zrfn\nsoftibank_audit.zgov",
+     "effects": [],
+     "unprinted": 0,
+     "verdict": "kept",
+     "out": "softibank_code.zrfn\nsoftibank_audit.zgov"
+    },
+    {
+     "hash": "27f0eb075588",
+     "promise": "3\ncompliance-officer\nautonomous\n3\n2",
+     "effects": [],
+     "unprinted": 0,
+     "verdict": "kept",
+     "out": "3\ncompliance-officer\nautonomous\n3\n2"
+    },
+    {
+     "hash": "57d0f3a71f25",
+     "promise": "",
+     "effects": [
+      "files"
+     ],
+     "verdict": "exercise",
+     "out": ""
+    }
+   ],
+   "kept": 2,
+   "runnable": 2,
+   "exercises": 1,
+   "ran": "2026-10-15 13:37 UTC+01:00",
+   "seconds": 3.6
   }
  }
 }
