@@ -18,7 +18,7 @@ The bank in this story is invented. Softibank, its people and the letter it rece
 
 ## The letter
 
-The letter arrived at Softibank on a Tuesday in September: paper, stamped, from the *Banque Centrale des États de l'Afrique de l'Ouest* in Dakar. The BCEAO is the central bank of the eight countries of the West African Economic and Monetary Union, and when it issues a circular, every commercial bank in the union adjusts.
+The letter arrived at Softibank, a commercial bank in Niamey, on a Tuesday in September: paper, stamped, from the *Banque Centrale des États de l'Afrique de l'Ouest* in Dakar. The BCEAO is the central bank of the eight countries of the West African Economic and Monetary Union, and when it issues a circular, every commercial bank in the union adjusts.
 
 This one was routine, as regulation goes. Under a revised directive, the cap on late-payment penalties would drop from eighteen per cent to sixteen. Compliance within ninety days.
 

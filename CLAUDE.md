@@ -89,5 +89,6 @@ reader (`briefs/voice-reader.md`) and the fixer (`briefs/fixer.md`).
   (`sessions/2026-10-15-rewrite-part-1.md`). Part II drafted the same day: chapters 4 to 8, 26 of 26 blocks kept in the scene form,
   131 claims verified and fixed (`sessions/2026-10-15-rewrite-part-2.md`). Part III the same day: chapters 9 and 10, 30 of 30 blocks kept,
   66 claims verified and fixed (`sessions/2026-10-15-rewrite-part-3.md`). Part IV the same day: chapters 11 and 12, 35 of 35 blocks kept,
-  66 claims verified and fixed (`sessions/2026-10-15-rewrite-part-4.md`); AUTHOR-01 open. Next: Part V, chapter 13, the coda and the glossary.
+  66 claims verified and fixed (`sessions/2026-10-15-rewrite-part-4.md`); AUTHOR-01 open. Part V the same day: chapter 13, the coda, the glossary and the start page; the first full draft is 16 pages, 36 of 36
+  blocks kept, 476 claims verified across the book (`sessions/2026-10-15-rewrite-part-5.md`). Next: the voice reader, the readers' pass, the reader build.
 - Session notes: `sessions/YYYY-MM-DD-topic.md`.
