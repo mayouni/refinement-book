@@ -44,8 +44,8 @@ Glossary, aligned with Softanza's appendix D. About 2,000 words a chapter.
 
 ## The shape of a chapter
 
-Front matter: `id`, `part`, `number`, `title`, `stage` (`built`, `designed`, `absent`, carried from code, never from documents), `status: draft`
-(only the author sets `read`), `research`, `guards`. Then, in order: an opening in the first person that says what the chapter does (a few
+Front matter: `id`, `part`, `number`, `title`, `stage` (`built`, `designed`, `absent`, carried from code, never from documents), `status` (HOUSE-18: `draft`, `review` or `published`;
+every page starts at `draft`, and only the author moves a page to `review` or `published`), `research`, `guards`. Then, in order: an opening in the first person that says what the chapter does (a few
 sentences); the story's scene where the chapter has one; `## The field`; `## The principle`; sections that run a block, show its exact answer and
 read it (titled freely); `## What I refused`; `## The court`; `## Where the field leads`; `## The limit`; `## In your hands` (a real defect or
 open question, with a `haro exercise` fence); a closing bridge to the next chapter, never a summary. Headings are reused exactly.
@@ -79,7 +79,9 @@ reader (`briefs/voice-reader.md`) and the fixer (`briefs/fixer.md`).
   endorsements.
 - Refine is told as stage and direction, with a date: specified in over a hundred documents, an interactive mockup of its screens, a command whose
   `version`, `status` and `init` run and six verbs are queued. It is never the subject of the gate (ROP-03).
-- Commit by explicit paths, never `git add -A`; never push (the house desk pushes, and a push publishes); never set `status: read`.
+- Commit by explicit paths, never `git add -A`; never push (the house desk pushes, and a push publishes); never move a page beyond `draft`
+  (HOUSE-18), and never write "not yet read by the author". When the author moves a page, tell the house desk the page id and the
+  stage, in a memo, so the desk records it with his words. The edition is a proof copy until every page is `published`.
 - Every substantive report to the author is a memo in the format of `../../writing-framework/templates/memo.md` (HOUSE-MEMO-01).
 
 ## Working state

@@ -8,8 +8,10 @@ redirected, so web/ is never written:
   reader/index.html   the web reader, one self-contained file, with reader/cover.png beside it
   print/print.html    the print composition (6 x 9 in), and print/book.pdf when Chrome and the network are there
 
-What the rewrite adds to each page: the draft banner (only the author marks a page read), the stage lines of its front
+What the rewrite adds to each page: its stage banner (HOUSE-18: Draft, In review or Published, read from the page's
+front matter, with its meaning on hover; only the author moves a page beyond Draft), the stage lines of its front
 matter (built, designed, absent), and under every block the verdict read from data/book-run.json, never composed.
+The edition is a proof copy until every page is published; the cover page and the copyright page count pages by stage.
 The front and back matter of the PDF are the rewrite's own: the Teaching Edition's back cover described a book that
 is no longer this one.
 
@@ -30,8 +32,49 @@ from book_common import sources, LIB_REF  # noqa: E402
 PARTS = {1: "The discipline", 2: "The gate, run", 3: "The AI agent at the point",
          4: "Softibank, eighteen months", 5: "Refine, the product and the IDE"}
 ROMAN = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V"}
-BANNER = "Draft · not yet read by the author"
 FENCE = re.compile(r"(?ms)^```haro([^\n]*)\n(.*?)^```[ \t]*$")
+
+# HOUSE-18; the labels and their meanings are the Softanza book's (6bb27a4), word for word
+STAGES = ("draft", "review", "published")
+LABEL = {"draft": "Draft", "review": "In review", "published": "Published"}
+MEANING = {"draft": "Written, its code run and judged, read by fresh readers; awaiting the author's review",
+           "review": "The author is reviewing this page; his remarks are being applied",
+           "published": "Approved by the author: this is the book's text"}
+
+
+def stage_of(meta):
+    st = meta.get("status", "draft")
+    return st if st in STAGES else "draft"
+
+
+def banner(st):
+    return f'<div class="status-banner st-{st}" title="{MEANING[st]}">{LABEL[st]}</div>'
+
+
+def slugify(t):
+    return re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-")
+
+
+def page_stages():
+    """The builder's slug of each source page -> its stage (the slug rule is web/build.py's)."""
+    out = {}
+    for _, meta, _b in sources("en"):
+        if meta["id"] == "start-here":
+            key = "start-here"
+        elif meta["id"].startswith("coda"):
+            key = "coda"
+        elif meta["id"] == "glossary":
+            key = "glossary"
+        else:
+            key = f"ch{meta['number']}-{slugify(meta['title'])}"
+        out[key] = stage_of(meta)
+    return out
+
+
+def edition_line(stages):
+    counts = {st: list(stages.values()).count(st) for st in STAGES}
+    kind = "Published" if counts["published"] == len(stages) else "Proof copy"
+    return kind + ": " + ", ".join(f"{counts[st]} {LABEL[st].lower()}" for st in STAGES)
 
 
 def verdict_line(rec):
@@ -101,20 +144,33 @@ def load_builder(md):
     return mod
 
 
-BANNER_CSS = (".chapter-page p.draft-banner,.hero-info p.draft-banner,.draft-banner{font-family:var(--sans);font-size:14px;letter-spacing:.04em;color:var(--ink);border:1px solid var(--rule-strong);border-radius:6px;padding:6px 12px;display:inline-block;margin:0 0 1.2em;}"
-              ".chapter-page pre{overflow-x:hidden;}.chapter-page pre code{white-space:pre-wrap;overflow-wrap:anywhere;}")
+STAGE_CSS = (".status-banner{display:inline-block;font-family:var(--sans);font-size:14px;font-weight:700;letter-spacing:2px;"
+             "text-transform:uppercase;padding:5px 10px;border-radius:4px;margin:0 0 1.2em;border:1px solid var(--rule-strong);"
+             "color:var(--ink);cursor:help;}"
+             ".hero-info .edition-line{font-family:var(--sans);font-size:14px;color:var(--ink);margin:0 0 1em;}"
+             ".chapter-page pre{overflow-x:hidden;}.chapter-page pre code{white-space:pre-wrap;overflow-wrap:anywhere;}")
+ARTICLE_HEAD = re.compile(r'<article class="chapter-page" id="page-([^"]+)"[^>]*>\n<div class="ch-eyebrow">.*?</div>\n'
+                          r'<h1 class="ch-title">.*?</h1>\n<div class="ch-rule"></div>', re.S)
 
 
 def finish_reader():
     p = READER / "index.html"
     s = p.read_text(encoding="utf-8")
-    s = s.replace("</style>", BANNER_CSS + "\n</style>", 1)
-    s = s.replace('<div class="ch-rule"></div>', f'<div class="ch-rule"></div>\n<p class="draft-banner">{BANNER}</p>')
-    s = s.replace('<p class="hero-author">Mansour Ayouni</p>', f'<p class="hero-author">Mansour Ayouni</p>\n<p class="draft-banner">{BANNER}</p>', 1)
+    s = s.replace("</style>", STAGE_CSS + "\n</style>", 1)
+    stages = page_stages()
+
+    def put(m):
+        st = stages.get(m.group(1))
+        return m.group(0) + ("\n" + banner(st) if st else "")
+    s = ARTICLE_HEAD.sub(put, s)
+    s = s.replace('<p class="hero-author">Mansour Ayouni</p>',
+                  f'<p class="hero-author">Mansour Ayouni</p>\n<p class="edition-line">{edition_line(stages)}</p>', 1)
     p.write_text(s, encoding="utf-8")
     shutil.copy2(WEB / "cover.png", READER / "cover.png")
-    n = s.count('class="draft-banner"')
-    print(f"reader: {p}  ({len(s)} bytes, {n} draft banners)")
+    n = s.count('class="status-banner')
+    print(f"reader: {p}  ({len(s)} bytes, {n} stage banners for {len(stages)} pages; {edition_line(stages)})")
+    assert n == len(stages), "a page has no stage banner"
+    assert "not yet read by the author" not in s
 
 
 COPYRIGHT = """<div class="fm fm-copyright">
@@ -123,7 +179,7 @@ COPYRIGHT = """<div class="fm fm-copyright">
 <p>The text of this book is released under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
 International (CC BY-NC-ND 4.0). Code follows the licence of the library it runs against. Illustrations and the cover follow the book's LICENSE.md.</p>
 <p>This edition rewrites the Teaching Edition of 2026 on the Softanza foundation. Every block was run against the Softanza library at commit {lib}.</p>
-<p><strong>{banner}.</strong> This is a local proof, not a published edition.</p>
+<p><strong>{edition}.</strong> The edition is a proof copy until the author has published every page. This is a local build, not a published edition.</p>
 <p>Typeset in EB Garamond and Inter. ISBN pending.</p>
 </div>"""
 
@@ -149,8 +205,17 @@ is built, what is designed and what is still absent.</p>
 </div>
 </div>"""
 
+PRINT_BANNER = ('font-family:Inter,sans-serif;font-size:8pt;font-weight:700;letter-spacing:1.5pt;text-transform:uppercase;'
+                'border:0.5pt solid #6b6358;padding:2pt 6pt;display:inline-block;margin:0 0 10pt;')
 
-def build_print():
+
+def build_print(mod):
+    stages = page_stages()
+    for pg in mod.pages:
+        st = stages.get(pg["slug"])
+        if st:
+            pg["body_html"] = (f'<p class="status-banner st-{st}" title="{MEANING[st]}" style="{PRINT_BANNER}">{LABEL[st]}</p>\n'
+                               + pg["body_html"])
     PRINT.mkdir(exist_ok=True)
     src = (WEB / "print.py").read_text(encoding="utf-8")
     src = src.replace('OUT_HTML = ROOT / "web" / "print.html"', f"OUT_HTML = pathlib.Path(r'{PRINT / 'print.html'}')")
@@ -162,7 +227,7 @@ def build_print():
                       "# --------------------------------------------------------------------------\n# TOC + body from the parsed pages", 1)
     assert "_COPYRIGHT" in src
     ns = {"__file__": str(WEB / "print.py"), "__name__": "__main__",
-          "_COPYRIGHT": COPYRIGHT.format(lib=LIB_REF[:9], banner=BANNER), "_BACK_COVER": BACK_COVER}
+          "_COPYRIGHT": COPYRIGHT.format(lib=LIB_REF[:9], edition=edition_line(stages)), "_BACK_COVER": BACK_COVER}
     shutil.copy2(WEB / "cover.png", PRINT / "cover.png")   # before the render: the composition loads it
     exec(compile(src, str(WEB / "print.py"), "exec"), ns)
 
@@ -172,11 +237,7 @@ def main():
     mod = load_builder(md)
     finish_reader()
     if "--pdf" in sys.argv:
-        tag = ('<p class="draft-banner" style="font-family:Inter,sans-serif;font-size:8pt;letter-spacing:.04em;'
-               'border:0.5pt solid #6b6358;padding:2pt 6pt;display:inline-block;margin:0 0 10pt;">' + BANNER + '</p>\n')
-        for pg in mod.pages:
-            pg["body_html"] = tag + pg["body_html"]
-        build_print()
+        build_print(mod)
 
 
 if __name__ == "__main__":
