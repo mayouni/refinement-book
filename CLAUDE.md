@@ -79,10 +79,15 @@ reader (`briefs/voice-reader.md`) and the fixer (`briefs/fixer.md`).
   endorsements.
 - Refine is told as stage and direction, with a date: specified in over a hundred documents, an interactive mockup of its screens, a command whose
   `version`, `status` and `init` run and six verbs are queued. It is never the subject of the gate (ROP-03).
-- Commit by explicit paths, never `git add -A`; never push (the house desk pushes, and a push publishes); never move a page beyond `draft`
+- **This folder is its own public repository**, `mayouni/refinement-book`, a submodule of the house (HOUSE-19, 2026-10-16).
+  Commit inside it, by explicit paths (`git -C books/refinement-book add <paths>`, then `commit`), never in the house for this
+  folder, never `git add -A`. **Never push**: a push publishes at once. Hand a commit over to the house desk in a memo; the desk
+  verifies, pins it and pushes. `web/book.pdf` stays tracked; any other PDF is ignored and goes online only on the author's word.
+- Never move a page beyond `draft`
   (HOUSE-18), and never write "not yet read by the author". When the author moves a page, tell the house desk the page id and the
   stage, in a memo, so the desk records it with his words. The edition is a proof copy until every page is `published`.
-- Every substantive report to the author is a memo in the format of `../../writing-framework/templates/memo.md` (HOUSE-MEMO-01).
+- Every substantive report to the author is a memo in the format of `../../writing-framework/templates/memo.md` (HOUSE-MEMO-01;
+  the house `CLAUDE.md`, "How every book session reports"). Page stages follow HOUSE-18 (the house `CLAUDE.md`, "Page stages").
 
 ## Working state
 
