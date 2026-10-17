@@ -329,13 +329,27 @@ h4.subsubsection-h{font-family:var(--sans);font-weight:700;font-size:0.76em;lett
 .hero-meta,.hero-series,.hero-status,.hb-label,.search-clear-hl{font-size:14px;}
 .spine-badge,.code-cell .cell-label,.stage,.aside-h,.src-k,.cnb-dir,.eyebrow,.ch-eyebrow,.card-words,.fig-label{font-size:14px;}
 .cover-wrap{position:relative;display:inline-block;line-height:0;}
-.cover-wrap .cover-img{cursor:zoom-in;}
+.hero-cover{display:flex;flex-direction:column;align-items:center;}
+.cover-flip{perspective:2200px;cursor:pointer;border-radius:2px;}
+.cover-flip:focus-visible{outline:3px solid var(--ink);outline-offset:6px;}
+.cover-inner{position:relative;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.3,.7,.2,1);}
+.cover-flip.is-back .cover-inner{transform:rotateY(180deg);}
+.cover-face{backface-visibility:hidden;-webkit-backface-visibility:hidden;}
+.cover-face.cover-back{position:absolute;top:0;left:0;width:100%;height:100%;transform:rotateY(180deg);}
+.cover-face img{display:block;width:100%;height:auto;}
+@media (prefers-reduced-motion: reduce){.cover-inner{transition:none;}}
+.cover-sides{display:inline-flex;border:1px solid var(--rule-strong);border-radius:20px;overflow:hidden;margin:18px auto 0;}
+.cover-side{font-family:var(--sans);font-size:15px;font-weight:600;border:0;background:var(--paper);color:var(--ink);padding:9px 16px;cursor:pointer;line-height:1.2;}
+.cover-side + .cover-side{border-left:1px solid var(--rule-strong);}
+.cover-side:hover{background:var(--sidebar-bg);}
+.cover-side[aria-pressed="true"]{background:var(--ink);color:var(--paper);cursor:default;}
+.lb-sides{margin:0;box-shadow:0 2px 10px rgba(23,20,15,.25);}
 .cover-zoom{position:absolute;right:14px;bottom:14px;width:46px;height:46px;border-radius:50%;border:1px solid var(--rule-strong);background:var(--paper);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:zoom-in;padding:0;box-shadow:0 2px 10px rgba(23,20,15,.25);}
 .cover-zoom svg{width:22px;height:22px;}
 .cover-zoom:hover{background:var(--ink);color:var(--paper);}
-.cover-lightbox{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1000;background:rgba(23,20,15,.88);display:flex;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;}
+.cover-lightbox{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1000;background:rgba(23,20,15,.88);display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;}
 .cover-lightbox[hidden]{display:none;}
-.cover-lightbox img{max-width:calc(100vw - 48px);max-height:calc(100vh - 48px);width:auto;height:auto;background:var(--paper);box-shadow:0 8px 40px rgba(23,20,15,.45);}
+.cover-lightbox img{cursor:pointer;max-width:calc(100vw - 48px);max-height:calc(100vh - 112px);width:auto;height:auto;background:var(--paper);box-shadow:0 8px 40px rgba(23,20,15,.45);}
 .cover-close{position:absolute;top:14px;right:18px;width:46px;height:46px;border-radius:50%;border:1px solid var(--rule-strong);background:var(--paper);color:var(--ink);font-size:28px;line-height:1;cursor:pointer;padding:0;}
 .the-invite{margin:3.2em 0 1em;padding:1.6em 0 0;border-top:1px solid var(--rule);}
 .the-invite p{text-indent:0;text-align:left;hyphens:none;}
@@ -369,7 +383,35 @@ figure figcaption .fig-hint{font-family:var(--sans);font-size:0.82em;color:var(-
 if "manifesto edition additions" not in head_header:   # idempotent: inject CSS only once
     head_header = head_header.replace("</style>", EXTRA_CSS + "\n</style>", 1)
 
-COVER_ZOOM_JS = "(function(){var z=document.querySelector('.cover-zoom'),lb=document.getElementById('coverLightbox'),im=document.querySelector('.hero-cover .cover-img');if(!z||!lb||!im)return;var big=lb.querySelector('img'),x=lb.querySelector('.cover-close');function open(){big.src=im.src;lb.hidden=false;document.body.style.overflow='hidden';x.focus();}function close(){lb.hidden=true;big.removeAttribute('src');document.body.style.overflow='';z.focus();}z.addEventListener('click',open);im.addEventListener('click',open);lb.addEventListener('click',function(e){if(e.target!==big)close();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)close();});})();"
+COVER_ZOOM_JS = ("(function(){var f=document.querySelector('.cover-flip'),z=document.querySelector('.cover-zoom'),lb=document.getElementById('coverLightbox');"
+    "if(!f||!z||!lb)return;var fr=f.querySelector('.cover-front'),bk=f.querySelector('.cover-back');var faces={front:fr.querySelector('img'),back:bk&&bk.querySelector('img')};"
+    "var big=lb.querySelector('img'),x=lb.querySelector('.cover-close'),side='front';"
+    "function show(){big.src=faces[side].src;big.alt=faces[side].alt;}"
+    "function set(s){if(!faces[s])return;side=s;f.classList.toggle('is-back',s==='back');fr.setAttribute('aria-hidden',s==='back'?'true':'false');"
+    "if(bk)bk.setAttribute('aria-hidden',s==='back'?'false':'true');"
+    "document.querySelectorAll('.cover-side').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.side===s?'true':'false');});if(!lb.hidden)show();}"
+    "function turn(){set(side==='front'?'back':'front');}"
+    "f.addEventListener('click',turn);f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();turn();}});"
+    "document.querySelectorAll('.cover-side').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();set(b.dataset.side);});});"
+    "function open(){show();lb.hidden=false;document.body.style.overflow='hidden';x.focus();}"
+    "function close(){lb.hidden=true;big.removeAttribute('src');document.body.style.overflow='';z.focus();}"
+    "z.addEventListener('click',function(e){e.stopPropagation();open();});big.addEventListener('click',function(e){e.stopPropagation();turn();});"
+    "lb.addEventListener('click',function(e){if(e.target===lb||e.target===x)close();});"
+    "document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')close();else if(e.key==='ArrowLeft'||e.key==='ArrowRight')turn();});})();")
+
+
+def back_jpeg():
+    """The back cover (web/cover-back.png, web/make_back.py), embedded so the reader stays one file beside cover.png."""
+    import base64, io
+    from PIL import Image
+    buf = io.BytesIO()
+    Image.open(ROOT / "web" / "cover-back.png").convert("RGB").resize((1097, 1434), Image.LANCZOS).save(buf, "JPEG", quality=88, optimize=True)
+    return "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode("ascii")
+
+
+SIDES = ('<div class="cover-sides{extra}" role="group" aria-label="Cover">'
+         '<button type="button" class="cover-side" data-side="front" aria-pressed="true">Front</button>'
+         '<button type="button" class="cover-side" data-side="back" aria-pressed="false">Back</button></div>')
 
 # --------------------------------------------------------------------------
 # 7. Overview + chapter views
@@ -380,9 +422,10 @@ overview = f"""{OV_MARK}
 
 <section class="book-hero">
 <div class="hero-cover">
-<div class="cover-wrap"><img src="cover.png" alt="Refinement-Oriented Programming — book cover" class="cover-img"><button type="button" class="cover-zoom" aria-label="View the cover large" title="View the cover large"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10.5" y1="7.5" x2="10.5" y2="13.5"/><line x1="7.5" y1="10.5" x2="13.5" y2="10.5"/></svg></button></div>
+<div class="cover-wrap"><div class="cover-flip" role="button" tabindex="0" aria-label="Turn the cover over" title="Turn the cover over"><div class="cover-inner"><div class="cover-face cover-front" aria-hidden="false"><img src="cover.png" alt="Refinement-Oriented Programming, front cover" class="cover-img"></div><div class="cover-face cover-back" aria-hidden="true"><img src="{back_jpeg()}" alt="Refinement-Oriented Programming, back cover" class="cover-img"></div></div></div><button type="button" class="cover-zoom" aria-label="View the cover large" title="View the cover large"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10.5" y1="7.5" x2="10.5" y2="13.5"/><line x1="7.5" y1="10.5" x2="13.5" y2="10.5"/></svg></button></div>
+{SIDES.format(extra="")}
 </div>
-<div class="cover-lightbox" id="coverLightbox" role="dialog" aria-modal="true" aria-label="View the cover large" hidden><button type="button" class="cover-close" aria-label="Close">&times;</button><img alt="Refinement-Oriented Programming — book cover"></div>
+<div class="cover-lightbox" id="coverLightbox" role="dialog" aria-modal="true" aria-label="View the cover large" hidden><button type="button" class="cover-close" aria-label="Close">&times;</button><img alt="Refinement-Oriented Programming, front cover">{SIDES.format(extra=" lb-sides")}</div>
 <script>{COVER_ZOOM_JS}</script>
 <div class="hero-info">
 <h1 class="hero-title">Refinement-Oriented Programming</h1>

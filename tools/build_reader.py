@@ -12,8 +12,8 @@ What the rewrite adds to each page: its stage banner (HOUSE-18: Draft, In review
 front matter, with its meaning on hover; only the author moves a page beyond Draft), the stage lines of its front
 matter (built, designed, absent), and under every block the verdict read from data/book-run.json, never composed.
 The edition is a proof copy until every page is published; the cover page and the copyright page count pages by stage.
-The front and back matter of the PDF are the rewrite's own: the Teaching Edition's back cover described a book that
-is no longer this one.
+The PDF's copyright page is the rewrite's own; both covers are the drawn ones (web/cover.png, web/cover-back.png),
+set by web/print.py as a bound book's, with bookmarks (ROP-18).
 
     python tools/build_reader.py          # the reader only
     python tools/build_reader.py --pdf    # the reader, then the print HTML and the PDF
@@ -183,27 +183,7 @@ International (CC BY-NC-ND 4.0). Code follows the licence of the library it runs
 <p>Typeset in EB Garamond and Inter. ISBN pending.</p>
 </div>"""
 
-BACK_COVER = """<div class="pg-back">
-<div class="bb-blurb">
-<p><strong>Software is now written faster than anyone can trust it.</strong> When an AI agent can draft in an
-afternoon what a team once wrote in a quarter, the slow part of the work is no longer writing a change. It is trusting it.</p>
-<p>This book is a discipline for that moment, told through a bank in Niamey that receives a regulator's letter. A change
-becomes a refinement: declared where the code may change, proposed in a typed form, judged by a gate of five checks,
-recorded as a step, and reversible. Every block in the book runs against an open library, and every chapter says what
-is built, what is designed and what is still absent.</p>
-<p class="bb-tag"><em>Stop trying to govern the intelligence, and govern the change.</em></p>
-</div>
-<div class="bb-points">
-<div><span>&#9656;</span>The gate, run: five checks, each refusal with its reason</div>
-<div><span>&#9656;</span>The AI model last: what an AI agent may touch, and who sets its origin</div>
-<div><span>&#9656;</span>For programmers, analysts, and everyone who signs for software</div>
-</div>
-<div class="bb-author">Mansour Ayouni is the founder of Softanza Labs. He works between Tunis, Niamey, and Paris.</div>
-<div class="bb-foot">
-<div class="bb-imprint"><img alt="AYOUNI" src="../assets/covers/ayouni-logo.png" style="height:0.34in;width:auto"></div>
-<div class="bb-meta">mayouni.github.io/ayouni<br>TUNIS · NIAMEY · PARIS · 2026<br><span class="bb-isbn">ISBN pending</span></div>
-</div>
-</div>"""
+# the back cover is the drawn one (web/make_back.py, ROP-18), which web/print.py sets as the PDF's last page
 
 PRINT_BANNER = ('font-family:Inter,sans-serif;font-size:8pt;font-weight:700;letter-spacing:1.5pt;text-transform:uppercase;'
                 'border:0.5pt solid #6b6358;padding:2pt 6pt;display:inline-block;margin:0 0 10pt;')
@@ -223,12 +203,13 @@ def build_print(mod):
     assert "print.html'" in src and "book.pdf'" in src, "web/print.py changed shape; update the redirection"
     # the rewrite's own front and back matter, replaced after print.py defines its own
     src = src.replace("# --------------------------------------------------------------------------\n# TOC + body from the parsed pages",
-                      "COPYRIGHT = _COPYRIGHT\nBACK_COVER = _BACK_COVER\n"
+                      "COPYRIGHT = _COPYRIGHT\n"
                       "# --------------------------------------------------------------------------\n# TOC + body from the parsed pages", 1)
     assert "_COPYRIGHT" in src
     ns = {"__file__": str(WEB / "print.py"), "__name__": "__main__",
-          "_COPYRIGHT": COPYRIGHT.format(lib=LIB_REF[:9], edition=edition_line(stages)), "_BACK_COVER": BACK_COVER}
-    shutil.copy2(WEB / "cover.png", PRINT / "cover.png")   # before the render: the composition loads it
+          "_COPYRIGHT": COPYRIGHT.format(lib=LIB_REF[:9], edition=edition_line(stages))}
+    for img in ("cover.png", "cover-back.png"):           # before the render: the composition loads them
+        shutil.copy2(WEB / img, PRINT / img)
     exec(compile(src, str(WEB / "print.py"), "exec"), ns)
 
 

@@ -46,7 +46,7 @@ body { font-family: 'EB Garamond', Georgia, serif; color: #1a1612; line-height: 
 .pg-ask .ask-line { font-family: 'EB Garamond', Georgia, serif; font-style: italic; font-size: 13pt; color: #1a1612; }
 /* ---------- cover + back ---------- */
 .pg-cover, .pg-back { page: coverpage; break-after: page; }
-.pg-cover { height: 9in; background: #f7f6f2; display: flex; align-items: center; justify-content: center; }
+.pg-cover { height: 9in; background: #ffffff; display: flex; align-items: center; justify-content: center; }
 .pg-cover img { max-width: 100%; max-height: 100%; }
 .pg-back { height: 9in; background: #f5f0e2; padding: 0.85in 0.75in 0.7in; display: flex; flex-direction: column; }
 .pg-back .bb-blurb { font-size: 10.5pt; line-height: 1.55; }
@@ -138,7 +138,9 @@ a { color: inherit; text-decoration: none; }
 # --------------------------------------------------------------------------
 # Front + back matter content
 # --------------------------------------------------------------------------
-COVER = '<div class="pg-cover"><img src="cover.png" alt="Refinement-Oriented Programming — cover"></div>'
+COVER = '<div class="pg-cover"><img src="cover.png" alt="Refinement-Oriented Programming, front cover"></div>'
+# the back cover is the drawn one (web/make_back.py, ROP-18), set as the last page by finish() below
+BACK_IMAGE = '<div class="pg-cover"><img src="cover-back.png" alt="Refinement-Oriented Programming, back cover"></div>'
 
 HALF_TITLE = '<div class="fm fm-halftitle"><div class="t">Refinement-Oriented Programming</div></div>'
 
@@ -249,7 +251,7 @@ DOC = f"""<!DOCTYPE html>
 {chr(10).join(toc)}
 {chr(10).join(body)}
 {THE_ASK}
-{BACK_COVER}
+{BACK_IMAGE}
 </body>
 </html>"""
 
@@ -258,6 +260,60 @@ print(f"wrote {OUT_HTML}  ({len(DOC)} bytes)")
 if "substrate" in DOC.lower():
     print("!! substrate check FAILED"); sys.exit(1)
 print("substrate check: clean")
+
+
+def finish(pdf_path, pages):
+    """Set the PDF as a bound book's (ROP-18, after the Softanza book's COVER-05): the front cover on page 1 and its blank
+    inside on page 2 (paged.js already sets the half title on a recto); at the end, a blank inside back cover and the back
+    cover on the last page, which must be even. Chrome ignores break-before: left/right, so the parity is counted here and
+    blank pages are added, then every cover position is checked. Bookmarks from the pages found, and the metadata."""
+    from pypdf import PdfReader, PdfWriter
+    from pypdf.generic import NameObject
+    r = PdfReader(str(pdf_path))
+    w = PdfWriter()
+    for pg in r.pages:
+        w.add_page(pg)
+    blank = lambda i: not (w.pages[i].extract_text() or "").strip() and "/XObject" not in str(w.pages[i].get("/Resources", {}))
+    size = w.pages[0].mediabox
+    last = len(w.pages) - 1
+    if not blank(last - 1):                       # the inside back cover
+        w.insert_blank_page(size.width, size.height, last)
+        last += 1
+    if len(w.pages) % 2:                          # the back cover on an even page
+        w.insert_blank_page(size.width, size.height, last)
+        last += 1
+    n = len(w.pages)
+    assert n % 2 == 0 and blank(1) and blank(n - 2), "cover positions"
+    texts = [(pg.extract_text() or "") for pg in w.pages]
+    contents = next(i for i, t in enumerate(texts) if t.lstrip().startswith("Contents"))
+    found, parent = [], None
+    w.add_outline_item("Front cover", 0)
+    w.add_outline_item("Contents", contents)
+    for pgm in pages:
+        title = pgm["title"]
+        at = next((i for i in range(contents + 1, n) if title in [ln.strip() for ln in texts[i].splitlines()]), None)
+        if at is None:
+            continue
+        label = (f"{pgm['eyebrow']}: {title}" if pgm["slug"].startswith("part-")
+                 else f"{pgm['num']} · {title}" if pgm.get("num") else title)
+        if pgm["slug"].startswith("part-"):
+            parent = w.add_outline_item(label, at)
+        elif pgm.get("num"):
+            w.add_outline_item(label, at, parent=parent)
+        else:
+            parent = None if pgm["slug"] in ("coda", "glossary") else parent
+            w.add_outline_item(label, at)
+        found.append(title)
+    w.add_outline_item("Back cover", n - 1)
+    w._root_object[NameObject("/PageMode")] = NameObject("/UseOutlines")
+    w.add_metadata({"/Title": "Refinement-Oriented Programming", "/Author": "Mansour Ayouni",
+                    "/Subject": "A discipline for software in the agentic era",
+                    "/Keywords": "refinement, governed change, AI agents, software engineering, AYOUNI"})
+    with open(pdf_path, "wb") as fh:
+        w.write(fh)
+    missing = [pg["title"] for pg in pages if pg["title"] not in found]
+    print(f"finished {pdf_path}: {n} pages, covers on 1 and {n}, {len(found)} bookmarks"
+          + (f", not found: {missing}" if missing else ""))
 
 if "--html" not in sys.argv:
     # Drive Chrome over the DevTools protocol: load, WAIT until paged.js has
@@ -319,3 +375,4 @@ if "--html" not in sys.argv:
         print(f"wrote {OUT_PDF}  ({OUT_PDF.stat().st_size} bytes)")
     finally:
         proc.terminate()
+    finish(OUT_PDF, build.pages)
