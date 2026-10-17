@@ -10,6 +10,8 @@ This book is about one discipline: governing the change to software, now that wr
 
 **The story.** A bank in Niamey, Softibank, receives a letter from its central bank, and the book follows the change it asks for, to an auditor's visit eighteen months later. Chapter 1 says what in the story is invented and what is real.
 
+**Who it is for.** It is written first for the crafter at the keyboard, who will run every block. A decision-maker, a bank's head of IT or of compliance, can read the same pages through the story of Softibank and each chapter's lines on what is built, designed and absent.
+
 **The code is real.** Every block in this book runs against the open Softanza library, at the commit `93d7a39bd`, the same commit my Softanza book runs at. Each block is followed by the exact answer it printed, and the book's build runs every block again and refuses a page whose answer changed. A block marked as an exercise is yours to run; I do not print its answer. To run a block yourself, take the library's public repository at that commit and run the blocks of a chapter in order, in one program that loads the library first; the book's own runner, `tools/book_run.py`, does exactly that.
 
 **The language is Haro.** The blocks are written in it. They take three forms: the classic form, which names the object on every line; the chain, for one sentence; and the scene, `obj { ... }`, where three or more things are said to one object.

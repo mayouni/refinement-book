@@ -1,17 +1,17 @@
-"""Draw the back cover of Refinement-Oriented Programming (web/cover-back.png), on the front cover's grid (ROP-18).
+"""Draw the back covers of Refinement-Oriented Programming on the front cover's grid (ROP-18, ROP-19).
 
 The author asked, on 2026-10-17, for a back cover on both AYOUNI books, turnable in the reader and set with the front in
-the PDF, "professional grade". The Softanza book drew its own first (COVER-05, its tools/make_cover.py); this one follows
-the same grid and the same rules: white, drawn at twice the logical 1097 x 1434 (2194 x 2868), and a description made
-only of sentences the book already says, never new prose:
+the PDF, "professional grade"; then ruled on the Softanza back: "The cover does not cite Softanza anywhere and does not say
+what is it and for whome!!!". So each back carries, on top, the title and the subtitle; then the book's opening argument and
+two labelled blocks, "What it is" and "Who it is for"; then the thesis; then the imprint band (the AYOUNI logo, the series,
+the free reader and its QR code, decoded at build) and the foot (the shelf, the edition, the licence). Every sentence of the
+description is the edition's own, word for word, never new prose.
 
-  - the thesis, on top: the sentence of the back cover of every edition of this book (ROP-06);
-  - the opening sentence of the PDF's back cover, the question of chapter 2, and the first sentence of the start page;
-  - the definition of a refinement, chapter 1 and the Softanza book's chapter 10;
-  - the imprint band: the AYOUNI logo, the series (HOUSE-13), the free reader and its QR code (checked by decoding it);
-  - the foot: the shelf, the edition (a proof copy until every page is published, HOUSE-18) and the licence.
+Two editions, two backs (the desk's ruling under HOUSE-09 and HOUSE-18: stage words are the author's to set):
+  web/cover-back.png              the live Teaching Edition: its own sentences; "TEACHING EDITION" in the corner
+  assets/covers/back-rewrite.png  the rewrite: its own sentences (src/en); "PROOF COPY" until every page is published
 
-Run: python web/make_back.py
+White, drawn at twice the logical 1097 x 1434 (2194 x 2868), the front's size. Run: python web/make_back.py
 """
 import sys
 from pathlib import Path
@@ -21,26 +21,60 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent.parent
 LOGO = ROOT / "assets" / "covers" / "ayouni-logo.png"
-OUT = ROOT / "web" / "cover-back.png"
 K = 2
 W, H = 1097 * K, 1434 * K
 PAPER, INK, GREY, RULE, RED = (255, 255, 255), (20, 20, 20), (110, 110, 106), (200, 198, 192), (212, 21, 25)
 FONTS = Path("C:/Windows/Fonts")
 
+TITLE = "Refinement-Oriented Programming"
+SUBTITLE = "A discipline for software in the agentic era"
 THESIS = "Stop trying to govern the intelligence, and govern the change."
-BLURB = [
-    "**Software is now written faster than anyone can trust it.** If the change can be written in an afternoon by "
-    "something that is not accountable for it, who makes sure it is right?",
-    "This book is about one discipline: governing the change to software, now that writing the change is no longer the "
-    "slow part of the work.",
-    "A refinement is a change to code that was declared to be changeable, proposed in a typed form, judged by a gate, "
-    "recorded as a step, and reversible.",
-]
 SERIES = "Second of the AYOUNI books"
 FREE = "Free to read, in every form"
 URL = "https://mayouni.github.io/ayouni/books/refinement/en/"
 SHELF = "Software engineering \u00b7 AI governance"
-EDITION = "PROOF COPY \u00b7 CC BY-NC-ND 4.0"
+
+# Each item is a paragraph; '## ' starts a label; **...** is bold. Sources are given beside each sentence.
+EDITIONS = {
+    "teaching": {
+        "out": ROOT / "web" / "cover-back.png",
+        "corner": "TEACHING EDITION \u00b7 CC BY-NC-ND 4.0",
+        "blurb": [
+            # the Teaching Edition's back cover (web/print.py, BACK_COVER), its first paragraph
+            "**Software is now written faster than anyone can trust it.** An AI agent can draft in an afternoon what a team "
+            "once built in a quarter \u2014 and every organization shipping consequential software has felt the ground move: the "
+            "bottleneck is no longer writing changes. It is trusting them.",
+            "## What it is",
+            # the same back cover, its second paragraph, first two sentences
+            "This book teaches the discipline that answers. Told through a small bank in Niamey facing a regulator's deadline, "
+            "it shows how every change \u2014 human or machine \u2014 becomes typed, checked before it lands, attributed, and reversible.",
+            "## Who it is for",
+            # manuscript/rop-book.md, Start here, third paragraph
+            "You do not need to be a programmer to read this book. If you are a programmer, you will find the terminal sessions "
+            "and the mechanics precise enough to act on. Both readers get the same book; they just linger on different pages.",
+        ],
+    },
+    "rewrite": {
+        "out": ROOT / "assets" / "covers" / "back-rewrite.png",
+        "corner": "PROOF COPY \u00b7 CC BY-NC-ND 4.0",
+        "blurb": [
+            # src/en/02-what-broke.md, The afternoon; src/en/00-start-here.md, first sentence
+            "If the change can be written in an afternoon by something that is not accountable for it, who makes sure it is "
+            "right? **This book is about one discipline: governing the change to software, now that writing the change is no "
+            "longer the slow part of the work.**",
+            "## What it is",
+            # src/en/00-start-here.md, first paragraph; src/en/01-the-letter.md, The principle
+            "I call it refinement-oriented programming, and I tell it through a bank that receives a letter. A refinement is a "
+            "change to code that was declared to be changeable, proposed in a typed form, judged by a gate, recorded as a step, "
+            "and reversible.",
+            "## Who it is for",
+            # src/en/00-start-here.md, Who it is for
+            "It is written first for the crafter at the keyboard, who will run every block. A decision-maker, a bank's head of IT "
+            "or of compliance, can read the same pages through the story of Softibank and each chapter's lines on what is built, "
+            "designed and absent.",
+        ],
+    },
+}
 
 
 def font(name, size):
@@ -111,33 +145,49 @@ def logo_png(width):
     return im.resize((width * K, round(im.height * width * K / im.width)), Image.LANCZOS)
 
 
-def make():
+def make(name, ed):
     back = Image.new("RGB", (W, H), PAPER)
     d = ImageDraw.Draw(back)
     x, right, maxw = 80 * K, W - 80 * K, 937
 
-    # the thesis on top, then the red rule of the series
-    y = 104 * K
-    head = font("georgiai.ttf", 50)
-    for line in wrap(d, typeset(THESIS), head, maxw):
-        d.text((x, y), line, font=head, fill=INK)
-        y += 66 * K
-    y += 30 * K
+    # the title and the subtitle, then the red rule of the series
+    y = 84 * K
+    tf = font("arial.ttf", 62)
+    for line in wrap(d, TITLE, tf, maxw):
+        d.text((x, y), line, font=tf, fill=INK)
+        y += 74 * K
+    sf = font("georgiai.ttf", 32)
+    for line in wrap(d, SUBTITLE, sf, maxw):
+        d.text((x, y + 4 * K), line, font=sf, fill=INK)
+        y += 44 * K
+    y += 26 * K
     d.rectangle((x, y, x + 64 * K, y + 5 * K), fill=RED)
-    y += 52 * K
+    y += 40 * K
 
-    # the description: the book's own sentences
-    reg, bld = font("georgia.ttf", 30), font("georgiab.ttf", 30)
-    for para in BLURB:
+    # the description: the edition's own sentences, with its two labelled blocks
+    reg, bld, lab = font("georgia.ttf", 25), font("georgiab.ttf", 25), font("arialbd.ttf", 16)
+    for para in ed["blurb"]:
+        if para.startswith("## "):
+            y += 6 * K
+            spaced(d, (x, y), para[3:].upper(), lab, RED, 1.6)
+            y += 30 * K
+            continue
         for line in rich_lines(d, typeset(para), reg, bld, maxw):
             cx = x
             for w, f in line:
                 d.text((cx, y), w, font=f, fill=INK)
                 cx += d.textlength(w + " ", font=f)
-            y += 46 * K
-        y += 22 * K
-    if y > 1100 * K:
-        raise SystemExit(f"back cover: the description runs into the imprint band ({y // K} > 1100)")
+            y += 37 * K
+        y += 16 * K
+
+    # the thesis, on its own line above the imprint band
+    tf = font("georgiai.ttf", 32)
+    tl = wrap(d, typeset(THESIS), tf, maxw)
+    THESIS_Y = 1126 - 44 * len(tl)                 # the thesis sits on the imprint band's hairline
+    if y > (THESIS_Y - 20) * K:
+        raise SystemExit(f"back cover ({name}): the description runs into the thesis ({y // K} > {THESIS_Y - 20})")
+    for i, line in enumerate(tl):
+        d.text((x, (THESIS_Y + 44 * i) * K), line, font=tf, fill=INK)
 
     # the imprint band: a hairline, the logo and the series; the free reader and its QR code
     d.rectangle((x, 1150 * K, right, 1150 * K + 1 * K), fill=RULE)
@@ -156,22 +206,27 @@ def make():
     # the foot, on the front's baseline: the shelf, and the edition with the licence
     foot, track = font("arial.ttf", 19), 0.8
     end_shelf = spaced(d, (x, 1373 * K), SHELF.upper(), foot, GREY, track)
-    start_ed = right - spaced_width(d, EDITION, foot, track)
+    start_ed = right - spaced_width(d, ed["corner"], foot, track)
     if start_ed - end_shelf < 40 * K:
-        raise SystemExit("back cover: the foot's two lines touch")
-    spaced(d, (start_ed, 1373 * K), EDITION, foot, GREY, track)
+        raise SystemExit(f"back cover ({name}): the foot's two lines touch")
+    spaced(d, (start_ed, 1373 * K), ed["corner"], foot, GREY, track)
 
-    back.save(OUT)
-    print("wrote", OUT, back.size, f"description ends at {y // K}")
+    ed["out"].parent.mkdir(parents=True, exist_ok=True)
+    back.save(ed["out"])
+    print(f"wrote {ed['out']} {back.size}, description ends at {y // K}")
 
-    # the QR code must read back as the reader's address
     import cv2, numpy as np
     img = cv2.cvtColor(np.array(back.crop((right - qr.width - 40, 1180 * K - 40, right + 40, 1180 * K + qr.height + 40))), cv2.COLOR_RGB2BGR)
     data, _, _ = cv2.QRCodeDetector().detectAndDecode(img)
     if data != URL:
-        raise SystemExit(f"back cover: the QR code reads {data!r}, not {URL!r}")
-    print("QR code decoded:", data)
+        raise SystemExit(f"back cover ({name}): the QR code reads {data!r}, not {URL!r}")
+
+
+def main():
+    for name, ed in EDITIONS.items():
+        make(name, ed)
+    print("QR codes decoded:", URL)
 
 
 if __name__ == "__main__":
-    sys.exit(make())
+    sys.exit(main())

@@ -134,7 +134,8 @@ def load_builder(md):
     src = (WEB / "build.py").read_text(encoding="utf-8")
     src = src.replace('SRC = ROOT / "manuscript" / ("rop-manifesto.md" if MANIFESTO else "rop-book.md")', f"SRC = pathlib.Path(r'{md}')")
     src = src.replace('OUT = ROOT / "web" / ("manifesto.html" if MANIFESTO else "index.html")', f"OUT = pathlib.Path(r'{READER / 'index.html'}')")
-    assert f"r'{md}'" in src and "reader" in src, "web/build.py changed shape; update the redirection"
+    src = src.replace('ROOT / "web" / "cover-back.png"', 'ROOT / "assets" / "covers" / "back-rewrite.png"')   # the rewrite's own back (ROP-19)
+    assert f"r'{md}'" in src and "reader" in src and "back-rewrite.png" in src, "web/build.py changed shape; update the redirection"
     mod = types.ModuleType("build")
     mod.__file__ = str(WEB / "build.py")
     sys.path.insert(0, str(WEB))
@@ -208,8 +209,8 @@ def build_print(mod):
     assert "_COPYRIGHT" in src
     ns = {"__file__": str(WEB / "print.py"), "__name__": "__main__",
           "_COPYRIGHT": COPYRIGHT.format(lib=LIB_REF[:9], edition=edition_line(stages))}
-    for img in ("cover.png", "cover-back.png"):           # before the render: the composition loads them
-        shutil.copy2(WEB / img, PRINT / img)
+    shutil.copy2(WEB / "cover.png", PRINT / "cover.png")  # before the render: the composition loads both
+    shutil.copy2(ROOT / "assets" / "covers" / "back-rewrite.png", PRINT / "cover-back.png")   # the rewrite's own back (ROP-19)
     exec(compile(src, str(WEB / "print.py"), "exec"), ns)
 
 
