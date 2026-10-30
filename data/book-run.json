@@ -1,28 +1,34 @@
 {
  "run": {
-  "date": "2026-10-17 04:49 UTC+01:00",
+  "date": "2026-10-30 13:38 UTC+01:00",
   "library": {
-   "commit": "93d7a39bdd040f82eae21d949460d69c32a75c70",
-   "short": "93d7a39bd",
-   "ref": "origin/main",
-   "commit_date": "2026-10-05 21:50:23 +0100",
-   "exported": "2026-10-08 21:12 UTC+01:00",
+   "commit": "0950e246a7e756bafbe179ca70a6bd36ae5f99b5",
+   "short": "0950e246a",
+   "ref": "0950e246a7e756bafbe179ca70a6bd36ae5f99b5",
+   "commit_date": "2026-10-29 11:26:41 +0100",
+   "exported": "2026-10-30 13:36 UTC+01:00",
    "engine_binaries": {
-    "count": 92,
-    "copied_from": "D:/GitHub/_wtt/libraries/stzlib/engine/zig-out/bin",
+    "built_for": "Ring++",
+    "package": {
+     "rnxc": "ringpp 686398f 2026-10-30 C-6 revised: a new name in a brace on an unproved object is a variable when no class declar",
+     "softanza": "stzlib 0950e246a 2026-10-29 Three loads spelt in another case than their file: the library loads on Linux again",
+     "engine": "built for Ring++ by bench/engine_copy.py from runtime\\engine-main (91 libraries)"
+    },
+    "count": 91,
+    "copied_from": "D:/ringpp/ringpp-win64/libraries/stzlib/engine/zig-out/bin",
     "built_in_a_tree_at_this_commit": true,
-    "newest_build": "2026-10-05 20:27 UTC+01:00",
-    "engine_commits_after_build": [
-     "55876012f 2026-10-05 20:41:17 +0100 testoor TR1: the runner -- one process, many tours, the exit code is the runner's"
-    ],
-    "pinned": false,
+    "newest_build": "2026-10-29 11:28 UTC+01:00",
+    "engine_commits_after_build": [],
+    "pinned": true,
     "why": "build products are in no commit; a pinned engine build was not run (the machine's build-load rule)"
    }
   },
   "runtime": {
-   "name": "Ring",
-   "version": "1.27",
-   "path": "D:/Ring127/bin/ring.EXE"
+   "name": "Ring++",
+   "version": "686398f (2026-10-30)",
+   "build": "ringpp 686398f 2026-10-30 C-6 revised: a new name in a brace on an unproved object is a variable when no class declar",
+   "ring_version": "1.27",
+   "path": "D:/ringpp/ringpp-win64/bin/rnxc.exe"
   },
   "failed": []
  },
@@ -88,8 +94,8 @@
    "kept": 5,
    "runnable": 5,
    "exercises": 1,
-   "ran": "2026-10-17 04:49 UTC+01:00",
-   "seconds": 27.5
+   "ran": "2026-10-30 13:38 UTC+01:00",
+   "seconds": 0.4
   },
   "en/02-what-broke": {
    "id": "what-broke",
@@ -121,8 +127,8 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-17 04:49 UTC+01:00",
-   "seconds": 3.2
+   "ran": "2026-10-30 13:38 UTC+01:00",
+   "seconds": 0.4
   },
   "en/03-the-unit-of-change": {
    "id": "the-unit-of-change",
@@ -162,8 +168,8 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-10-17 04:49 UTC+01:00",
-   "seconds": 3.3
+   "ran": "2026-10-30 13:38 UTC+01:00",
+   "seconds": 0.7
   },
   "en/04-the-point": {
    "id": "the-point",
@@ -203,8 +209,8 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-10-17 04:49 UTC+01:00",
-   "seconds": 3.4
+   "ran": "2026-10-30 13:38 UTC+01:00",
+   "seconds": 0.5
   },
   "en/05-the-gate": {
    "id": "the-gate",
@@ -236,8 +242,8 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-17 04:49 UTC+01:00",
-   "seconds": 3.2
+   "ran": "2026-10-30 13:38 UTC+01:00",
+   "seconds": 0.4
   },
   "en/06-the-cascade": {
    "id": "the-cascade",
@@ -277,8 +283,8 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-10-17 04:49 UTC+01:00",
-   "seconds": 3.4
+   "ran": "2026-10-30 13:38 UTC+01:00",
+   "seconds": 0.4
   },
   "en/07-the-timeline": {
    "id": "the-timeline",
@@ -328,8 +334,8 @@
    "kept": 4,
    "runnable": 4,
    "exercises": 1,
-   "ran": "2026-10-17 04:50 UTC+01:00",
-   "seconds": 3.5
+   "ran": "2026-10-30 13:38 UTC+01:00",
+   "seconds": 0.4
   },
   "en/08-trust-and-governance": {
    "id": "trust-and-governance",
@@ -377,8 +383,8 @@
    "kept": 4,
    "runnable": 4,
    "exercises": 1,
-   "ran": "2026-10-17 04:50 UTC+01:00",
-   "seconds": 3.4
+   "ran": "2026-10-30 13:38 UTC+01:00",
+   "seconds": 0.4
   },
   "en/09-the-ai-model-comes-last": {
    "id": "the-ai-model-comes-last",
@@ -410,8 +416,8 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-17 04:50 UTC+01:00",
-   "seconds": 3.8
+   "ran": "2026-10-30 13:38 UTC+01:00",
+   "seconds": 0.4
   },
   "en/10-the-safest-write-surface": {
    "id": "the-safest-write-surface",
@@ -443,8 +449,8 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-17 04:50 UTC+01:00",
-   "seconds": 3.4
+   "ran": "2026-10-30 13:38 UTC+01:00",
+   "seconds": 0.6
   },
   "en/11-the-refinement-the-bank-made": {
    "id": "the-refinement-the-bank-made",
@@ -484,8 +490,8 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-10-17 04:50 UTC+01:00",
-   "seconds": 3.5
+   "ran": "2026-10-30 13:38 UTC+01:00",
+   "seconds": 0.4
   },
   "en/12-what-the-auditor-saw": {
    "id": "what-the-auditor-saw",
@@ -519,8 +525,8 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-17 04:50 UTC+01:00",
-   "seconds": 3.4
+   "ran": "2026-10-30 13:38 UTC+01:00",
+   "seconds": 0.4
   },
   "en/13-the-environment-specified": {
    "id": "the-environment-specified",
@@ -544,8 +550,8 @@
    "kept": 1,
    "runnable": 1,
    "exercises": 1,
-   "ran": "2026-10-17 04:50 UTC+01:00",
-   "seconds": 3.4
+   "ran": "2026-10-30 13:38 UTC+01:00",
+   "seconds": 0.4
   },
   "en/14-coda-the-next-letter": {
    "id": "coda-the-next-letter",

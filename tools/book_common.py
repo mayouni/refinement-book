@@ -5,11 +5,12 @@ What the book's three tools share: the sources, their code blocks, and the libra
 The library is never run in its working checkout: other sessions write that tree while the book
 builds, so a run there would be a run at no commit at all. The runner exports the library's files
 at a named commit into .cache/ (git archive, which reads the library's history and writes nothing
-in its repository) and runs there. The engine binaries are build products, absent from any commit;
-they are copied from the working checkout and their build time is recorded beside the run, so the
+in its repository) and runs there. The engine binaries are build products, absent from any commit; they are copied
+from the Ring++ install the chapters run on (its engine is built for Ring++ from the library's own engine
+source, and its PACKAGE.txt names the commit), and their build time is recorded beside the run, so the
 proof line can say what it cannot pin.
 """
-import hashlib, json, re, shutil, subprocess, pathlib, datetime
+import hashlib, json, os, re, shutil, subprocess, pathlib, datetime
 import yaml
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -25,8 +26,41 @@ LIB_IN_REPO = "libraries/stzlib"
 # the pin was a commit. This one is origin/main as the book's first drafts saw it (2026-10-05 21:50); the
 # working checkout was then on a side branch, which is not the library a reader can fetch. Move the pin
 # deliberately, then re-run: `python tools/book_run.py --commit <sha>` shows what a newer commit does first.
-LIB_REF = "93d7a39bdd040f82eae21d949460d69c32a75c70"
+# MOVED 2026-10-30, from 93d7a39bd (2026-10-05) to 0950e246a (2026-10-29): the chapters run on Ring++ now,
+# which refuses the library before its Rule A migration (main, 2026-10-28), and 0950e246a is the library the
+# Ring++ install ships -- what a reader who installs it runs.
+LIB_REF = "0950e246a7e756bafbe179ca70a6bd36ae5f99b5"
 GH_BLOB = "https://github.com/mayouni/stzlib/blob/{sha}/libraries/stzlib/{path}"
+
+# THE RUNTIME: Ring++'s rnxc, which runs a file as `ring` did (Ring is retired from the author's projects,
+# 2026-10-14; the book moved on 2026-10-30). Found in this order: the environment variable RNXC; RINGPP, the
+# install's folder; `rnxc` on the path; the estate's install, D:/ringpp/ringpp-win64.
+def find_rnxc():
+    exe = "rnxc.exe" if os.name == "nt" else "rnxc"
+    if os.environ.get("RNXC", "").strip():
+        return os.environ["RNXC"].strip()
+    if os.environ.get("RINGPP", "").strip():
+        return str(pathlib.Path(os.environ["RINGPP"].strip()) / "bin" / exe)
+    on_path = shutil.which("rnxc")
+    if on_path:
+        return on_path
+    return str(pathlib.Path("D:/ringpp/ringpp-win64/bin") / exe)
+
+
+RNXC = find_rnxc()
+INSTALL = pathlib.Path(RNXC).resolve().parent.parent          # <install>/bin/rnxc -> <install>
+
+
+def package_line(word):
+    """The install's PACKAGE.txt line that starts with `word` (rnxc, Softanza, engine), or None."""
+    p = INSTALL / "PACKAGE.txt"
+    if not p.exists():
+        return None
+    for l in p.read_text(encoding="utf-8", errors="replace").splitlines():
+        if l.strip().lower().startswith(word.lower()):
+            return " ".join(l.split()[1:])
+    return None
+
 
 FENCE = re.compile(r"(?ms)^```([^\n]*)\n(.*?)^```[ \t]*$")
 CODE_TAG = "haro"                                     # the language's name, as section 4.8 rules
@@ -113,15 +147,20 @@ def snapshot(commit=None):
         subprocess.run(["tar", "-x", "-C", str(base)], stdin=archive.stdout, check=True)
         archive.wait()
     bin_dst = lib / "engine" / "zig-out" / "bin"
-    if not prov_file.exists() or not any(bin_dst.glob("*.dll")):
-        tree = engine_tree(sha)
-        bin_src = tree / LIB_IN_REPO / "engine" / "zig-out" / "bin"
+    old = json.loads(prov_file.read_text(encoding="utf-8")) if prov_file.exists() else {}
+    if old.get("engine_binaries", {}).get("built_for") != "Ring++" or not any(bin_dst.glob("*.dll")):
+        # the engine Ring++ loads (rpp_init), from the install the chapters run on: a Ring build's libraries
+        # (ringlib_init) stop rnxc at the first load, R46
+        if bin_dst.exists():
+            shutil.rmtree(bin_dst)
+        bin_src = INSTALL / LIB_IN_REPO / "engine" / "zig-out" / "bin"
         bin_dst.mkdir(parents=True, exist_ok=True)
         dlls = sorted(bin_src.glob("*.dll"))
         for f in dlls:
             shutil.copy2(f, bin_dst / f.name)
         newest = max((f.stat().st_mtime for f in dlls), default=None)
-        tree_head = subprocess.run(["git", "-C", str(tree), "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip()
+        shipped = (package_line("Softanza") or "").split()
+        tree_head = git("rev-parse", shipped[1]) if len(shipped) > 1 and shipped[0] == "stzlib" else ""
         # engine sources committed after the binaries were built: the gap the proof line must admit
         later = []
         if newest:
@@ -134,6 +173,9 @@ def snapshot(commit=None):
             "commit_date": git("show", "-s", "--format=%ci", sha),
             "exported": stamp(now()),
             "engine_binaries": {
+                "built_for": "Ring++",
+                "package": {"rnxc": package_line("rnxc"), "softanza": package_line("Softanza"),
+                            "engine": package_line("engine")},
                 "count": len(dlls),
                 "copied_from": str(bin_src).replace("\\", "/"),
                 "built_in_a_tree_at_this_commit": tree_head == sha,

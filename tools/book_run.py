@@ -19,7 +19,8 @@ What differs from the site's runner, and why:
     python tools/book_run.py --commit <sha>  # the library at a named commit
 """
 import os, re, sys, subprocess, shutil
-from book_common import (sources, code_blocks, block_hash, snapshot, now, stamp, save_json, ROOT, LIB_REF)
+from book_common import (sources, code_blocks, block_hash, snapshot, now, stamp, save_json, ROOT, LIB_REF,
+                         RNXC, package_line)
 from book_judge import parse, verdict, effects_of
 
 
@@ -58,7 +59,7 @@ def run_chapter(lib, name, blocks):
         # the library's door to foreign runtimes starts its script by bare name, which a machine that sets
         # NoDefaultCurrentDirectoryInExePath cannot find; the chapter on the door needs it unset
         env = {k: v for k, v in os.environ.items() if k.lower() != "nodefaultcurrentdirectoryinexepath"}
-        p = subprocess.run(["ring", script.name], cwd=work, capture_output=True, text=True, env=env,
+        p = subprocess.run([RNXC, script.name], cwd=work, capture_output=True, text=True, env=env,
                            encoding="utf-8", errors="replace", timeout=300)
         out = (p.stdout or "").replace("\r", "")
     except subprocess.TimeoutExpired as e:
@@ -90,8 +91,9 @@ def run_chapter(lib, name, blocks):
 
 
 def runtime():
-    """Which runtime ran the blocks, read from the runtime itself: the book must say it is not yet Haro."""
-    exe = shutil.which("ring") or "ring"
+    """Which runtime ran the blocks: the book must say it is not yet Haro. Ring++'s `version()` answers the
+    Ring version it keeps compatible with (1.27); the build itself is named by the install's PACKAGE.txt."""
+    exe = RNXC
     probe = ROOT / ".cache" / "_runtime_probe.ring"   # in this book's own .cache
     probe.parent.mkdir(exist_ok=True)
     probe.write_text("? version()\n", encoding="utf-8")
@@ -99,12 +101,18 @@ def runtime():
         v = subprocess.run([exe, probe.name], cwd=probe.parent, capture_output=True, text=True, timeout=30).stdout.strip()
     finally:
         probe.unlink(missing_ok=True)
-    return {"name": "Ring", "version": v or None, "path": exe.replace("\\", "/")}
+    build = (package_line("rnxc") or "").split()          # "ringpp <sha> <date> <subject>"
+    return {"name": "Ring++", "version": f"{build[1]} ({build[2]})" if len(build) > 2 else None,
+            "build": package_line("rnxc"), "ring_version": v or None,
+            "path": exe.replace("\\", "/")}
 
 
 def main():
     commit = sys.argv[sys.argv.index("--commit") + 1] if "--commit" in sys.argv else LIB_REF
     lib, prov = snapshot(commit)
+    # the library compiled once, on purpose, and kept (`rnxc prefix`): each chapter then compiles only itself
+    # on top of it, where it would compile the whole library again (Ring++'s prefix, ringpp CLAUDE.md)
+    subprocess.run([RNXC, "prefix", "stzMax.ring"], cwd=lib / "max", capture_output=True, timeout=600)
     started = now()
     result = {"run": {"date": stamp(started), "library": prov, "runtime": runtime()}, "chapters": {}}
     failed = []
