@@ -104,9 +104,10 @@ def assemble():
         stage_md = ""
         if stage:
             lines = []
-            for key in ("built", "designed", "absent"):
+            # HOUSE-21 (ROP-23): the page shows what runs and what is designed; "absent" stays in the front matter as the record
+            for key, label in (("built", "Built"), ("designed", "Next")):
                 if stage.get(key):
-                    lines.append(f"- **{key.capitalize()}.** {stage[key]}")
+                    lines.append(f"- **{label}.** {stage[key]}")
             stage_md = "\n".join(lines) + "\n\n"
         part = meta.get("part")
         if part and part not in part_seen:

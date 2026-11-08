@@ -12,7 +12,7 @@ research: research/ch01.md
 guards: [refinablecode_narrated, refine_deepening_narrated, gate_deepening_narrated]
 ---
 
-In this chapter I tell the letter that starts the story of this book, and I say what it asks of the software of a bank. Then I run the one thing the rest of the book is built on: a change proposed to a place in the code that was declared to be changeable, and judged before it lands. I close on what that one run does not yet do.
+In this chapter I tell the letter that starts the story of this book, and I say what it asks of the software of a bank. Then I run the one thing the rest of the book is built on: a change proposed to a place in the code that was declared to be changeable, and judged before it lands. I close on where it stands and what comes next.
 
 The bank in this story is invented. Softibank, its people and the letter it receives are fiction, written to carry a discipline that is not. The central bank, the monetary union, the city and the currency, the CFA franc, are real, and I treat them as such.
 
@@ -95,7 +95,7 @@ o {
 }
 ```
 
-Refused! The refusal names its check first, `constraint`, then says what was wrong: `0.61 above max 0.20`. The value is still `0.16`, and the timeline did not grow by a step. Nobody had to read a diff to see that sixty-one per cent is not a penalty cap a bank may charge. The point said so.
+Refused! The refusal names its check first, `constraint`, then says what was wrong: `0.61 above max 0.20`. The value is still `0.16`, and the timeline did not grow by a step. No reviewer had to read a diff to see that sixty-one per cent is not a penalty cap a bank may charge. The point said so.
 
 And what does the code look like now? Ask it:
 
@@ -144,13 +144,11 @@ The field leads in breadth. A review can look at any change to any file in any l
 
 The field also leads in habit. Programmers know the diff and the pull request; a refinement point is a new thing to write and a new answer to read. That is the cost of the discipline, and this book pays it chapter by chapter.
 
-## The limit
+## Where it stands
 
-What is built: the refinement point, declared in the source; the proposal; the gate with its five checks; the refusal that leaves the source whole; the step taken back. All of it ran above, against the library at the commit this book is pinned to, the gate on its first two checks; the guards prove the other three, and Part II runs them.
+**What runs.** The refinement point, declared in the source; the proposal; the gate with its five checks; the refusal that leaves the source whole; the step taken back. All of it ran above, against the library at the commit this book is pinned to, the gate on its first two checks; the guards prove the other three, and Part II runs them.
 
-What is designed: the cascade that would tell Amina what a point reaches beyond its line. Today two cascades are built: a point's cascade is its line and the other points on it, and a class's cascade comes from the code graph. The two are not yet one, and chapter 6 runs them. Refine, the environment in which a team lives with refinements day to day, is specified and shown as screens; Part V tells it as stage and direction.
-
-What is absent: a saved history. The library saves the source with its current values; the timeline you just reverted lives in the running object, and carrying it into the file is the next step.
+**What comes next:** the two cascades built today, a point's line and a class's code graph, joined into one that tells Amina what a point reaches beyond its line (chapter 6 runs both); the timeline saved with the source, so that the way back outlives the program; and Refine, the environment in which a team lives with refinements day to day, specified and shown as screens (Part V).
 
 ## In your hands
 

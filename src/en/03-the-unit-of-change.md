@@ -4,7 +4,7 @@ part: 1
 number: 3
 title: The unit of change
 stage:
-  built: "the refinement as a typed proposal to a declared point; three kinds of point judged against their declaration (a parameter, an algorithm, a library; the library kind run here and not yet guarded); every admitted proposal recorded as a step with its prior value"
+  built: "the refinement as a typed proposal to a declared point; three kinds of point judged against their declaration (a parameter, an algorithm, a library; the library kind run here); every admitted proposal recorded as a step with its prior value"
   designed: "the point and the refinement as classes of their own (stzRefinementPoint, stzRefinement); points of eight kinds (parameter, block, algorithm, function, pipeline, variable type, library, custom)"
   absent: "a check for a point of another kind, a block of code for instance: it parses and passes without one"
 status: draft
@@ -103,13 +103,11 @@ Amina's notebook in chapter 1 listed the statement generator among what the cap 
 
 The field leads in what a change may be. A diff can change anything: a function, a class, a whole file, a comment. A refinement changes the value of a declared point, and today the library judges three kinds of point. Changing the structure of the code itself, adding a function or a product, is not a refinement today; it is still a diff, reviewed as one. Points of a block or a function kind are designed, and the limit says where they stand.
 
-## The limit
+## Where it stands
 
-What is built: the refinement as a typed proposal to a declared point; a parameter judged against its bounds, an algorithm and a library against their options; every admitted proposal recorded as a step with the value it replaced. All of it ran above.
+**What runs.** The refinement as a typed proposal to a declared point; a parameter judged against its bounds, an algorithm and a library against their options; every admitted proposal recorded as a step with the value it replaced. All of it ran above.
 
-What is designed: the point and the refinement as classes of their own, named in the library's architecture document (`stzRefinementPoint`, `stzRefinement`), and points of eight kinds: parameter, block, algorithm, function, pipeline, variable type, library and custom.
-
-What is absent: a check for a point of any other kind. A point tagged as a block of code, for instance, parses and is listed, and a proposal to it passes the constraint check without one, because the library checks three kinds. Checks for the other kinds are the next step. And the gate judges proposals, not the code as it stands: a text edit that set a value out of bounds, as above, is not flagged when the code is read again, and a later step records it as the value to return to. One more: a value that is not a number, proposed to a bounded parameter, stops the program with an error instead of a refusal with a reason. These are the next steps of the gate.
+**What comes next:** the point and the refinement as classes of their own, named in the library's architecture document (`stzRefinementPoint`, `stzRefinement`); points of eight kinds, each judged by its own check: parameter, block, algorithm, function, pipeline, variable type, library and custom; a check of the code as it stands, so that a value set by a text edit is judged when the code is read again; and a refusal with a reason for a value that is not a number, proposed to a bounded parameter.
 
 ## In your hands
 
@@ -122,6 +120,6 @@ b = new stzRefinableCode(cBlock)
 ? b.Refine("limit_rule").To("1 = 1")[:admitted]
 ```
 
-Before you run it, write what you expect the gate to answer, and what you would want it to answer. The distance between the two is a check the library does not yet have. What would its rule be, for a block of code? I do not have the answer in the library today, and I leave the question with you.
+Before you run it, write what you expect the gate to answer, and what you would want it to answer. The distance between the two is the check the library takes up next. What would its rule be, for a block of code? I do not have the answer in the library today, and I leave the question with you.
 
 The unit has changed. Part II takes it apart: the point, the gate, the cascade, the timeline, and the trust that decides who may turn which knob.

@@ -90,13 +90,11 @@ The field leads in what an AI agent can do on its own. An AI agent in a loop can
 
 The field also leads in the AI model itself. The library's own language models, the domain language model of the Softanza book's chapter 19, are small and built for a closed vocabulary; reading a circular in French prose is work for the field's large AI models, which the bank brings and the library does not ship.
 
-## The limit
+## Where it stands
 
-What is built: the programmatic agent, a loop whose proposals face the gate; a draft read into a typed proposal with its origin declared; the floor of trust that refuses the AI model's proposal on a point that asks for more. All of it ran above.
+**What runs.** The programmatic agent, a loop whose proposals face the gate; a draft read into a typed proposal with its origin declared; the floor of trust that refuses the AI model's proposal on a point that asks for more. All of it ran above. The draft in the run is written by hand, the way an AI model's answer arrives.
 
-What is designed: the thinking machine's cascade across faculties, set out in the Softanza book's chapter 9 and listed in its chapter 17; and the AI model's draft held to the grammar of a declared language before it is read, which the platform's door for AI agents names as a verb (chapter 10).
-
-What is absent: an AI model called by this book's runs. The draft was written as text, and the reading of it was a split on `" = "`, which a real draft would break in many ways. The grammar compiler is built, in the Softanza book's chapter 19; holding a draft to it here, before the gate, is the direction, and chapter 10 says where the door for it stands. And the origin is what the proposal declares: chapter 8 said so, and it holds here.
+**What comes next:** the thinking machine's cascade across faculties, set out in the Softanza book's chapter 9 and listed in its chapter 17; and the AI model's draft held to the grammar of a declared language before it is read, with the grammar compiler of the Softanza book's chapter 19 and the platform's door for AI agents (chapter 10).
 
 ## In your hands
 

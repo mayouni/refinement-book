@@ -124,13 +124,11 @@ The field leads in identity. Its permissions rest on accounts that are authentic
 
 The field also leads in breadth for AI agents: sandboxes that limit what an AI agent can touch at all, whatever it proposes. The floor of trust is narrower and sharper: it governs one knob, by origin.
 
-## The limit
+## Where it stands
 
-What is built: the four postures and their ranks; the floor of trust per point; governance by permission, authority and declared risk, decided before any change; the lineage of decisions with the actor, the authority and risk at the time, a time and the action, asked by actor, action or time. All of it ran above, except the queries by action and by time.
+**What runs.** The four postures and their ranks; the floor of trust per point; governance by permission, authority and declared risk, decided before any change; the lineage of decisions with the actor, the authority and risk at the time, a time and the action, asked by actor, action or time. The queries by actor ran above; the queries by action and by time are the same lineage, read by another key.
 
-What is designed: the refinement as a typed transformation of the code graph, carrying its author and its verification, in the architecture document.
-
-What is absent: an origin the library does not know, refused or ranked lowest; it is a one-line change in the library. And an origin proven rather than declared. A proposal says `As(:external)`, and the library believes it; proving where a proposal came from is the work of the program that receives it. That program, not the AI agent, must set the origin: a proposal that declares nothing is `trusted`. Part III is about that program.
+**What comes next:** the refinement carrying its author and its verification as a typed transformation of the code graph, in the architecture document; an origin the library does not know, ranked lowest, a one-line change in the library; and the origin set and proven by the program that receives the proposal, the program around the AI agent that Part III describes.
 
 ## In your hands
 

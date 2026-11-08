@@ -47,7 +47,8 @@ Glossary, aligned with Softanza's appendix D. About 2,000 words a chapter.
 Front matter: `id`, `part`, `number`, `title`, `stage` (`built`, `designed`, `absent`, carried from code, never from documents), `status` (HOUSE-18: `draft`, `review` or `published`;
 every page starts at `draft`, and only the author moves a page to `review` or `published`), `research`, `guards`. Then, in order: an opening in the first person that says what the chapter does (a few
 sentences); the story's scene where the chapter has one; `## The field`; `## The principle`; sections that run a block, show its exact answer and
-read it (titled freely); `## What I refused`; `## The court`; `## Where the field leads`; `## The limit`; `## In your hands` (a real defect or
+read it (titled freely); `## What I refused`; `## The court`; `## Where the field leads`; `## Where it stands` (HOUSE-21, ROP-23: "**What runs.**" and "**What comes next:**" in affirmative
+sentences; what is missing goes to `research/chNN.md` and to library requests, never onto the page); `## In your hands` (a real defect or
 open question, with a `haro exercise` fence); a closing bridge to the next chapter, never a summary. Headings are reused exactly.
 
 ## The evidence and the run

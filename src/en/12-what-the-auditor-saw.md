@@ -92,7 +92,7 @@ Read the auditor's question in three parts, against what the file holds.
 
 **What it affected.** Answered in part. The decisions name their actions, `refine-penalty_cap`, `refine-letter_rate`, `refine-regulatory_max`, and the source saved with its current values, `softibank_code.zrfn`, shows where the points stand now. The values before and after are in the timeline of the running object, and chapter 7 said the timeline is not saved. The cascade of chapter 6 is asked of a point today; it is not kept with the decision.
 
-**How you know the communications matched.** Answered by a rule, not by a record. The rule `letter-covers-cap` was declared, and the gate refused the one order of changes that would have broken it, as chapter 11 ran. But the file does not keep the rule, nor the refusal: the governance saves its regime and its decisions, and a rule across points belongs to the refinable code. An auditor has to take the rule from the code; the refusal is not kept yet.
+**How you know the communications matched.** Answered by a rule, not by a record. The rule `letter-covers-cap` was declared, and the gate refused the one order of changes that would have broken it, as chapter 11 ran. But the file does not keep the rule, nor the refusal: the governance saves its regime and its decisions, and a rule across points belongs to the refinable code. An auditor takes the rule from the code; keeping the refusal in the record is the next step.
 
 So the screen Amina could turn around today answers the first part of the question as who acted and under what authority, the second in part, and the third by pointing at the code. The Teaching Edition drew a screen that answered all three, with an export scoped to the question and two clocks on every line. That screen is the direction. The architecture document describes a refinement that carries its cascade, its author, its verification and its history; the file above is the part of it that is built.
 
@@ -122,13 +122,11 @@ What the Softanza book's chapters 29 and 31 say is absent is worth repeating her
 
 The field leads in the audit itself. Tools built for compliance keep evidence from many systems, map it to controls and export it for an examiner, and banks use them. The library keeps one kind of evidence, the decision to admit a refinement, and keeps it well: with the authority at the time, written by the act. Joining it to the rest of a bank's evidence is a program the bank or a product writes.
 
-## The limit
+## Where it stands
 
-What is built: a governance saved with its regime and its decisions and loaded back; decisions asked by action and by actor, with authority and risk at the time, a time and the action; the source saved with its current values. All of it ran above.
+**What runs.** A governance saved with its regime and its decisions and loaded back; decisions asked by action and by actor, with authority and risk at the time, a time and the action; the source saved with its current values. All of it ran above.
 
-What is designed: a refinement carrying its cascade, author, verification and history; an export scoped to an auditor's question.
-
-What is absent: the timeline saved with the source; an approver distinct from the actor; the values before and after in a decision; the reason a person gave for a refinement (a decision recorded directly can carry one, and the guard above keeps it intact, but a refinement's decision carries a fixed rationale that names its origin); two clocks; and, outside the story, an auditor's reading of a finding the library produced.
+**What comes next:** a refinement carrying its cascade, author, verification and history; an export scoped to an auditor's question; the timeline saved with the source; an approver distinct from the actor; the values before and after, and the reason a person gave, in each decision; and a rule's two clocks.
 
 ## In your hands
 

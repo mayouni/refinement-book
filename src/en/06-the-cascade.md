@@ -12,7 +12,7 @@ research: research/ch06.md
 guards: [refinablecode_narrated]
 ---
 
-In this chapter I run the cascade: the answer to "what does this change reach?", asked before the change lands. I run the cascade of a point as the library has it, I show the line it does not reach yet, and I say what the cascade of a class adds and where the two are not yet one.
+In this chapter I run the cascade: the answer to "what does this change reach?", asked before the change lands. I run the cascade of a point as the library has it, I show where it stops, and I say what the cascade of a class adds and how the two are to be joined.
 
 Amina's notebook from chapter 1 was a cascade written by hand: fourteen products, a risk module, a report, the statements, the text messages, the tests. She wrote it from memory, and she wrote that some of it she would discover "when they break".
 
@@ -70,7 +70,7 @@ Now read line 3 again. `total` adds the late fee to the principal and the VAT. A
 
 No. The cascade of a point is its own line and the other points on it. It does not follow `late_fee` to the line that reads it. At Softibank, the fourteen products, the risk module and the statements are all lines like line 3: they read what the cap sets, somewhere else.
 
-That is the line between what is built and what is designed, and I want it read plainly. The cascade of a point, today, tells a reviewer which knobs move together. The cascade that would tell Amina what the cap reaches across the bank's code is the one the library's architecture describes as reachability in the code graph, and it is not yet joined to the point.
+That is the line between what is built and what is designed, and I want it read plainly. The cascade of a point, today, tells a reviewer which knobs move together. The cascade that would tell Amina what the cap reaches across the bank's code is the one the library's architecture describes as reachability in the code graph; joining it to the point is the next step.
 
 ## The cascade of a class
 
@@ -82,7 +82,7 @@ So two cascades are built. One belongs to the point and stops at its line; the o
 
 **I refused to call the line-local cascade the whole cascade.** The Teaching Edition of this book drew a cascade of seventeen nodes in three depths, with a wave that stopped where verdicts came back unchanged. That drawing showed the direction. The library at this commit computes what this chapter ran, and the book now shows that.
 
-**I refused the diff as the review object, and kept it as evidence.** A reviewer reads the cascade first, because it names consequences; the diff stays available, because the cascade does not yet reach every line.
+**I refused the diff as the review object, and kept it as evidence.** A reviewer reads the cascade first, because it names consequences; the diff stays available, for the lines beyond the cascade's reach.
 
 ## The court
 
@@ -92,13 +92,11 @@ So two cascades are built. One belongs to the point and stops at its line; the o
 
 The field leads in reach. Code-intelligence tools in common use follow calls, imports and references across a whole repository and many languages, and some draw the result beside the diff. The library's point cascade follows one line. What the discipline adds is the kind of answer: a cascade computed from what was declared, asked before the change, in the same object the gate judges. What the field adds today is distance.
 
-## The limit
+## Where it stands
 
-What is built: the cascade of a point, its line and the other points on it, asked before a change; the cascade of a class, from the code graph, run in Softanza's chapter 10.
+**What runs.** The cascade of a point, its line and the other points on it, asked before a change; the cascade of a class, from the code graph, run in Softanza's chapter 10.
 
-What is designed: one cascade, from a point through the code graph to every line that reads what it sets, joined to the gate so that a change is judged against what it reaches.
-
-What is absent, in the code: the reach of a point beyond its own line, as line 3 showed. The wave that stops early where a re-check comes back unchanged, drawn in the Teaching Edition, is not in the library and not in its architecture document: it is a direction this book keeps, not a design it can cite.
+**What comes next:** one cascade, from a point through the code graph to every line that reads what it sets, joined to the gate so that a change is judged against what it reaches. The Teaching Edition drew a wave that stops early where a re-check comes back unchanged; this book keeps it as a direction.
 
 ## In your hands
 

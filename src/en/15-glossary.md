@@ -34,7 +34,7 @@ Each entry gives the word as this book uses it and the chapter where it is run o
 
 **derivation.** The last check of the gate: the rules declared across points, judged on the state a change would produce, which is put back if a rule fails. Chapters 5, 11.
 
-**designed.** One of the three stage words: a document says so, and nothing runs. As in Softanza's appendix D. Every chapter's front matter.
+**designed.** One of the three stage words: a document specifies it, and the code is the next step. Softanza's appendix D gives the same stage in its own words. Every chapter's front matter.
 
 **diff.** The lines a change of text moved. Kept in this book as evidence; refused as the unit of change. Chapters 1, 3.
 
@@ -68,7 +68,7 @@ Each entry gives the word as this book uses it and the chapter where it is run o
 
 **refinement.** A change to code that was declared to be changeable, proposed in a typed form, judged by a gate, recorded as a step, and reversible. Softanza's appendix D calls it the write surface, judged by a gate of five checks. Chapters 1, 3.
 
-**refinement point.** A named knob declared in the source as a tag, with a kind, a value and bounds or options. Three kinds are judged today: a parameter, an algorithm, a library (the library kind not yet guarded). Chapters 3, 4.
+**refinement point.** A named knob declared in the source as a tag, with a kind, a value and bounds or options. Three kinds are judged today: a parameter, an algorithm, a library. Chapters 3, 4.
 
 **rehearse.** To run on what touches nothing, and read what it would have done: here, proposals to a copy of a refinable code. As in Softanza's appendix D. Chapter 10.
 

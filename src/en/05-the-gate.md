@@ -111,15 +111,13 @@ That is also the gate's honest edge. It proves a change against what was declare
 
 ## Where the field leads
 
-The field's gates lead in what they check. A compiler checks that the code still parses; a test suite checks behaviour the change may break three modules away. This gate checks a value at a declared point, the actor, the origin and the rules declared across points. It does not ask the language whether the changed source still parses, and it does not run the tests that cover the line. Teams keep their builds and their suites, and this gate stands in front of them.
+The field's gates lead in what they check. A compiler checks that the code still parses; a test suite checks behaviour the change may break three modules away. This gate checks a value at a declared point, the actor, the origin and the rules declared across points. The language's parser and the tests that cover the line stay with the build and the suite. Teams keep both, and this gate stands in front of them.
 
-## The limit
+## Where it stands
 
-What is built: the five checks, in the order the code runs them; a refusal that names its check and its reason; a rule across points judged on the state the change would produce, and rolled back; governance and trust that refuse before anything is applied. All of it ran above.
+**What runs.** The five checks, in the order the code runs them; a refusal that names its check and its reason; a rule across points judged on the state the change would produce, and rolled back; governance and trust that refuse before anything is applied. All of it ran above.
 
-What is designed: the gate composed from the rules of the code graph, so that a change is judged against what it reaches beyond its line; the architecture document describes it.
-
-What is absent: the declarations kept with the code (`Save` keeps the source, not the risk tiers, floors and rules); a check that the language still parses the changed source; and an admitted message that prints the checks in the order they ran, a change of one line in the library.
+**What comes next:** the gate composed from the rules of the code graph, so that a change is judged against what it reaches beyond its line, as the architecture document describes; the declarations saved with the code, beside the source; the language's own parser as one more check; and an admitted message that lists the checks in the order they run.
 
 ## In your hands
 

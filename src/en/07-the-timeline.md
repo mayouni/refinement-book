@@ -122,13 +122,11 @@ The field leads in memory. Version control keeps every change on disk, on every 
 
 The Teaching Edition of this book told of two clocks on every record: when a rule was in force, and when the system recorded it. That is how an auditor's question "as of May: what was in force, and what did your system believe?" gets an answer. The library's refinement does not carry it, and neither does its architecture document; the governance lineage carries one time, the moment of the decision.
 
-## The limit
+## Where it stands
 
-What is built: the step with its prior value and its origin; revert by one, to a step, to a checkpoint and to zero; redo, and the fork that clears it; under governance, a decision with its actor, authority, risk and time. All of it ran above, runs in chapter 8, or is asserted by `refine_deepening_narrated` (the revert to a step and to zero).
+**What runs.** The step with its prior value and its origin; revert by one, to a step, to a checkpoint and to zero; redo, and the fork that clears it; under governance, a decision with its actor, authority, risk and time. All of it ran above, runs in chapter 8, or is asserted by `refine_deepening_narrated` (the revert to a step and to zero).
 
-What is designed: the refinement as a typed transformation of the code graph, carrying its cascade, its author, its verification and its history, with its inverse as a graph event; the architecture document describes it.
-
-What is absent, and next: a saved timeline, so that the way back survives the program; a time and an actor on the step itself; a revert that passes the gate and is recorded as a decision under governance; and the two clocks of a rule.
+**What comes next:** the refinement as a typed transformation of the code graph, carrying its cascade, its author, its verification and its history, with its inverse as a graph event, as the architecture document describes; the timeline saved with the source; a time and an actor on each step; a revert judged by the gate and recorded under governance; and a rule's two clocks, in force and recorded.
 
 ## In your hands
 

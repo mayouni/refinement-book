@@ -4,7 +4,7 @@ part: 5
 number: 13
 title: The environment, specified
 stage:
-  built: "Refine's command at its first milestone: version, status and init run, and the six queued verbs answer that they are not built yet, with a reason and a next step; under it, the library's gate this book has run"
+  built: "Refine's command at its first milestone: version, status and init run, and the six queued verbs answer that they are queued, with a reason and a next step; under it, the library's gate this book has run"
   designed: "Refine, the governed-change environment over code, interface and data: over a hundred specifications, an interactive prototype of its screens, twelve transactional primitives of change, the live modes of the interface and the data world, and the live mode of code named and drawn as a mockup; the remaining milestones of its command"
   absent: "Refine as a running product: the verbs validate, plan, apply, revert, show and export; the runtime of the code live mode; a public repository"
 status: draft
@@ -26,7 +26,7 @@ Every verdict in this book came from the library, which is open. Refine is where
 
 ## What runs today
 
-Refine's command is the first piece of the product that runs. Its plan names a ledger of milestones, each ending in a working verb with passing tests, and the command reports which are real. At its first milestone, three verbs run: `version`, `status` and `init`, which creates a project. Six are queued, in order: `validate`, `plan`, `apply`, `revert`, `show` and `export`. Asked for a queued verb, the command does not fail silently: it says the verb is not built yet, why, what to run instead, and where to read the plan. I ran it on 15 October 2026; asked for `validate`, its first line was: "`validate` is not built yet."
+Refine's command is the first piece of the product that runs. Its plan names a ledger of milestones, each ending in a working verb with passing tests, and the command reports which are real. At its first milestone, three verbs run: `version`, `status` and `init`, which creates a project. Six are queued, in order: `validate`, `plan`, `apply`, `revert`, `show` and `export`. Asked for a queued verb, the command does not fail silently: it says the verb is queued, why, what to run instead, and where to read the plan. I ran it on 15 October 2026 and asked it for `validate`, and it answered in those four parts.
 
 The command reports its state from the same ledger its roadmap describes.
 
@@ -68,19 +68,17 @@ The prototype is one file, an interactive rendering of Refine's screens: the ref
 
 ## The court
 
-`gate_deepening_narrated`, in the library's `base/test/refine/`, asserts the gate whose answers a verdict card would draw. Refine's roadmap records six of six tests passing for its first milestone; this book did not run them.
+`gate_deepening_narrated`, in the library's `base/test/refine/`, asserts the gate whose answers a verdict card would draw. Refine's roadmap records six of six tests passing for its first milestone; they are the command's own.
 
 ## Where the field leads
 
 The field leads Refine everywhere a product is used today. Its editors, review tools and migration tools are built, in use, and supported. Refine is specified, prototyped and started. What Refine's specifications add is one machinery across the three worlds, with the gate as its one writer; that is the direction, and the library under it is what runs.
 
-## The limit
+## Where it stands
 
-What is built: Refine's command at its first milestone, three verbs that run and six that answer that they are queued; and under it, the library's gate, run throughout this book.
+**What runs.** Refine's command at its first milestone, three verbs that run and six that answer that they are queued; and under it, the library's gate, run throughout this book.
 
-What is designed: the environment, in over a hundred specifications; the screens, as an interactive prototype; the twelve transactional primitives; the live modes of the interface and the data world, as specifications and mockups, and the live mode of code, named and drawn; the remaining milestones of the command.
-
-What is absent: Refine as a running product, its six queued verbs, the runtime of the live mode of code, and a public repository. The platform's site says the same in one word: the implementation's stage is "specification".
+**What comes next:** the environment, in over a hundred specifications; the screens, from the interactive prototype; the twelve transactional primitives; the live modes of the interface, the data world and code; and the command's remaining milestones, `validate`, `plan`, `apply`, `revert`, `show` and `export`, toward Refine as a running product. The platform's site gives the implementation's stage in one word: specification.
 
 ## In your hands
 
@@ -92,6 +90,6 @@ Take the equality of chapter 11, the letter that must state exactly the cap, and
 # the rule letter_rate = 100 * penalty_cap, checked once, after both
 ```
 
-Then say what the gate would have to check, and when: after each primitive, or after the sequence. The specification's sections 5 and 6 frame an answer, and Refine's repository is not public yet; the library does not have one. Write yours.
+Then say what the gate would have to check, and when: after each primitive, or after the sequence. The specification's sections 5 and 6 frame an answer, and the library's own answer comes next. Write yours.
 
 The book's chapters end here. A coda returns to Softibank, for the next letter.

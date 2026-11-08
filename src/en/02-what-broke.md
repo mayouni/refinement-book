@@ -18,7 +18,7 @@ In this chapter I say what broke in the way software is changed, and why the let
 
 By the time the letter reached Softibank, an AI agent could draft the whole change in an afternoon: all fourteen products, the compliance report, the statement templates, the text messages, the tests.
 
-The draft would not be careless work. In my view, today's AI agents write code that is plausible, idiomatic and often correct, and they write it at a speed no team matches: many changes at once, at any hour, at a small cost. In a few years, writing code went from the most expensive step in making software to one of the cheapest. These are views drawn from the work I see, not measured results.
+The draft would not be careless work. In my view, today's AI agents write code that is plausible, idiomatic and often correct, and they write it at a speed no team matches: many changes at once, at any hour, at a small cost. In a few years, writing code went from the most expensive step in making software to one of the cheapest. These are views drawn from the work I see.
 
 In my view, every earlier era of programming had the same slow step: writing. Languages, tools and methods were shaped around that scarcity. When it ended, a question arrived in every serious software team at once.
 
@@ -111,13 +111,11 @@ The field's instruments lead in reach. A diff covers every line of every file, d
 
 Version control leads in memory. It keeps every change forever, on disk, across machines. The timeline you just read lives in the running object; the limit says so.
 
-## The limit
+## Where it stands
 
-What is built: the declared change surface, listed on demand; a proposal judged before it lands and answered with its verdict; the other points on its line; a step that keeps the origin the proposal declared and its way back. All of it ran above.
+**What runs.** The declared change surface, listed on demand; a proposal judged before it lands and answered with its verdict; the other points on its line; a step that keeps the origin the proposal declared and its way back. All of it ran above.
 
-What is designed: a cascade that reaches beyond the line, across the code graph, joined to the gate (chapter 6). And the fifth property is carried only at the moment of judgement: the answer explains, but the step in the history keeps the point, the values and the origin, not the reason. A change that keeps its reason with it, for the auditor of chapter 12, is the direction.
-
-What is absent: a saved history. The library writes the source with its current values; the timeline is not in the file, so it does not yet survive the end of the program that made it.
+**What comes next:** a cascade that reaches across the code graph, joined to the gate (chapter 6); a step that keeps its reason with it, for the auditor of chapter 12; and the timeline saved with the source, so that it outlives the program that made it.
 
 ## In your hands
 

@@ -94,13 +94,11 @@ The field leads in what its AI agents can reach and do today, through doors that
 
 The field also leads in the rehearsal of whole changes, as the field holds it: a branch, a preview environment, a plan for infrastructure. The rehearsal here is of a refinable code, one object, and the Softanza book's chapter 24 tells the larger twins that are built, of files and of the process environment.
 
-## The limit
+## Where it stands
 
-What is built: the declared points as the AI agent's map; a proposal off the map refused by name; a rehearsal on a copy that leaves the original as it was; the floor of trust per point. All of it ran above.
+**What runs.** The declared points as the AI agent's map; a proposal off the map refused by name; a rehearsal on a copy that leaves the original as it was; the floor of trust per point. All of it ran above.
 
-What is designed: the door, one command whose verbs include rehearse and commit, ratified on 2 October 2026; and the live mode of Refine, the product, in which a person refines a point from the running product's screen, which Part V tells as stage and direction.
-
-What is absent: a rehearsal carried to the original as one act. The twin knows what it admitted; carrying those steps to the original, re-judged, is the commit verb's work, and the verb is not built.
+**What comes next:** the door, one command whose verbs include rehearse and commit, ratified on 2 October 2026, whose commit verb carries a rehearsal to the original as one act, re-judged; and the live mode of Refine, in which a person refines a point from the running product's screen (Part V).
 
 ## In your hands
 

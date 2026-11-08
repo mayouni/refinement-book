@@ -1,6 +1,6 @@
 {
  "run": {
-  "date": "2026-10-30 15:01 UTC+01:00",
+  "date": "2026-11-08 23:31 UTC+01:00",
   "library": {
    "commit": "0950e246a7e756bafbe179ca70a6bd36ae5f99b5",
    "short": "0950e246a",
@@ -25,8 +25,8 @@
   },
   "runtime": {
    "name": "Ring++",
-   "version": "ddc98fa (2026-10-30)",
-   "build": "ringpp ddc98fa 2026-10-30 ringvm_classesList: the empty package pointer as each platform's C prints it (Linux: (nil))",
+   "version": "a8ad844 (2026-11-02)",
+   "build": "ringpp a8ad844 2026-11-02 HaroServer moves to its own repository; Ring++ keeps the server natives and checks them its",
    "ring_version": "1.27",
    "path": "D:/ringpp/ringpp-win64/bin/rnxc.exe"
   },
@@ -94,8 +94,8 @@
    "kept": 5,
    "runnable": 5,
    "exercises": 1,
-   "ran": "2026-10-30 15:01 UTC+01:00",
-   "seconds": 0.4
+   "ran": "2026-11-08 23:31 UTC+01:00",
+   "seconds": 4.9
   },
   "en/02-what-broke": {
    "id": "what-broke",
@@ -127,8 +127,8 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-30 15:01 UTC+01:00",
-   "seconds": 0.4
+   "ran": "2026-11-08 23:31 UTC+01:00",
+   "seconds": 0.5
   },
   "en/03-the-unit-of-change": {
    "id": "the-unit-of-change",
@@ -168,8 +168,8 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-10-30 15:01 UTC+01:00",
-   "seconds": 0.4
+   "ran": "2026-11-08 23:31 UTC+01:00",
+   "seconds": 0.5
   },
   "en/04-the-point": {
    "id": "the-point",
@@ -209,8 +209,8 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-10-30 15:01 UTC+01:00",
-   "seconds": 0.4
+   "ran": "2026-11-08 23:31 UTC+01:00",
+   "seconds": 0.5
   },
   "en/05-the-gate": {
    "id": "the-gate",
@@ -242,8 +242,8 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-30 15:01 UTC+01:00",
-   "seconds": 0.4
+   "ran": "2026-11-08 23:31 UTC+01:00",
+   "seconds": 0.6
   },
   "en/06-the-cascade": {
    "id": "the-cascade",
@@ -283,8 +283,8 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-10-30 15:01 UTC+01:00",
-   "seconds": 0.4
+   "ran": "2026-11-08 23:31 UTC+01:00",
+   "seconds": 0.5
   },
   "en/07-the-timeline": {
    "id": "the-timeline",
@@ -334,8 +334,8 @@
    "kept": 4,
    "runnable": 4,
    "exercises": 1,
-   "ran": "2026-10-30 15:01 UTC+01:00",
-   "seconds": 0.4
+   "ran": "2026-11-08 23:31 UTC+01:00",
+   "seconds": 0.5
   },
   "en/08-trust-and-governance": {
    "id": "trust-and-governance",
@@ -383,8 +383,8 @@
    "kept": 4,
    "runnable": 4,
    "exercises": 1,
-   "ran": "2026-10-30 15:01 UTC+01:00",
-   "seconds": 0.4
+   "ran": "2026-11-08 23:31 UTC+01:00",
+   "seconds": 0.5
   },
   "en/09-the-ai-model-comes-last": {
    "id": "the-ai-model-comes-last",
@@ -416,7 +416,7 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-30 15:01 UTC+01:00",
+   "ran": "2026-11-08 23:31 UTC+01:00",
    "seconds": 0.4
   },
   "en/10-the-safest-write-surface": {
@@ -449,8 +449,8 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-30 15:01 UTC+01:00",
-   "seconds": 0.4
+   "ran": "2026-11-08 23:31 UTC+01:00",
+   "seconds": 0.5
   },
   "en/11-the-refinement-the-bank-made": {
    "id": "the-refinement-the-bank-made",
@@ -490,8 +490,8 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-10-30 15:01 UTC+01:00",
-   "seconds": 0.4
+   "ran": "2026-11-08 23:31 UTC+01:00",
+   "seconds": 0.5
   },
   "en/12-what-the-auditor-saw": {
    "id": "what-the-auditor-saw",
@@ -525,8 +525,8 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-10-30 15:01 UTC+01:00",
-   "seconds": 0.4
+   "ran": "2026-11-08 23:31 UTC+01:00",
+   "seconds": 0.5
   },
   "en/13-the-environment-specified": {
    "id": "the-environment-specified",
@@ -550,7 +550,7 @@
    "kept": 1,
    "runnable": 1,
    "exercises": 1,
-   "ran": "2026-10-30 15:01 UTC+01:00",
+   "ran": "2026-11-08 23:31 UTC+01:00",
    "seconds": 0.4
   },
   "en/14-coda-the-next-letter": {

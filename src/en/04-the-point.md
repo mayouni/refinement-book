@@ -92,17 +92,11 @@ The field leads in reach. A configuration file can be changed without touching t
 
 The field also leads in types. A configuration schema can say that a value is a whole number, a date or one of a list; the library's parameter says a range, and its variable type is designed.
 
-## The limit
+## Where it stands
 
-What is built: the tag, with its kind, name, value and bounds or options; the declared change surface listed on demand; names matched exactly. All of it ran above.
+**What runs.** The tag, with its kind, name, value and bounds or options; the declared change surface listed on demand; names matched exactly. All of it ran above.
 
-What is designed: points of eight kinds (parameter, block, algorithm, function, pipeline, variable type, library and custom), named in the library's architecture document, and points anchored as typed nodes in the code graph rather than read as tags from text.
-
-What is absent, and next:
-
-- The class renders the source with its tags in place. A form with each tag replaced by its value, for a compiler to read, is not in the class at this commit; the tagged source is the document the gate governs.
-- Two tags with the same name are both listed, and a proposal changes the first one only. Nothing refuses the second declaration.
-- A value that contains `>`, the character that closes a tag, is read as empty, and a later proposal is written in front of the old text, so the tag is spoiled. A block of code such as `amount > 100` cannot be the value of a point today.
+**What comes next:** points of eight kinds (parameter, block, algorithm, function, pipeline, variable type, library and custom), named in the library's architecture document, anchored as typed nodes in the code graph; a rendering of the source with each tag replaced by its value, for a compiler to read; one declaration per name, a second one refused; and values that may hold any character, a block of code such as `amount > 100` among them.
 
 ## In your hands
 

@@ -84,7 +84,7 @@ b {
 
 Five proposals, and the rules wrote the order; the gate enforced it. The admissions print `[:trusted]` because no proposal declared another origin: chapter 8 said the origin is what a proposal declares. The letter could not go first: for a moment the bank would have charged eighteen per cent while telling customers sixteen, and the rule refused that moment. The cap went first, then the letter. The pricing agent could not move the regulation, because it holds no permission for it; the compliance officer could, last, when nothing in the code still exceeded the new maximum. The Teaching Edition told the rule moving first and the code following it; with these rules, the library lets the rule move only once the code is already under it.
 
-Read the rules again, and see what they encode. The letter may state more than the cap for the length of one step, which is the safe direction: a customer is charged less than the letter says. It may never state less. Nobody had to remember that order. It was declared once, and every proposal met it.
+Read the rules again, and see what they encode. The letter may state more than the cap for the length of one step, which is the safe direction: a customer is charged less than the letter says. It may never state less. No one on the team had to remember that order. It was declared once, and every proposal met it.
 
 ## The change it cannot make one step at a time
 
@@ -117,13 +117,11 @@ Neither can move first, so neither moves at all! The rule is right, and the gate
 
 The field leads in each world. Design systems hold tokens and wording with their own tools; data teams hold schemas and checks with theirs; each is mature, and none of this is the library's. The library's refinable code puts them under one gate only when they are written as one tagged text, as the letter was here. Points of the interface and of the data world, held in their own structures and judged by the same gate, are the Teaching Edition's direction; the library's design documents do not hold them yet.
 
-## The limit
+## Where it stands
 
-What is built: a regulator's rule as a point under compliance authority; code and letter in one refinable text tied by a rule; two actors with different permissions on one governed code; the order of changes the rules impose, enforced step by step. All of it ran above.
+**What runs.** A regulator's rule as a point under compliance authority; code and letter in one refinable text tied by a rule; two actors with different permissions on one governed code; the order of changes the rules impose, enforced step by step. All of it ran above.
 
-What is designed: several points refined as one change, ordered by their dependencies; the equality showed what its absence costs today.
-
-What is absent: the language's own parser as the structural check; the gate works on any text with tags in it, and the tags stay in it, so a tagged file is not valid source in its own language until it is rendered without them (chapter 4). And points of the interface and the data world in their own structures, the Teaching Edition's direction. My Softanza book tells, in its chapters 11 to 16, how the platform declares and closes languages, and which run at this commit.
+**What comes next:** several points refined as one change, ordered by their dependencies, which the equality above calls for; the language's own parser as the structural check, with a tagged file rendered as valid source in its language (chapter 4); and points of the interface and the data world in their own structures, the Teaching Edition's direction. My Softanza book tells, in its chapters 11 to 16, how the platform declares and closes languages.
 
 ## In your hands
 
