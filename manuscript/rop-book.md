@@ -38,7 +38,7 @@ In the spring of 2026, in a meeting room at Softibank Niger in Niamey, a vendor 
 
 Amina Bello, the bank's methodologist, asked one question. "When your agent changes the penalty rate in our loan system — who checked that change, against which rule, and how do I undo it on Thursday when the regulator calls?"
 
-There was a pause. The presenter talked about guardrails, then about evals, then about human-in-the-loop. All three answers were interesting. None of them was an answer. He had told her how the agent would be *filtered*, how it would be *scored*, and where a human would *watch* — but not what would happen to the change itself: the new number in the loan system, sitting there, unattributed, unproven, and hard to take back.
+There was a pause. The presenter talked about guardrails, then about evals, then about human-in-the-loop. All three answers were interesting. None of them was an answer. He had told her how the agent would be *filtered*, how it would be *scored*, and where a human would *watch* — but not what would happen to the change itself: the new number in the loan system, sitting there, unattributed, unchecked, and hard to take back.
 
 Hold on to that pause. This whole book lives inside it.
 
@@ -111,7 +111,7 @@ In Chapter 10, this same map will be drawn again — every box in its place, eve
 - Each jungle word answers a *fragment* of a trust question — about the model, the actor, or the pipeline — while the concrete question, *can you trust what just changed?*, goes unanswered, because the change itself is the one object nothing governs.
 - The way out is a change of object: govern the change. That discipline is this book's subject.
 
-*What this chapter has not shown: that governing the change is actually possible, at machine speed, without drowning the people responsible. That demonstration begins in the next chapter — with the morning it became necessary.*
+*The next chapter begins the demonstration that governing the change is possible at machine speed, without drowning the people responsible — with the morning it became necessary.*
 
 # Chapter 2 — What broke
 
@@ -184,13 +184,13 @@ Which means the unit of work has to change. That is the next chapter, and you wi
 - The standard instruments — diff, pull request, sign-off, version control — each assume hand-written, human-scale change volume. They do their jobs; the jobs changed.
 - Trust must become a checkable property of the change itself: validated, scoped, attributed, reversible, explainable — a list that never needs to mention who the author was.
 
-*What this chapter has not shown: how a change could actually carry those five properties. That machinery is the rest of the book — starting now, in a terminal.*
+*The rest of the book is the machinery that lets a change carry those five properties — starting now, in a terminal.*
 
 # Chapter 3 — The unit changed
 
 *From the line, to the diff, to the refinement. You will make one before this chapter ends.*
 
-Every era of programming has a unit of work — the thing you make, review, and talk about. For decades the unit was the **line of code**: programming was typing, and a program was thousands of decisions frozen into text. Version control raised the unit to the **diff**: the set of lines that changed, which could be stored, compared, shared, and argued about. The diff is one of software's great inventions, and Chapter 2 showed its limit: it records which bytes moved and stays silent about everything a trusting person needs — meaning, permission, blast radius, undo.
+Every era of programming has a unit of work — the thing you make, review, and talk about. For decades the unit was the **line of code**: programming was typing, and a program was thousands of decisions frozen into text. Version control raised the unit to the **diff**: the set of lines that changed, which could be stored, compared, shared, and argued about. The diff is one of software's great inventions, and Chapter 2 showed where it stops: it records which bytes moved and stays silent about everything a trusting person needs — meaning, permission, blast radius, undo.
 
 This chapter introduces the third unit, the one this book is named for. Then, without further ceremony, you will make one.
 
@@ -262,7 +262,7 @@ The rest of this book is this session, taken seriously. The graph that made the 
 - You ran the full loop: lift → points → explain → propose → cascade → apply — four gate stages (structural, constraint, derivation, governance) — landed, reversible, explainable.
 - None of it referenced the author. The gate examines proposals, not authors — which is exactly what makes the discipline hold at machine speed.
 
-*What this chapter has not shown: how real, messy, existing codebases acquire a graph and declared points in the first place — that is Chapter 4 — and what a refusal looks like, which is Chapter 5's opening scene.*
+*Chapter 4 shows how real, messy, existing codebases acquire a graph and declared points, and Chapter 5 opens on what a refusal looks like.*
 
 ---
 
@@ -292,7 +292,7 @@ One edge deserves its own paragraph, because it does work no ordinary tool does.
 
 ## §2 — The lift
 
-The obvious objection arrives immediately: nobody is going to rebuild a working bank around a graph. Correct — and nobody has to. Existing code *enters* the graph through the *lift*, and the lift moves nothing.
+The obvious objection arrives immediately: nobody is going to rebuild a working bank around a graph. Correct — and the discipline asks for no such thing. Existing code *enters* the graph through the *lift*, and the lift moves nothing.
 
 {{fig:cli-lift|The lift, module by module. Files stay exactly where they are — the graph is a second reading of the same code, not a migration. Note the parser column: each language is the authority on its own structure.}}
 
@@ -300,7 +300,7 @@ Two details in that panel carry the whole design. First, the files are not conve
 
 Second, look at the parser column: *python*. The foundation does not bring its own opinion of what a Python file means — it asks Python. Each language's own parser is the authority on that language's structure, and the graph records what the authority reported. This will matter again in Chapter 11, where the same move makes the whole discipline work across languages; for now it is enough to notice the humility. The graph adds relations *between* meanings. It does not overrule anyone's meaning.
 
-And the refinement points of Chapter 3? They ride in the same way — declared as structured annotations in ordinary comments, lifted into the graph as typed nodes. The panel's last lines show the honest edge of this: two annotations referenced policies nobody has declared yet. The lift does not invent what it cannot find. It tells you, and gives you the command to see the gap.
+And the refinement points of Chapter 3? They ride in the same way — declared as structured annotations in ordinary comments, lifted into the graph as typed nodes. The panel's last lines show the honest edge of this: two annotations referenced policies that are still to be declared. The lift does not invent what it cannot find. It tells you, and gives you the command to see the gap.
 
 ## §3 — What the graph makes possible
 
@@ -321,7 +321,7 @@ A last word about honesty. The graph knows only what was declared or derived: li
 - Existing code enters by the **lift**: files stay put, each language's own parser is the authority, declared points and policies ride in as annotations, and gaps are reported rather than papered over.
 - The discipline's mechanisms are graph operations: cascade = reachability, constraint checks = reading the nodes, the audit chain = a subgraph. Terminal, IDE, and agent all read the same object.
 
-*What this chapter has not shown: what actually happens at the moment of judgment — the four checks, and what a refusal looks like. That is the gate, next.*
+*Next comes the moment of judgment — the four checks, and what a refusal looks like. That is the gate.*
 
 # Chapter 5 — The gate
 
@@ -380,7 +380,7 @@ That determinism is also the gate's honest limit, stated here and again in Chapt
 - Refusals follow a four-part grammar — what happened, why, what next, where to learn — and a good refusal costs seconds, teaches the system, and makes daring cheap.
 - The gate is deterministic: same proposal, same rules, same verdict, replayable. And it is honest: it proves what you declared, and judges neither the undeclared nor the unwise.
 
-*What this chapter has not shown: the thing the derivation stage walks — the cascade itself, which is about to replace the diff as the surface a reviewer actually reads.*
+*Next comes the thing the derivation stage walks — the cascade itself, which replaces the diff as the surface a reviewer actually reads.*
 
 # Chapter 6 — The cascade
 
@@ -425,7 +425,7 @@ This is what re-couples approval to understanding at machine speed. The reviewer
 - Review changes object: instead of reconstructing meaning from bytes, the reviewer reads consequences directly, and spends her judgment only where judgment is needed.
 - The same cascade is the derivation stage's checklist and the reviewer's brief — one computation, two consumers.
 
-*What this chapter has not shown: what happens after landing — the undo you were promised, and the chain of record that answers for everything, years later. That closes Part II next.*
+*Part II closes next with what happens after landing — the undo you were promised, and the chain of record that answers for everything, years later.*
 
 # Chapter 7 — Reversibility and the audit chain
 
@@ -463,7 +463,7 @@ One subtlety separates a good audit record from a bank-grade one, and it is wort
 
 Every fact in the chain carries two timestamps. **The world's clock**: when the rule was actually in force. **The system's clock**: when the system learned of it and recorded the change. Usually they nearly coincide. But regulation has a habit that breaks naive record-keeping: the retroactive rule. A circular issued in July, effective from the first of April, is entirely ordinary in a regulated industry — and a system with one clock can only lie about it, one way or the other.
 
-With two clocks, the auditor's sharpest question — *"as of May: what was in force, and what did your system believe?"* — gets the honest double answer: in force, yes; recorded, not yet; and here is the refinement, dated on both clocks, that closed the gap when the circular arrived. That answer, given plainly, is what regulatory trust is made of.
+With two clocks, the auditor's sharpest question — *"as of May: what was in force, and what did your system believe?"* — gets the honest double answer: in force, yes; recorded later; and here is the refinement, dated on both clocks, that closed the gap when the circular arrived. That answer, given plainly, is what regulatory trust is made of.
 
 ## §4 — Part II, assembled
 
@@ -480,7 +480,7 @@ Validated, scoped, attributed, reversible, explainable — Chapter 2's five prop
 - Every record carries **two clocks** — in force, and recorded — which is what lets a system answer retroactive-regulation questions honestly.
 - The four mechanisms compose: graph → cascade → gate → chain. Five trust properties, by construction, author-blind throughout.
 
-*What this chapter has not shown: agents. Part III opens the door — and you already know the one thing that matters about what happens when they walk through it.*
+*Part III opens the door to agents — and you already know the one thing that matters about what happens when they walk through it.*
 
 ---
 
@@ -538,7 +538,7 @@ Two of the loop's components deserve their own sentences, because Part II alread
 - Two minds are on the shelf: programmatic (deterministic, free, auditable — for the work that must be exactly right) and model-backed (creative, linguistic, probabilistic — for the work that needs language). Same interfaces, same gate, chosen per task.
 - Memory and skills have governed forms: memory as a queryable view of the graph on two clocks; skills as capabilities that verify.
 
-*What this chapter has not shown: what you actually hand an agent when you let it act on your system. That is the next chapter, and it is the discipline's sharpest practical payoff.*
+*The next chapter is what you actually hand an agent when you let it act on your system — the discipline's sharpest practical payoff.*
 
 # Chapter 9 — The safest write surface
 
@@ -592,7 +592,7 @@ The panel is doing exactly what `stz refine` did in Chapter 3 — same typed pro
 - **Wise coding** inverts vibe coding: the system measures the gap and asks; answers arrive in any register (including examples); candidates are checked against the declared rules; enumerate-or-refuse, never a silent guess.
 - Doors multiply — terminal, conversation, running pixels, protocol — and the gate never does.
 
-*What this chapter has not shown: the promised payoff — the jungle of Chapter 1, walked again with everything you now hold. Next.*
+*Next comes the promised payoff — the jungle of Chapter 1, walked again with everything you now hold.*
 
 # Chapter 10 — The jungle, revisited
 
@@ -644,7 +644,7 @@ Amina's question — *who checked this change, against which rule, and how do I 
 - "Governance" splits into three real, composing disciplines — of the model, of the actor, of the change — and the third was the empty center of the map.
 - The jungle was a category error: actor-words and model-words stretched to cover a change-shaped gap. Supply the missing object and the vocabulary relaxes; specifications replace moods.
 
-*What this chapter has not shown: whether the governed center holds beyond code — for designs, data, other languages, and the people who answer to regulators. That is Part IV.*
+*Part IV carries the governed center beyond code — to designs, data, other languages, and the people who answer to regulators.*
 
 ---
 
@@ -694,7 +694,7 @@ One gate, many worlds — many crafts, many artifacts, many languages. The disci
 - The rules themselves are refinable: a regulation change is a *policy refinement* (under compliance authority), after which the cascade re-governs everything downstream of the rule.
 - The polyglot rule: each language's own parser lifts and re-validates its files (the structural stage is delegated); the graph-side stages are language-neutral; apply touches only exact spans. No migration, no one true language.
 
-*What this chapter has not shown: what all of this is ultimately for — the day someone from outside walks in and asks the bank to prove itself.*
+*Next comes what all of this is ultimately for — the day someone from outside walks in and asks the bank to prove itself.*
 
 # Chapter 12 — In the boardroom
 
@@ -743,13 +743,13 @@ The auditor's report, filed three weeks later, was clean. One sentence from it i
 - Directives now enter as policy refinements: the cascade computes the compliance work, and "how did you implement it?" has an identifier for an answer.
 - The auditor's judgment is not replaced but concentrated — on whether the declared rules are the right ones. Which is the question that was always supposed to get the time.
 
-*What this chapter has not shown: the limits. The book owes you those before it lets you go — and they get the final chapter, undiluted.*
+*The final chapter draws the book's boundaries, plainly, before it lets you go.*
 
 # Chapter 13 — Honest boundaries
 
 *What this discipline does not do — said plainly, because trust is the whole subject.*
 
-A book about trust ends honestly or it refutes itself. This chapter is the ledger of what the discipline cannot do, will not do, and has not yet done — written with the same care as the promises, because you will bet real systems on knowing the difference.
+A book about trust ends honestly or it refutes itself. This chapter is the ledger of the discipline's boundaries: where it stops, what it leaves to people, and what comes next — written with the same care as the promises, because you will bet real systems on knowing the difference.
 
 ## §1 — The gate proves what you declared
 

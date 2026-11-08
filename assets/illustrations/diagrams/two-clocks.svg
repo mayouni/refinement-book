@@ -33,5 +33,5 @@
   <!-- the auditor's question -->
   <line x1="350" y1="88" x2="350" y2="216" stroke="#9a9078" stroke-width="1" stroke-dasharray="3 4"/>
   <text x="350" y="256" text-anchor="middle" font-size="10" font-style="italic" fill="#6b6358">“As of May: what was in force — and what did your system know?”</text>
-  <text x="350" y="272" text-anchor="middle" font-size="10" font-style="italic" fill="#1a1612">Two clocks, two honest answers: in force, yes — recorded, not yet.</text>
+  <text x="350" y="272" text-anchor="middle" font-size="10" font-style="italic" fill="#1a1612">Two clocks, two honest answers: in force, yes — recorded later.</text>
 </svg>

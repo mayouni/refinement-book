@@ -115,7 +115,7 @@ PANELS = {
             seg(("out", "  tests/         "), ("ok", "lifted"), ("out", " · "), ("num", "93"), ("out", " nodes     "), ("dim", "parser: python")),
             blank(),
             seg(("field", "graph"), ("out", "   "), ("num", "546"), ("out", " nodes · "), ("num", "1,312"), ("out", " edges · "), ("num", "9"), ("out", " refinement points declared")),
-            seg(("field", "note"), ("out", "    2 annotations reference policies not yet in the graph")),
+            seg(("field", "note"), ("out", "    2 annotations reference policies still to be declared")),
             seg(("dim", "         → stz points --missing to list them")),
         ],
     },
