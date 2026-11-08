@@ -291,6 +291,13 @@ for p in pages:
     sl_label = (f'{p["num"]} · {html.escape(p["title"], quote=False)}'
                 if p.get("num") else html.escape(disp_title, quote=False))
     # data-t mirrors the label so CSS can reserve the bold width (no reflow on hover/active)
+    # the menu rule (house HOUSE-20): a Part names a section; its own page is the section's first entry, labelled
+    # "Overview"; the coda and the glossary sit under a section of their own, so they are not read as Part IV's
+    if p["slug"].startswith("part-"):
+        sidelinks.append(f'<div class="sb-part">{html.escape(disp_title, quote=False)}</div>')
+        sl_label = "Overview"
+    elif p["slug"] in ("coda", "glossary", "about") and not any('>Back matter<' in x for x in sidelinks):
+        sidelinks.append('<div class="sb-part">Back matter</div>')
     sl_attr = sl_label.replace('"', '&quot;')
     sidelinks.append(
         f'<a class="sidebar-link" href="#{p["slug"]}">'
@@ -357,6 +364,8 @@ h4.subsubsection-h{font-family:var(--sans);font-weight:700;font-size:0.76em;lett
 .the-invite a{border-bottom:1px solid var(--rule-strong);}
 .the-invite .invite-more,.the-invite .colophon-line{font-family:var(--sans);font-size:14.5px;color:var(--soft);line-height:1.5;}
 .chapter-page li{margin:0.4em 0;line-height:1.6;}
+.sb-part{font-family:var(--sans);font-size:18px;font-weight:700;color:var(--ink);margin:22px 0 4px;line-height:1.3;}
+.sb-part:first-child{margin-top:4px;}
 blockquote{margin:1.5em 0;padding:0.3em 0 0.3em 1.3em;border-left:3px solid var(--rule-strong);color:var(--ink-soft);font-style:italic;}
 .book-table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:0.74em;line-height:1.45;margin:1.7em 0;}
 .book-table th,.book-table td{border:1px solid var(--rule);padding:7px 10px;text-align:left;vertical-align:top;}
