@@ -6,7 +6,7 @@ title: The cascade
 stage:
   built: "the cascade of a point: the line it sits on and the other points on that line, asked before a change; the cascade of a class from the code graph: its descendants and the classes that inherit a method"
   designed: "one cascade from a point through the code graph to everything that reads its value, joined to the gate as the review artifact"
-  absent: "in the code, the reach of a point beyond its own line: a line that reads a variable the point sets is not in its cascade"
+  reached: "the cascade beyond a point's line: reachability in the code graph, designed; the line and its points, built"
 status: draft
 research: research/ch06.md
 guards: [refinablecode_narrated]

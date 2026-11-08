@@ -6,7 +6,7 @@ title: What broke
 stage:
   built: "the declared change surface, listed on demand; a proposal answered with its verdict; the reach of its point on its line; a step that keeps the origin the proposal declared and its way back"
   designed: "a change that keeps its reason with it after the moment it was judged; the reach of a change across the code graph, joined to the gate"
-  absent: "a saved history: the record of what changed and from which origin lives in the running object and not in the file"
+  reached: "the saved history: each step keeps the point, the values and the origin in the running object, and saving it with the file is the next step"
 status: draft
 research: research/ch02.md
 guards: [refinablecode_narrated, refine_deepening_narrated]

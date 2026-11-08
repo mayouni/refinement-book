@@ -6,7 +6,7 @@ title: Trust and governance
 stage:
   built: "four postures of origin ranked from trusted to an AI model's; a floor of trust per point; governance by permission, authority and declared risk, decided before any change; a lineage of decisions with actor, authority and risk at the time, a time and the action, queried by actor"
   designed: "the refinement carrying its author and verification as a typed transformation of the code graph (the architecture document)"
-  absent: "an origin proven rather than declared: the posture is what the proposal says it is; an unknown origin refused or ranked lowest"
+  reached: "an origin proven by the program that receives the proposal, and an unknown origin ranked lowest: requested from the library"
 status: draft
 research: research/ch08.md
 guards: [refine_deepening_narrated, gate_deepening_narrated]

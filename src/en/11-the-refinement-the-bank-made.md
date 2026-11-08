@@ -6,7 +6,7 @@ title: The refinement the bank made
 stage:
   built: "a rule of the regulator declared as a point and refined under compliance authority; the code and the customer's letter held in one refinable text, tied by a rule; two actors with different permissions and authorities on one governed code; an order of refinements the gate enforces, step by step"
   designed: "several points refined together as one change, ordered by their dependencies (the planner of the architecture document)"
-  absent: "the language's own parser judging the changed source (the structural stage delegated); points of the interface and the data world in their own structures, a direction of the Teaching Edition not in the library's design documents"
+  reached: "the language's parser as the structural check, and points of the interface and the data world: the Teaching Edition's direction"
 status: draft
 research: research/ch11.md
 guards: [gate_deepening_narrated]

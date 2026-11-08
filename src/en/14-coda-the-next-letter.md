@@ -5,7 +5,7 @@ title: "Coda: the next letter"
 stage:
   built: "every piece of the change the coda tells: the point, the gate, the order the rules impose, the governance and its saved record"
   designed: "the cascade that would reach across the bank's code, and the review read from it"
-  absent: "the story itself: it is fiction"
+  reached: "the story: told as fiction, as chapter 1 says, to carry a discipline that runs"
 status: draft
 research: research/ch14.md
 ---

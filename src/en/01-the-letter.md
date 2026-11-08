@@ -6,7 +6,7 @@ title: The letter
 stage:
   built: "the refinement point declared in the source; the proposal judged by a gate of five checks (two of them run here); the refusal that leaves the source whole; the step taken back; the cascade of a point (its line) and of a class (the code graph)"
   designed: "the two cascades joined into one, reaching beyond a line; Refine, the environment in which a team lives with refinements day to day (Part V)"
-  absent: "a saved history: the file the library writes keeps the source, not the timeline"
+  reached: "the saved history: the library saves the source with its current values, and saving the timeline with it is the next step"
 status: draft
 research: research/ch01.md
 guards: [refinablecode_narrated, refine_deepening_narrated, gate_deepening_narrated]

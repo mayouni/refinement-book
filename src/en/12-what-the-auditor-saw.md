@@ -6,7 +6,7 @@ title: What the auditor saw
 stage:
   built: "a governance saved to a file with its regime and its decisions, and loaded back; the decisions asked by action and by actor, each with the authority and risk at the time, a time and the action; the source saved with its current values"
   designed: "a refinement carrying its cascade, author, verification and history (the architecture document); an export scoped to an auditor's question"
-  absent: "the timeline saved with the source; an approver distinct from the actor; the values before and after in a decision; the reason a person gave, in the record; two clocks; an auditor's reading of a finding the library produced, outside this story"
+  reached: "the saved timeline, an approver distinct from the actor, the values and the reason in each decision, and two clocks: requested from the library"
 status: draft
 research: research/ch12.md
 guards: [gate_deepening_narrated, governance_lineage_narrated]

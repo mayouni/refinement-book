@@ -44,7 +44,8 @@ Glossary, aligned with Softanza's appendix D. About 2,000 words a chapter.
 
 ## The shape of a chapter
 
-Front matter: `id`, `part`, `number`, `title`, `stage` (`built`, `designed`, `absent`, carried from code, never from documents), `status` (HOUSE-18: `draft`, `review` or `published`;
+Front matter: `id`, `part`, `number`, `title`, `stage` (`built`, `designed`, `reached`: the stage a further thing has reached, in the book's words, HOUSE-22, ROP-24;
+carried from code, never from documents), `status` (HOUSE-18: `draft`, `review` or `published`;
 every page starts at `draft`, and only the author moves a page to `review` or `published`), `research`, `guards`. Then, in order: an opening in the first person that says what the chapter does (a few
 sentences); the story's scene where the chapter has one; `## The field`; `## The principle`; sections that run a block, show its exact answer and
 read it (titled freely); `## What I refused`; `## The court`; `## Where the field leads`; `## Where it stands` (HOUSE-21, ROP-23: "**What runs.**" and "**What comes next:**" in affirmative

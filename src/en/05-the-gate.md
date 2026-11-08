@@ -6,7 +6,7 @@ title: The gate
 stage:
   built: "the gate of five checks in the order the code runs them: structural, constraint, governance, trust, derivation; a refusal that names its check and leaves the source whole; a rule across points judged on the state the change would produce, and rolled back"
   designed: "the gate composed from the code graph's rules (stzGraphRule), so that a change is judged against what it reaches and not only against its point"
-  absent: "a check that the language itself still parses the changed source; the admitted message printing the checks in the order they ran"
+  reached: "the language's own parser as a check, and the admitted message in the order the checks run: requested from the library"
 status: draft
 research: research/ch05.md
 guards: [gate_deepening_narrated, refine_deepening_narrated, refinablecode_narrated]

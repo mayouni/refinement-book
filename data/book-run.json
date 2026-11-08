@@ -1,6 +1,6 @@
 {
  "run": {
-  "date": "2026-11-08 23:31 UTC+01:00",
+  "date": "2026-11-08 23:40 UTC+01:00",
   "library": {
    "commit": "0950e246a7e756bafbe179ca70a6bd36ae5f99b5",
    "short": "0950e246a",
@@ -94,8 +94,8 @@
    "kept": 5,
    "runnable": 5,
    "exercises": 1,
-   "ran": "2026-11-08 23:31 UTC+01:00",
-   "seconds": 4.9
+   "ran": "2026-11-08 23:40 UTC+01:00",
+   "seconds": 0.5
   },
   "en/02-what-broke": {
    "id": "what-broke",
@@ -127,7 +127,7 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-11-08 23:31 UTC+01:00",
+   "ran": "2026-11-08 23:40 UTC+01:00",
    "seconds": 0.5
   },
   "en/03-the-unit-of-change": {
@@ -168,8 +168,8 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-11-08 23:31 UTC+01:00",
-   "seconds": 0.5
+   "ran": "2026-11-08 23:40 UTC+01:00",
+   "seconds": 0.4
   },
   "en/04-the-point": {
    "id": "the-point",
@@ -209,7 +209,7 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-11-08 23:31 UTC+01:00",
+   "ran": "2026-11-08 23:40 UTC+01:00",
    "seconds": 0.5
   },
   "en/05-the-gate": {
@@ -242,7 +242,7 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-11-08 23:31 UTC+01:00",
+   "ran": "2026-11-08 23:40 UTC+01:00",
    "seconds": 0.6
   },
   "en/06-the-cascade": {
@@ -283,8 +283,8 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-11-08 23:31 UTC+01:00",
-   "seconds": 0.5
+   "ran": "2026-11-08 23:40 UTC+01:00",
+   "seconds": 0.7
   },
   "en/07-the-timeline": {
    "id": "the-timeline",
@@ -334,8 +334,8 @@
    "kept": 4,
    "runnable": 4,
    "exercises": 1,
-   "ran": "2026-11-08 23:31 UTC+01:00",
-   "seconds": 0.5
+   "ran": "2026-11-08 23:40 UTC+01:00",
+   "seconds": 0.6
   },
   "en/08-trust-and-governance": {
    "id": "trust-and-governance",
@@ -383,7 +383,7 @@
    "kept": 4,
    "runnable": 4,
    "exercises": 1,
-   "ran": "2026-11-08 23:31 UTC+01:00",
+   "ran": "2026-11-08 23:40 UTC+01:00",
    "seconds": 0.5
   },
   "en/09-the-ai-model-comes-last": {
@@ -416,8 +416,8 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-11-08 23:31 UTC+01:00",
-   "seconds": 0.4
+   "ran": "2026-11-08 23:40 UTC+01:00",
+   "seconds": 0.6
   },
   "en/10-the-safest-write-surface": {
    "id": "the-safest-write-surface",
@@ -449,7 +449,7 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-11-08 23:31 UTC+01:00",
+   "ran": "2026-11-08 23:40 UTC+01:00",
    "seconds": 0.5
   },
   "en/11-the-refinement-the-bank-made": {
@@ -490,7 +490,7 @@
    "kept": 3,
    "runnable": 3,
    "exercises": 1,
-   "ran": "2026-11-08 23:31 UTC+01:00",
+   "ran": "2026-11-08 23:40 UTC+01:00",
    "seconds": 0.5
   },
   "en/12-what-the-auditor-saw": {
@@ -525,8 +525,8 @@
    "kept": 2,
    "runnable": 2,
    "exercises": 1,
-   "ran": "2026-11-08 23:31 UTC+01:00",
-   "seconds": 0.5
+   "ran": "2026-11-08 23:40 UTC+01:00",
+   "seconds": 0.6
   },
   "en/13-the-environment-specified": {
    "id": "the-environment-specified",
@@ -550,8 +550,8 @@
    "kept": 1,
    "runnable": 1,
    "exercises": 1,
-   "ran": "2026-11-08 23:31 UTC+01:00",
-   "seconds": 0.4
+   "ran": "2026-11-08 23:40 UTC+01:00",
+   "seconds": 0.6
   },
   "en/14-coda-the-next-letter": {
    "id": "coda-the-next-letter",

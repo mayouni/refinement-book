@@ -6,7 +6,7 @@ title: The timeline
 stage:
   built: "every admitted proposal recorded as a step with the value it replaced and its origin; revert by one step, to a step, to a named checkpoint and to zero; redo, cleared when the timeline forks; under governance, a decision recorded with its actor, authority, risk and time"
   designed: "the refinement as a typed transformation of the code graph, its inverse a graph event; the step carrying its cascade, author, verification and history"
-  absent: "a saved timeline: the file holds the source; a time and an actor on the step itself; a revert judged by the gate and recorded under governance; the two clocks of a rule, in force and recorded"
+  reached: "the saved timeline, a time and an actor on each step, a governed revert, and a rule's two clocks: requested from the library"
 status: draft
 research: research/ch07.md
 guards: [refine_deepening_narrated, refinablecode_narrated]

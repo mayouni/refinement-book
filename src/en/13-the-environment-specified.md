@@ -6,7 +6,7 @@ title: The environment, specified
 stage:
   built: "Refine's command at its first milestone: version, status and init run, and the six queued verbs answer that they are queued, with a reason and a next step; under it, the library's gate this book has run"
   designed: "Refine, the governed-change environment over code, interface and data: over a hundred specifications, an interactive prototype of its screens, twelve transactional primitives of change, the live modes of the interface and the data world, and the live mode of code named and drawn as a mockup; the remaining milestones of its command"
-  absent: "Refine as a running product: the verbs validate, plan, apply, revert, show and export; the runtime of the code live mode; a public repository"
+  reached: "Refine as a running product: specified, prototyped, and started as a command at its first milestone"
 status: draft
 research: research/ch13.md
 guards: [gate_deepening_narrated]

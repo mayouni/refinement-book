@@ -6,7 +6,7 @@ title: The point
 stage:
   built: "the refinement point as a tag in the source, with a kind, a name, a value and bounds or options; the declared change surface listed on demand"
   designed: "points of eight kinds, among them a variable type, which carries a type and a validation; points anchored as typed nodes in the code graph"
-  absent: "a form of the source with the tags replaced by their values, for a compiler to read; a refusal of two points with the same name; a value containing the character that closes a tag"
+  reached: "the source rendered for a compiler, one declaration per name, and any character in a value: requested from the library"
 status: draft
 research: research/ch04.md
 guards: [refinablecode_narrated]

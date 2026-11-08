@@ -6,7 +6,7 @@ title: The AI model comes last
 stage:
   built: "a programmatic agent, a plain loop over the declared points, whose proposals face the gate; a draft from an AI model read as a typed proposal and judged like any other; a floor of trust that refuses a proposal declared as the AI model's"
   designed: "the thinking machine's cascade across faculties, set out in the Softanza book's chapter 9 (listed in chapter 17); the AI model's draft held to the grammar of a declared language before it is read"
-  absent: "an AI model called by this book's runs: the draft below is written as text, the way an AI model's answer arrives"
+  reached: "the AI model's part in the runs: the draft is written by hand, the way an AI model's answer arrives"
 status: draft
 research: research/ch09.md
 guards: [refine_deepening_narrated]

@@ -6,7 +6,7 @@ title: The safest write surface
 stage:
   built: "the declared change surface as the AI agent's map; a proposal outside it refused by name; a rehearsal on a copy of the refinable code that leaves the original untouched; the floor of trust per point"
   designed: "the door for AI agents, one command with rehearse and commit among its verbs, ratified on 2 October 2026 and not built; the live mode of Refine, in which a person refines from the running product (Part V)"
-  absent: "a rehearsal carried to the original as one act: today a person or a program proposes again on the original what the copy admitted"
+  reached: "the commit verb that carries a rehearsal to the original as one act: ratified with the door on 2 October 2026"
 status: draft
 research: research/ch10.md
 guards: [refinablecode_narrated, refine_deepening_narrated, gate_deepening_narrated]

@@ -10,7 +10,7 @@ redirected, so web/ is never written:
 
 What the rewrite adds to each page: its stage banner (HOUSE-18: Draft, In review or Published, read from the page's
 front matter, with its meaning on hover; only the author moves a page beyond Draft), the stage lines of its front
-matter (built, designed, absent), and under every block the verdict read from data/book-run.json, never composed.
+matter (built, designed, reached), and under every block the verdict read from data/book-run.json, never composed.
 The edition is a proof copy until every page is published; the cover page and the copyright page count pages by stage.
 The PDF's copyright page is the rewrite's own; both covers are the drawn ones (web/cover.png, web/cover-back.png),
 set by web/print.py as a bound book's, with bookmarks (ROP-18).
@@ -104,8 +104,8 @@ def assemble():
         stage_md = ""
         if stage:
             lines = []
-            # HOUSE-21 (ROP-23): the page shows what runs and what is designed; "absent" stays in the front matter as the record
-            for key, label in (("built", "Built"), ("designed", "Next")):
+            # HOUSE-21 and HOUSE-22 (ROP-23, ROP-24): what runs, what comes next, and the stage each further thing has reached
+            for key, label in (("built", "Built"), ("designed", "Next"), ("reached", "Reached")):
                 if stage.get(key):
                     lines.append(f"- **{label}.** {stage[key]}")
             stage_md = "\n".join(lines) + "\n\n"

@@ -6,7 +6,7 @@ title: The unit of change
 stage:
   built: "the refinement as a typed proposal to a declared point; three kinds of point judged against their declaration (a parameter, an algorithm, a library; the library kind run here); every admitted proposal recorded as a step with its prior value"
   designed: "the point and the refinement as classes of their own (stzRefinementPoint, stzRefinement); points of eight kinds (parameter, block, algorithm, function, pipeline, variable type, library, custom)"
-  absent: "a check for a point of another kind, a block of code for instance: it parses and passes without one"
+  reached: "checks for every kind of point: the parameter, the algorithm and the library are judged today, and the other five kinds are designed"
 status: draft
 research: research/ch03.md
 guards: [refinablecode_narrated]
