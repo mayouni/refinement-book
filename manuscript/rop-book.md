@@ -18,11 +18,11 @@ You do not need to be a programmer to read this book. The argument runs on one s
 
 **A note on the terminal sessions.** The sessions in this book are set in an `stz` command idiom and show the machinery of the open-source **Softanza** foundation — the engine and library this discipline runs on, free, local, with nothing to buy. The machinery is real: the typed refinement points, the four-stage gate, the computed cascade, the reversible history you will meet are all defined by that foundation. The command names and flags are an idealized rendering, and may differ in detail as the tooling ships. Nothing shown goes beyond what the foundation defines. Commercial products are built on the same foundation — **Refine**, an IDE for this discipline, is one — and when a picture teaches better than a terminal, this book shows an illustration of its screens. The discipline itself belongs to the open foundation, and to you.
 
-**The map.** The book has four parts. *Part I* names the confusion honestly and finds the single question underneath it — then puts your hands on the answer. *Part II* takes the discipline apart, one mechanism per chapter: the graph, the gate, the cascade, the audit chain. *Part III* brings the agents in — and shows why a well-governed change does not care whether a human or a machine proposed it. *Part IV* widens the lens: beyond code, beyond one language, into the boardroom, and finally into the discipline's own honest limits.
+**The map.** The book has four parts. *Part I* names the confusion honestly and finds the single question underneath it — then puts your hands on the answer. *Part II* takes the discipline apart, one mechanism per chapter: the graph, the gate, the cascade, the audit chain. *Part III* brings the agents in — and shows why a well-governed change does not care whether a human or a machine proposed it. *Part IV* widens the lens: beyond code, beyond one language, into the boardroom, and finally to where the discipline stands.
 
-**If you have ninety minutes**, read Chapters 1, 3, 5, 6, 10, and 13. That path carries the whole argument: the jungle, the new unit of work, the gate, the cascade, the jungle made legible, and what none of this can do.
+**If you have ninety minutes**, read Chapters 1, 3, 5, 6, 10, and 13. That path carries the whole argument: the jungle, the new unit of work, the gate, the cascade, the jungle made legible, and where it stands.
 
-**A word about honesty.** A book about trust earns its subject or it does not. Every chapter here ends by saying what it has shown and what it has not; the last chapter is nothing but limits. When the book does not know something, it says so.
+**A word about honesty.** A book about trust earns its subject or it does not. Every chapter here ends by saying what it has shown and what comes next; the last chapter says where the discipline stands. What the book knows, it says at its true size.
 
 ---
 
@@ -369,7 +369,7 @@ Every refusal in the discipline speaks this grammar, and the cumulative effect o
 
 One property runs under all four stages and gives the gate its authority: it is **deterministic**. The same proposal against the same declared rules yields the same verdict — today, tomorrow, replayed in front of an auditor. There is no model in the loop deciding differently after lunch. Whatever else in your stack is probabilistic (and in Part III, plenty will be), the moment of admission is not.
 
-That determinism is also the gate's honest limit, stated here and again in Chapter 13: the gate proves a change against *what you declared*. It does not know the rules you never wrote down, and it does not judge taste, elegance, or wisdom — a change can pass all four stages and still be a bad idea, beautifully validated. The gate was never meant to replace judgment. It is meant to *spend* judgment where judgment is needed, by disposing of everything checkable before a human ever looks.
+That determinism also sets the gate's scope, stated here and again in Chapter 13: the gate proves a change against *what you declared*. The rules still to be written, and taste, elegance, and wisdom, stay with people — a change can pass all four stages and still be a poor idea, beautifully validated. The gate was never meant to replace judgment. It is meant to *spend* judgment where judgment is needed, by disposing of everything checkable before a human ever looks.
 
 {{fig:ide-verdict|The same verdict as a surface: the Refine IDE's verdict card for rfn-0207 — four stages, their reasons, the landed state, and the revert within reach. (An illustration, not a screenshot.)}}
 
@@ -745,39 +745,39 @@ The auditor's report, filed three weeks later, was clean. One sentence from it i
 
 *The final chapter draws the book's boundaries, plainly, before it lets you go.*
 
-# Chapter 13 — Honest boundaries
+# Chapter 13 — Where it stands
 
-*What this discipline does not do — said plainly, because trust is the whole subject.*
+*What this discipline covers, what it leaves to people, and what comes next — said plainly, because trust is the whole subject.*
 
-A book about trust ends honestly or it refutes itself. This chapter is the ledger of the discipline's boundaries: where it stops, what it leaves to people, and what comes next — written with the same care as the promises, because you will bet real systems on knowing the difference.
+A book about trust ends by saying where it stands. This chapter is the ledger of the discipline's boundaries: what it covers, what it leaves to people, and what comes next — written with the same care as the promises, because you will bet real systems on knowing the difference.
 
-## §1 — The gate proves what you declared
+## §1 — The gate governs what you declare
 
-Every verdict in this book checked a change against *declared* rules — declared bounds, declared policies, declared authorities. Nothing checks the rule you never wrote down. If nobody declared that penalty timing matters, the gate will happily land a change that breaks penalty timing, four green stages and all. The discipline converts unknown risks into declared rules *over time* — every incident becomes a declaration, and the map improves monotonically — but at any given moment, your blind spots are exactly as blind as before. Tests, scanners, monitoring, and experienced humans hunt the undeclared; the gate governs the declared. Both jobs are real. Neither does the other's.
+Every verdict in this book checked a change against *declared* rules — declared bounds, declared policies, declared authorities. The gate governs the declared; tests, scanners, monitoring, and experienced people hunt the rest. Every incident they find becomes a new declaration, so the map grows with each one, and the gate's reach grows with the map. Both jobs are real, and each does its own.
 
-## §2 — Valid is not wise
+## §2 — Valid, and wise
 
-The gate answers *may this land?* It cannot answer *should it?* A change can be typed, bounded, within policy, fully cascaded, properly authorized — and still be a bad product decision, a clumsy wording, a strategically foolish move, beautifully validated. Wisdom — taste, judgment, knowing what the customer will feel — is not a stage in the pipeline, and this book has been careful never to pretend otherwise. The discipline's honest ambition is narrower and, lived with, more valuable: it *spends judgment where judgment is needed*, by disposing of everything checkable before a human looks. What the human then decides is not the gate's business.
+The gate answers *may this land?* Whether it *should* is a question the discipline leaves to people, by design: taste, judgment, knowing what the customer will feel. A change can be typed, bounded, within policy, fully cascaded and properly authorized, and the decision to make it is still a person's. The discipline's ambition is precise and, lived with, more valuable: it *spends judgment where judgment is needed*, by disposing of everything checkable before a person looks. What the person then decides is theirs.
 
 ## §3 — Declaring is work, and adoption is change
 
-The whole machine runs on declarations — points, bounds, policies, satisfies edges, authorities — and declarations are authored by people, maintained by people, and neglected by people. The lift reports what it cannot find; someone must still close the gaps. A team that declares nothing gets a gate that governs nothing.
+The whole machine runs on declarations — points, bounds, policies, satisfies edges, authorities — and declarations are authored and maintained by people. The lift reports what it finds, and the team closes the gaps it shows. The more a team declares, the more the gate governs.
 
-And adopting the discipline is organizational change, not a tool install. Review becomes reading cascades; authority becomes explicit (which some enjoy less than ambiguity); refusals land on humans with human feelings — the four-part grammar exists precisely because a gate that refuses rudely gets routed around. Budget for the culture, not just the tooling. The bank in this book took eighteen months, and the months were not spent typing.
+Adopting the discipline is organizational change as well as a tool. Review becomes reading cascades; authority becomes explicit; refusals land on people with human feelings — which is why every refusal speaks the four-part grammar. Budget for the culture as well as the tooling. The bank in this book took eighteen months, and the months went into people and declarations.
 
-## §4 — The tooling is young
+## §4 — The tooling ships in stages
 
-Said once in the front matter and repeated here where it belongs: the `stz` sessions in this book are an idealized rendering of an open foundation whose machinery — the graph, the points, the gate, the cascade, the reversible history — is defined and real, and whose tooling ships in stages. Command names will drift; rough edges exist; the commercial products built on the foundation are further along in some surfaces and absent in others. This book taught the discipline, not a version number. The judgment of *when* the tooling under it is ready for your penalty cap is — fittingly — yours.
+Said once in the front matter and again here, where it belongs: the `stz` sessions in this book are an idealized rendering of an open foundation whose machinery — the graph, the points, the gate, the cascade, the reversible history — is defined and real, and whose tooling ships in stages. Command names may change as it ships, and the commercial products built on the foundation advance surface by surface. This book teaches the discipline, which holds across versions. The judgment of *when* the tooling under it is ready for your penalty cap is — fittingly — yours.
 
 ## §5 — This is a bet
 
-Finally, the widest honesty. This book has argued one side of a live question. There is another view of the agentic era — coherent, well-funded, seriously held — in which the artifact stops mattering: code becomes disposable, systems are regenerated from intent on demand, and governing changes to an artifact is nostalgia, because there is no artifact, only the agent and the ask.
+Finally, the widest view. This book has argued one side of a live question. There is another view of the agentic era — coherent, well-funded, seriously held — in which the artifact stops mattering: code becomes disposable, systems are regenerated from intent on demand, and governing changes to an artifact is nostalgia, because there is no artifact, only the agent and the ask.
 
 The discipline bets the other way: that consequential systems — the ones holding money, health, and law — will keep needing a persistent, governed, explainable artifact, precisely *because* someone must answer for it on Thursday. The evidence of the regulated world leans this way; the bet is stated so you can judge it, not so you can inherit it unexamined.
 
 ## §6 — Monday morning
 
-None of the limits above excuse waiting, because the discipline's first steps need no tooling at all. Five lines, one workweek each:
+The discipline's first steps need no tooling at all. Five lines, one workweek each:
 
 1. **List your knobs.** The ten most consequential adjustable things in your system — rates, thresholds, limits, wordings. That page is your first refinement-point inventory.
 2. **Write their bounds, and who may change them.** One sentence each. You have just drafted your constraint and governance stages.
@@ -787,11 +787,11 @@ None of the limits above excuse waiting, because the discipline's first steps ne
 
 A team that does these five things has begun practicing refinement-oriented programming with a notebook. The tooling makes it fast. The discipline is what makes it work.
 
-## What this book has established — and what it has not
+## What this book establishes, and what it leaves to you
 
 **Established:** that the bottleneck moved from writing changes to trusting them; that trust at machine speed must be a property of the change, not a feeling about the author; that a refinement — typed, bounded, validated, attributed, cascade-aware, reversible — carries those properties by construction; that four mechanisms (graph, gate, cascade, chain) produce them; that the same law governs humans and agents, code and interfaces and data, one language or many; and that the result is auditable in minutes because the audit is the workflow's exhaust.
 
-**Not established, by design:** that the gate catches what you never declared; that valid means wise; that adoption is easy; that the tooling is finished; or that the industry will choose governed artifacts over regenerated ones. Those are, respectively: your vigilance, your judgment, your leadership, the foundation's roadmap, and the era's open question.
+**Left to you, by design:** the rules your vigilance finds and declares; whether a valid change is wise, which is your judgment; adoption, which is your leadership; the tooling's next stages, which are the foundation's roadmap; and whether the industry chooses governed artifacts over regenerated ones, which is the era's open question.
 
 The jungle, at least, is behind you. What you build on the clearing is yours.
 
