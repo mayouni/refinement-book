@@ -179,7 +179,7 @@ COPYRIGHT = """<div class="fm fm-copyright">
 <p>© 2026 Mansour Ayouni</p>
 <p>Published by AYOUNI, the independent imprint of Mansour Ayouni / Softanza Labs. Tunis · Niamey · Paris.</p>
 <p>The text of this book is released under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
-International (CC BY-NC-ND 4.0). Code follows the licence of the library it runs against. Illustrations and the cover follow the book's LICENSE.md.</p>
+International (CC BY-NC-ND 4.0). Code is under the MIT licence. Illustrations and the cover follow the book's LICENSE.md.</p>
 <p>This edition rewrites the Teaching Edition of 2026 on the Softanza foundation. Every block was run against the Softanza library at commit {lib}.</p>
 <p><strong>{edition}.</strong> The edition is a proof copy until the author has published every page. This is a local build, not a published edition.</p>
 <p>Typeset in EB Garamond and Inter. ISBN pending.</p>

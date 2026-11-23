@@ -309,7 +309,7 @@ for p in pages:
     # the open book (house OPEN-BOOK.md, HOUSE-11): the ask and the colophon line once, after the last chapter
     the_ask = ('<section class="the-invite"><p class="invite-line">If this book is useful to your organisation, I work with organisations on its subjects: paper copies in quantity, workshops and training, talks, consulting and the building of solutions. Write to <a href="mailto:kalidianow@gmail.com">kalidianow@gmail.com</a>.</p>'
                '<p class="invite-more"><a href="https://mayouni.github.io/ayouni/offer/">How these books are offered</a></p>'
-               '<p class="colophon-line">Free to read and share under <a href="https://mayouni.github.io/ayouni/licence/">CC BY-NC-ND 4.0</a>; code under the library&#39;s licence.</p></section>') if p["slug"] == "coda" else ""
+               '<p class="colophon-line">Copyright &copy; 2026 Mansour Ayouni. Free to read and share under <a href="https://mayouni.github.io/ayouni/licence/">CC BY-NC-ND 4.0</a>; code under the MIT licence.</p></section>') if p["slug"] == "coda" else ""
     articles.append(
         f'<article class="chapter-page" id="page-{p["slug"]}" data-slug="{p["slug"]}" '
         f'data-title="{html.escape(disp_title, quote=False)}" data-prev="{p["prev"]}" data-next="{p["next"]}">\n'
